@@ -10,8 +10,8 @@ class LamaranTersimpanController extends Controller
     //Route::get('lamaran-tersimpan','LamaranTersimpanController@GetLamaranTersimpan');
     //Route::post('lamaran-tersimpan','LamaranTersimpanController@PostLamaranTersimpan');
 
-    public function GetLamaranTersimpan(){
-        $data = LamaranTersimpan::all();
+    public function GetLamaranTersimpan($id){
+        $data = Bahasa::where('id_kandidat',$id)->get();
         if(count($data)>0){
             $res['count'] = count($data);
             $res['message'] = 'data ditemukan';

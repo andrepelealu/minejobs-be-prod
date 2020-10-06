@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Validator;
 class DataPribadiController extends Controller
 {
     //PostDataPribadi
-    public function PostDataPribadi(Request $req){
+    public function PostDataPribadi(Request $req, $id){
         $validator = Validator::make($req->all(), [
             'id_kandidat' => 'required|unique:data_pribadi',
             'nama_depan' => 'required|string',
