@@ -64,7 +64,7 @@ class ProfilPerusahaanController extends Controller
             return $res;
         }
     }
-    public function UpdateProfilPerusahaan($id)
+    public function UpdateProfilPerusahaan(Request $req, $id)
     {
         $data = ProfilPerusahaan::find($id,'id_perusahaan')->first();
         // $data->id_kandidat = $req->id_kandidat;
