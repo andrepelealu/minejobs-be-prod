@@ -139,7 +139,7 @@ Route::get('atur-ulang','AturUlangController@GetAturUlang');//ok
 /*END*/
 
 /*PROFIL PERUSAHAAN*/
-Route::post('profil-perusahaan/','ProfilPerusahaanController@PostProfilPerusahaan');//checked
+Route::post('profil-perusahaan','ProfilPerusahaanController@PostProfilPerusahaan');//checked
 Route::get('profil-perusahaan/{id}','ProfilPerusahaanController@GetProfilPerusahaan');//checked
 Route::put('profil-perusahaan/{id}','ProfilPerusahaanController@UpdateProfilPerusahaan');//ok
 
