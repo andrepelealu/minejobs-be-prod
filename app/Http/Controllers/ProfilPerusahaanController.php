@@ -81,7 +81,7 @@ class ProfilPerusahaanController extends Controller
         $data->no_npwp_perusahaan   = $req->no_npwp_perusahaan;
         $data->url_npwp_perusahaan  = $req->url_npwp_perusahaan;
 
-        if(count($data)>0){
+        if($data){
             if($data->save()){
                 $res['message'] = 'Berhasil Update';
                 $res['data'] = $data;
