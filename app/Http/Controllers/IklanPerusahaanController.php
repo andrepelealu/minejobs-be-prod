@@ -62,19 +62,26 @@ class IklanPerusahaanController extends Controller
             return $res;
         }
     }
-        // public function GetIklanPerusahaanByKota($kota){
-        //     $data = Iklan_Perusahaan::where('kota',$kota)->get();
-        //     if(count($data)>0){
-        //         $res['count'] = count($data);
-        //         $res['message'] = 'data ditemukan';
-        //         $res['data'] = $data;
-        //         return $res;
-        //     }else{
-        //         $res['count'] = count($data);
-        //         $res['message'] = 'data tidak ditemukan';
-        //         return $res;
-        //     }
-        // }
+
+    public function  DeleteIklanPerusahaan($id){
+        $data = IklanPerusahaanModel::find($id,'id_perusahaan')->first();
+        if($data){
+            if($data->delete()){
+                $res['message'] = 'Berhasil Dihapus';
+                $res['data'] = $data;
+                return $res;
+            }else{
+                $res['message'] = 'Gagal Dihapus';
+                $res['data'] = $data;
+                return $res;
+            }
+        }else{
+            $res['count'] = count($data);
+            $res['message'] = 'data tidak ditemukan';
+            return $res;
+        }       
+    }
+   
         public function GetIklanPerusahaanByLokasi(Request $req){
             $provinsi= $req->provinsi;
             $kota= $req->kota;

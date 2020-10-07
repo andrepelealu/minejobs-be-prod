@@ -154,7 +154,7 @@ Route::get('filter-gaji/{gaji}','IklanPerusahaanController@GetIklanPerusahaanByG
 // Route::get('filter-kota/{kota}','IklanPerusahaanController@GetIklanPerusahaanByKota');
 Route::post('filter-lokasi','IklanPerusahaanController@GetIklanPerusahaanByLokasi');//checked
 Route::get('filter-bidang/{bidang}','IklanPerusahaanController@GetIklanPerusahaanByBidang');//checked
-Route::post('cari-iklan/','IklanPerusahaanController@CariIklanPerusahaan');//checked
+Route::post('cari-iklan','IklanPerusahaanController@CariIklanPerusahaan');//checked
 
 
 
