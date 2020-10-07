@@ -21,6 +21,7 @@ class Iklan_Perusahaan extends Model
                 'pengalaman_kerja',
                 'persyaratan',
                 'benefit_perusahaan',
-                'url_header'
+                'url_header',
+                'status_iklan'
     ];
 }

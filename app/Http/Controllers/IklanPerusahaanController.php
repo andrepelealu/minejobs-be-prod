@@ -24,6 +24,7 @@ class IklanPerusahaanController extends Controller
             'url_header'=>'required|string'
         ]
     );
+
     if($validator->fails()){
         return response()->json($validator->errors()->toJson(), 400);
     }
@@ -37,7 +38,7 @@ class IklanPerusahaanController extends Controller
     $input->bidang_pekerjaan = $req->bidang_pekerjaan;
     $input->tingkat_pendidikan = $req->tingkat_pendidikan;
     $input->pengalaman_kerja = $req->pengalaman_kerja;
-    $input->persyaratan = $req->tingkat_pendidikan;
+    $input->persyaratan = $req->persyaratan;
     $input->benefit_perusahaan = $req->benefit_perusahaan;
     $input->url_header = $req->url_header;
 
@@ -49,7 +50,7 @@ class IklanPerusahaanController extends Controller
     }
     
     public function GetIklanPerusahaanById($id){
-        $data = IklanPerusahaanModel::where('id',$id)->get();
+        $data = IklanPerusahaanModel::where('id_perusahaan',$id)->get();
         if(count($data)>0){
             $res['count'] = count($data);
             $res['message'] = 'data ditemukan';
@@ -191,7 +192,6 @@ class IklanPerusahaanController extends Controller
 
         $data = Iklan_Perusahaan::find($id,'id_perusahaan')->first();
         // $data->id_perusahaan = $req->id_perusahaan;
-        $data->id_perusahaan = $req->id_perusahaan;
         $data->posisi_pekerjaan = $req->posisi_pekerjaan;
         $data->gaji_min = $req->gaji_min;
         $data->gaji_max = $req->gaji_max;

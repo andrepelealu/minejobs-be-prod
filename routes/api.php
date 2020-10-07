@@ -146,7 +146,7 @@ Route::put('profil-perusahaan/{id}','ProfilPerusahaanController@UpdateProfilPeru
 /*END*/
 
 /*IKLAN PERUSAHAAN*/
-Route::post('iklan-perusahaan/{id}','IklanPerusahaanController@PostIklanPerusahaan');//checked
+Route::post('iklan-perusahaan','IklanPerusahaanController@PostIklanPerusahaan');//checked
 Route::get('iklan-perusahaan/{id}','IklanPerusahaanController@GetIklanPerusahaan');//checked
 Route::put('iklan-perusahaan/{id}','IklanPerusahaanController@UpdateIklanPerusahaan');//checked
 Route::delete('iklan-perusahaan/{id}','IklanPerusahaanController@DeleteIklanPerusahaan');
