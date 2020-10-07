@@ -16,6 +16,10 @@ class ProfilPerusahaan extends Model
     'url_banner',
     'foto_perusahaan',
     'website_perusahaan',
-    'jenis_industri'];
+    'jenis_industri',
+    'no_telp_perusahaan',
+    'no_npwp_perusahaan',
+    'url_npwp_perusahaan'
+    ];
 //
 }
