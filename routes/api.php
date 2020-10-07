@@ -171,7 +171,7 @@ Route::get('undangan-interview/{id}','UndanganInterviewController@GetUndanganInt
 Route::post('kirim/undangan','UndanganInterviewController@PostUndanganInterview');//checked
 /*END*/
 /*END*/
-Route::post('pelamar-perusahaan/','PelamarPerusahaanController@PostPelamarPerusahaan');//checked
+Route::post('pelamar-perusahaan','PelamarPerusahaanController@PostPelamarPerusahaan');//checked
 Route::get('pelamar-perusahaan/{id}','PelamarPerusahaanController@GetPelamarPerusahaan');//checked
 Route::patch('pelamar-perusahaan/{id}','PelamarPerusahaanController@UpdateStatusPelamar');//ok
 Route::delete('pelamar-perusahaan/{id}','PelamarPerusahaanController@DeletePelamarPerusahaan');//ok

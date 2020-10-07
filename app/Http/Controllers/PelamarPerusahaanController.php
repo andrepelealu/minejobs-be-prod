@@ -69,7 +69,7 @@ class PelamarPerusahaanController extends Controller
         // $data->id_perusahaan = $req->id_perusahaan;
         // $data->id_iklan = $req->id_iklan;
         // $data->tanggal_lamaran = $req->tanggal_lamaran;            
-        if(count($check)>0){
+        if($check){
             $data = Pelamar_Perusahaan::find($id,'id_kandidat')->first();
             $data->status_lamaran = $req->status_lamaran;
             if($data->save()){
