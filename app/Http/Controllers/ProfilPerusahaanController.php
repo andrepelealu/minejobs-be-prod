@@ -77,7 +77,7 @@ class ProfilPerusahaanController extends Controller
         $data->website_perusahaan   = $req->website_perusahaan;
         $data->jenis_industri       = $req->jenis_industri;
         $data->website_perusahaan   = $req->website_perusahaan;
-        $data->no_tlp_perusahaan    = $req->no_tlp_perusahaan;
+        $data->no_telp_perusahaan    = $req->no_telp_perusahaan;
         $data->no_npwp_perusahaan   = $req->no_npwp_perusahaan;
         $data->url_npwp_perusahaan  = $req->url_npwp_perusahaan;
 
