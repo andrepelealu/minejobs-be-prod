@@ -82,7 +82,7 @@ class PelamarPerusahaanController extends Controller
                 return $res;
             }
         }else{
-            $res['count'] = count($check);
+            
             $res['message'] = 'data tidak ditemukan';
             return $res;
         }
@@ -90,7 +90,7 @@ class PelamarPerusahaanController extends Controller
     }
     public function DeletePelamarPerusahaan($id){
         $check = Pelamar_Perusahaan::find($id,'id');
-        if(count($check)>0){
+        if($check){
             $data = Pelamar_Perusahaan::find($id,'id')->first();
             if($data->delete()){
                 $res['message'] = 'Berhasil Dihapus';
@@ -102,7 +102,7 @@ class PelamarPerusahaanController extends Controller
                 return $res;
             }
         }else{
-            $res['count'] = count($data);
+        
             $res['message'] = 'data tidak ditemukan';
             return $res;
         }       
