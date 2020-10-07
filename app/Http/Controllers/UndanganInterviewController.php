@@ -29,7 +29,7 @@ class UndanganInterviewController extends Controller
         'waktu_mulai' =>'required',
         'waktu_selesai' =>'required',
         'metode_interview'=>'required',
-        'url_concall'=>'optional|string'
+        'url_concall'=>'nullable|string'
 
         ]
     );
