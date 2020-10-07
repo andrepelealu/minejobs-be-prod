@@ -21,8 +21,8 @@ class CreateUndanganInterviewTable extends Migration {
 			$table->string('pesan');
 			$table->string('tanggal_interview');
 			$table->string('metode_interview');
-			$table->time('waktu_mulai');
-			$table->time('waktu_selesai');
+			$table->string('waktu_mulai');
+			$table->string('waktu_selesai');
 			$table->string('url_concall')->nullable();
 			$table->string('status');
 		});
