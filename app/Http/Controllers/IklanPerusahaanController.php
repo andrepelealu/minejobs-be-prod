@@ -131,8 +131,8 @@ class IklanPerusahaanController extends Controller
                 return $res;
             }
         }
-        public function GetIklanPerusahaan(){
-            $data = Iklan_Perusahaan::where('status_iklan',1)->get();
+        public function GetIklanPerusahaan($id){
+            $data = Iklan_Perusahaan::where('id_perusahaan',$id)->get();
             if(count($data)>0){
                 $res['count'] = count($data);
                 $res['message'] = 'data ditemukan';
