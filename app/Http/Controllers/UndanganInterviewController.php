@@ -51,11 +51,14 @@ class UndanganInterviewController extends Controller
             
     $detailIklan = Iklan_Perusahaan::select('posisi_pekerjaan')->where('id',$req->id_iklan)->get();
     $detailPerusahaan = ProfilPerusahaan::select('nama_perusahaan')->where('id_perusahaan',$req->id_perusahaan)->get();
-    
-    $email = DB::table('user_kandidat')->select('email')->where('id', $req->id_kandidat)->first();
+    $user = UserKandidat::select('id')->where('id',$req->id_kandidat)->get();
 
-    // $detailIklan = 'test';
-    // $detailPerusahaan = 'test';
+    if(count($detailIklan)==0 )
+    {
+        $res['message'] = 'iklan or user not found';
+        return response()->json($res, 404);
+    }
+    $email = DB::table('user_kandidat')->select('email')->where('id', $req->id_kandidat)->first();
     $subject = "Minejobs | Undangan Interview dari ".$detailPerusahaan[0]->nama_perusahaan;
     
     if($input->save()){
