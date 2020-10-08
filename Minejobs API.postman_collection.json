@@ -19,7 +19,7 @@
 									"bearer": [
 										{
 											"key": "token",
-											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9taW5lam9icy1iZS5oZXJva3VhcHAuY29tXC9cL2FwaVwva2FuZGlkYXRcL2xvZ2luIiwiaWF0IjoxNjAxODYxMDk2LCJleHAiOjE2MDE4NjQ2OTYsIm5iZiI6MTYwMTg2MTA5NiwianRpIjoiTk0wb2c4RHkweUtZSVRPeiIsInN1YiI6MSwicHJ2IjoiZDhkZjE5ODEyNzdiZjk1NjhjN2RkM2ZlMWM3NTMwNDg2ODU2YTE0NiJ9.XZZ7lNDhFR5mxnIL8H1jJX_9qaGNzJVkc2BLw1vK4e8",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9taW5lam9icy1iZS5oZXJva3VhcHAuY29tXC9cL2FwaVwva2FuZGlkYXRcL2xvZ2luIiwiaWF0IjoxNjAxOTkyNDM0LCJleHAiOjE2MDE5OTYwMzQsIm5iZiI6MTYwMTk5MjQzNCwianRpIjoibGtOakFxTGRKN0NTZFNkSyIsInN1YiI6MSwicHJ2IjoiZDhkZjE5ODEyNzdiZjk1NjhjN2RkM2ZlMWM3NTMwNDg2ODU2YTE0NiJ9.qmIBiWE12ZQPzBEd_RLUK3NlAIPZFmY5MFrY5G_d2_Y",
 											"type": "string"
 										}
 									]
@@ -1119,7 +1119,7 @@
 									"bearer": [
 										{
 											"key": "token",
-											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9rYW5kaWRhdFwvbG9naW4iLCJpYXQiOjE2MDE4MjM0NTMsImV4cCI6MTYwMTgyNzA1MywibmJmIjoxNjAxODIzNDUzLCJqdGkiOiJyWWl0YVVCeVh4Y0pkNVVYIiwic3ViIjoxLCJwcnYiOiJkOGRmMTk4MTI3N2JmOTU2OGM3ZGQzZmUxYzc1MzA0ODY4NTZhMTQ2In0.ARttmg2grKu51tYcFz6tWLvMIvglT6wBx4MpjUrKvbc",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9taW5lam9icy1iZS5oZXJva3VhcHAuY29tXC9cL2FwaVwva2FuZGlkYXRcL2xvZ2luIiwiaWF0IjoxNjAxOTkyNDM0LCJleHAiOjE2MDE5OTYwMzQsIm5iZiI6MTYwMTk5MjQzNCwianRpIjoibGtOakFxTGRKN0NTZFNkSyIsInN1YiI6MSwicHJ2IjoiZDhkZjE5ODEyNzdiZjk1NjhjN2RkM2ZlMWM3NTMwNDg2ODU2YTE0NiJ9.qmIBiWE12ZQPzBEd_RLUK3NlAIPZFmY5MFrY5G_d2_Y",
 											"type": "string"
 										}
 									]
@@ -1150,15 +1150,26 @@
 						{
 							"name": "jadwal interview",
 							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9taW5lam9icy1iZS5oZXJva3VhcHAuY29tXC9cL2FwaVwva2FuZGlkYXRcL2xvZ2luIiwiaWF0IjoxNjAxOTkyNDM0LCJleHAiOjE2MDE5OTYwMzQsIm5iZiI6MTYwMTk5MjQzNCwianRpIjoibGtOakFxTGRKN0NTZFNkSyIsInN1YiI6MSwicHJ2IjoiZDhkZjE5ODEyNzdiZjk1NjhjN2RkM2ZlMWM3NTMwNDg2ODU2YTE0NiJ9.qmIBiWE12ZQPzBEd_RLUK3NlAIPZFmY5MFrY5G_d2_Y",
+											"type": "string"
+										}
+									]
+								},
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{url}}/jadwal-interview/1",
+									"raw": "{{url}}/api/adwal-interview/1",
 									"host": [
 										"{{url}}"
 									],
 									"path": [
-										"jadwal-interview",
+										"api",
+										"adwal-interview",
 										"1"
 									]
 								}
@@ -1221,9 +1232,9 @@
 									}
 								},
 								"url": {
-									"raw": "{{url}}/api/perusahaan/login",
+									"raw": "{{dev}}/api/perusahaan/login",
 									"host": [
-										"{{url}}"
+										"{{dev}}"
 									],
 									"path": [
 										"api",
@@ -1240,13 +1251,13 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{url}}/api/kandidat/auth/google",
+									"raw": "{{url}}/api/perusahaan/auth/google",
 									"host": [
 										"{{url}}"
 									],
 									"path": [
 										"api",
-										"kandidat",
+										"perusahaan",
 										"auth",
 										"google"
 									]
@@ -1269,7 +1280,7 @@
 									"bearer": [
 										{
 											"key": "token",
-											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9taW5lam9ic2FwaWJlLWVudi5lYmEtbmZpYXJ6YmUuYXAtc291dGhlYXN0LTEuZWxhc3RpY2JlYW5zdGFsay5jb21cL1wvYXBpXC9wZXJ1c2FoYWFuXC9sb2dpbiIsImlhdCI6MTYwMjAyNzIxMywiZXhwIjoxNjAyMDMwODEzLCJuYmYiOjE2MDIwMjcyMTMsImp0aSI6IjF2a0kyTnh5cmRibzRnTjAiLCJzdWIiOjEsInBydiI6ImE4NjUzYWQ0MDc4YjFhNDVmNjU3ODU1ZjA3MmIwMGRlNjIzMDFhYzAifQ.ODWyJXp16r2d4ReSIagLxEwavHw50_X1c_45XaQ71SE",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9wZXJ1c2FoYWFuXC9sb2dpbiIsImlhdCI6MTYwMjE3MTg5MywiZXhwIjoxNjAyMTc1NDkzLCJuYmYiOjE2MDIxNzE4OTMsImp0aSI6Im1sQVNYeEZUb1h1aUw5VHMiLCJzdWIiOjEsInBydiI6ImE4NjUzYWQ0MDc4YjFhNDVmNjU3ODU1ZjA3MmIwMGRlNjIzMDFhYzAifQ.up1FUl55In9H8HEPPO9QAuCQc8l6dQzdLH6rC6SVA-M",
 											"type": "string"
 										}
 									]
@@ -1286,14 +1297,13 @@
 									}
 								},
 								"url": {
-									"raw": "{{url}}/api/profil-perusahaan/1",
+									"raw": "{{url}}/api/profil-perusahaan",
 									"host": [
 										"{{url}}"
 									],
 									"path": [
 										"api",
-										"profil-perusahaan",
-										"1"
+										"profil-perusahaan"
 									]
 								}
 							},
@@ -1331,8 +1341,27 @@
 						{
 							"name": "edit profi;e",
 							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9taW5lam9ic2FwaWJlLWVudi5lYmEtbmZpYXJ6YmUuYXAtc291dGhlYXN0LTEuZWxhc3RpY2JlYW5zdGFsay5jb21cL1wvYXBpXC9wZXJ1c2FoYWFuXC9sb2dpbiIsImlhdCI6MTYwMjAyODkyMCwiZXhwIjoxNjAyMDMyNTIwLCJuYmYiOjE2MDIwMjg5MjAsImp0aSI6IlF0VGdkZ2N2V3lrU2M2aVQiLCJzdWIiOjEsInBydiI6ImE4NjUzYWQ0MDc4YjFhNDVmNjU3ODU1ZjA3MmIwMGRlNjIzMDFhYzAifQ.lFfxGm9fdzkvuJG8-7yHWOmqPWozMLfvLvPPNouCvBg",
+											"type": "string"
+										}
+									]
+								},
 								"method": "PUT",
 								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n        \"nama_perusahaan\":\"testing perusahaan\",\r\n        \"alamat_perusahaan\":\"edit\",\r\n        \"tentang_perusahaan\":\"tentang perusahaan\",\r\n        \"url_banner\":\"url foto\",\r\n        \"foto_perusahaan\":\"url foto\",\r\n        \"website_perusahaan\":\"website\",\r\n        \"jenis_industri\":\"jenis industri\",\r\n        \"no_telp_perusahaan\":\"0822340088822\",\r\n        \"no_npwp_perusahaan\":\"1240981249874124\",\r\n        \"url_npwp_perusahaan\":\"foto npwp\"\r\n\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
 								"url": {
 									"raw": "{{url}}/api/profil-perusahaan/1",
 									"host": [
@@ -1354,72 +1383,6 @@
 				{
 					"name": "iklan perusahaan",
 					"item": [
-						{
-							"name": "create iklan",
-							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9taW5lam9ic2FwaWJlLWVudi5lYmEtbmZpYXJ6YmUuYXAtc291dGhlYXN0LTEuZWxhc3RpY2JlYW5zdGFsay5jb21cL1wvYXBpXC9wZXJ1c2FoYWFuXC9sb2dpbiIsImlhdCI6MTYwMjAyODkyMCwiZXhwIjoxNjAyMDMyNTIwLCJuYmYiOjE2MDIwMjg5MjAsImp0aSI6IlF0VGdkZ2N2V3lrU2M2aVQiLCJzdWIiOjEsInBydiI6ImE4NjUzYWQ0MDc4YjFhNDVmNjU3ODU1ZjA3MmIwMGRlNjIzMDFhYzAifQ.lFfxGm9fdzkvuJG8-7yHWOmqPWozMLfvLvPPNouCvBg",
-											"type": "string"
-										}
-									]
-								},
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n    \"id_perusahaan\":\"1\",\r\n    \"posisi_pekerjaan\":\"posisi pekerjaan\",\r\n    \"gaji_min\":\"1000000\",\r\n    \"gaji_max\":\"3000000\",\r\n    \"provinsi\":\"jawa tengah\",\r\n    \"kota\":\"semarang\",\r\n    \"bidang_pekerjaan\":\"teknologi\",\r\n    \"tingkat_pendidikan\":\"sma\",\r\n    \"pengalaman_kerja\":\"3 tahun\",\r\n    \"persyaratan\":\"test\",\r\n    \"benefit_perusahaan\":\"benefit\",\r\n    \"url_header\":\"google.com\"\r\n\r\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{url}}/api/iklan-perusahaan",
-									"host": [
-										"{{url}}"
-									],
-									"path": [
-										"api",
-										"iklan-perusahaan"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "get iklan",
-							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9taW5lam9ic2FwaWJlLWVudi5lYmEtbmZpYXJ6YmUuYXAtc291dGhlYXN0LTEuZWxhc3RpY2JlYW5zdGFsay5jb21cL1wvYXBpXC9wZXJ1c2FoYWFuXC9sb2dpbiIsImlhdCI6MTYwMjAzMDQ3NiwiZXhwIjoxNjAyMDM0MDc2LCJuYmYiOjE2MDIwMzA0NzYsImp0aSI6ImxSaVVvN1BwS0duVjk4UXIiLCJzdWIiOjEsInBydiI6ImE4NjUzYWQ0MDc4YjFhNDVmNjU3ODU1ZjA3MmIwMGRlNjIzMDFhYzAifQ.FL0Aj6cUiWadCrh1_eYUEmzSJ0_6A2mha9lLPz5fJ5M",
-											"type": "string"
-										}
-									]
-								},
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "{{url}}/api/iklan-perusahaan/1",
-									"host": [
-										"{{url}}"
-									],
-									"path": [
-										"api",
-										"iklan-perusahaan",
-										"1"
-									]
-								}
-							},
-							"response": []
-						},
 						{
 							"name": "update iklan",
 							"request": {
@@ -1459,19 +1422,56 @@
 							"response": []
 						},
 						{
-							"name": "delete iklan",
+							"name": "create iklan",
 							"request": {
 								"auth": {
 									"type": "bearer",
 									"bearer": [
 										{
 											"key": "token",
-											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9taW5lam9ic2FwaWJlLWVudi5lYmEtbmZpYXJ6YmUuYXAtc291dGhlYXN0LTEuZWxhc3RpY2JlYW5zdGFsay5jb21cL1wvYXBpXC9wZXJ1c2FoYWFuXC9sb2dpbiIsImlhdCI6MTYwMjAzMDQ3NiwiZXhwIjoxNjAyMDM0MDc2LCJuYmYiOjE2MDIwMzA0NzYsImp0aSI6ImxSaVVvN1BwS0duVjk4UXIiLCJzdWIiOjEsInBydiI6ImE4NjUzYWQ0MDc4YjFhNDVmNjU3ODU1ZjA3MmIwMGRlNjIzMDFhYzAifQ.FL0Aj6cUiWadCrh1_eYUEmzSJ0_6A2mha9lLPz5fJ5M",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9wZXJ1c2FoYWFuXC9sb2dpbiIsImlhdCI6MTYwMjE3MTg5MywiZXhwIjoxNjAyMTc1NDkzLCJuYmYiOjE2MDIxNzE4OTMsImp0aSI6Im1sQVNYeEZUb1h1aUw5VHMiLCJzdWIiOjEsInBydiI6ImE4NjUzYWQ0MDc4YjFhNDVmNjU3ODU1ZjA3MmIwMGRlNjIzMDFhYzAifQ.up1FUl55In9H8HEPPO9QAuCQc8l6dQzdLH6rC6SVA-M",
 											"type": "string"
 										}
 									]
 								},
-								"method": "DELETE",
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id_perusahaan\":\"1\",\r\n    \"posisi_pekerjaan\":\"posisi pekerjaan\",\r\n    \"gaji_min\":\"1000000\",\r\n    \"gaji_max\":\"3000000\",\r\n    \"provinsi\":\"jawa tengah\",\r\n    \"kota\":\"semarang\",\r\n    \"bidang_pekerjaan\":\"teknologi\",\r\n    \"tingkat_pendidikan\":\"sma\",\r\n    \"pengalaman_kerja\":\"3 tahun\",\r\n    \"persyaratan\":\"test\",\r\n    \"benefit_perusahaan\":\"benefit\",\r\n    \"url_header\":\"google.com\"\r\n\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{dev}}/api/iklan-perusahaan",
+									"host": [
+										"{{dev}}"
+									],
+									"path": [
+										"api",
+										"iklan-perusahaan"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get iklan",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9taW5lam9ic2FwaWJlLWVudi5lYmEtbmZpYXJ6YmUuYXAtc291dGhlYXN0LTEuZWxhc3RpY2JlYW5zdGFsay5jb21cL1wvYXBpXC9wZXJ1c2FoYWFuXC9sb2dpbiIsImlhdCI6MTYwMjA2MjA3MCwiZXhwIjoxNjAyMDY1NjcwLCJuYmYiOjE2MDIwNjIwNzAsImp0aSI6ImgzYXBiR2I2bzZhUEltSWgiLCJzdWIiOjEsInBydiI6ImE4NjUzYWQ0MDc4YjFhNDVmNjU3ODU1ZjA3MmIwMGRlNjIzMDFhYzAifQ.CAiWVkM4L4-ij07PTFt8Uqj3BsclnFqjRwMR-Lh2WIc",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
 								"header": [],
 								"url": {
 									"raw": "{{url}}/api/iklan-perusahaan/1",
@@ -1488,10 +1488,7 @@
 							"response": []
 						},
 						{
-							"name": "cari iklan",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
+							"name": "delete iklan",
 							"request": {
 								"auth": {
 									"type": "bearer",
@@ -1503,7 +1500,45 @@
 										}
 									]
 								},
-								"method": "GET",
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"keyword\":\"\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/iklan-perusahaan/cari-iklan",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"iklan-perusahaan",
+										"cari-iklan"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "cari iklan",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9wZXJ1c2FoYWFuXC9sb2dpbiIsImlhdCI6MTYwMjE2NzQ3MywiZXhwIjoxNjAyMTcxMDczLCJuYmYiOjE2MDIxNjc0NzMsImp0aSI6Ik80OWZTR0FEWlgwMXdORXoiLCJzdWIiOjEsInBydiI6ImE4NjUzYWQ0MDc4YjFhNDVmNjU3ODU1ZjA3MmIwMGRlNjIzMDFhYzAifQ.bvZAoGrkYr-Vp9mPBnbRZdbqE3X85tbVZYrvSBK_VE0",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
 								"header": [],
 								"body": {
 									"mode": "raw",
@@ -1515,9 +1550,9 @@
 									}
 								},
 								"url": {
-									"raw": "{{url}}/api/cari-iklan/",
+									"raw": "{{dev}}/api/cari-iklan/",
 									"host": [
-										"{{url}}"
+										"{{dev}}"
 									],
 									"path": [
 										"api",
@@ -1543,21 +1578,31 @@
 									"bearer": [
 										{
 											"key": "token",
-											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMGU0YzFhM2YtNmQ3YS00Y2NhLWJlZTUtZDExMjJmYzNhNzk1IiwiZW1haWwiOiJqaG9uZG9lQGV4YW1wbGUuY29tIiwidXNlcm5hbWUiOiJqaG9uZG9lIiwiaXNfdmVyaWZpZWQiOnRydWUsImlzX2FkbWluIjp0cnVlLCJpYXQiOjE2MDIwNTY3NzYsImV4cCI6MTYwMjY2MTU3Nn0.mVSKfze7phYY362zT9u6OgBL9OYS9ownGidpu8nrNCM",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9wZXJ1c2FoYWFuXC9sb2dpbiIsImlhdCI6MTYwMjE3MTg5MywiZXhwIjoxNjAyMTc1NDkzLCJuYmYiOjE2MDIxNzE4OTMsImp0aSI6Im1sQVNYeEZUb1h1aUw5VHMiLCJzdWIiOjEsInBydiI6ImE4NjUzYWQ0MDc4YjFhNDVmNjU3ODU1ZjA3MmIwMGRlNjIzMDFhYzAifQ.up1FUl55In9H8HEPPO9QAuCQc8l6dQzdLH6rC6SVA-M",
 											"type": "string"
 										}
 									]
 								},
 								"method": "POST",
 								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n        \"id_kandidat\" : \"1\",\r\n        \"id_perusahaan\" :\"1\",\r\n        \"id_iklan\" :\"1\",\r\n        \"pesan\":\"test\", \r\n        \"tanggal_interview\":\"1990-20-21\", \r\n        \"waktu_mulai\" :\"10.00\",\r\n        \"waktu_selesai\" :\"11.00\",\r\n        \"metode_interview\":\"langsung\",\r\n        \"url_concall\":\"test\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
 								"url": {
-									"raw": "{{url}}/api/iklan-perusahaan",
+									"raw": "{{dev}}/api/kirim/undangan",
 									"host": [
-										"{{url}}"
+										"{{dev}}"
 									],
 									"path": [
 										"api",
-										"iklan-perusahaan"
+										"kirim",
+										"undangan"
 									]
 								}
 							},
@@ -1571,7 +1616,7 @@
 									"bearer": [
 										{
 											"key": "token",
-											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMGU0YzFhM2YtNmQ3YS00Y2NhLWJlZTUtZDExMjJmYzNhNzk1IiwiZW1haWwiOiJqaG9uZG9lQGV4YW1wbGUuY29tIiwidXNlcm5hbWUiOiJqaG9uZG9lIiwiaXNfdmVyaWZpZWQiOnRydWUsImlzX2FkbWluIjp0cnVlLCJpYXQiOjE2MDIwNTY3NzYsImV4cCI6MTYwMjY2MTU3Nn0.mVSKfze7phYY362zT9u6OgBL9OYS9ownGidpu8nrNCM",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9taW5lam9ic2FwaWJlLWVudi5lYmEtbmZpYXJ6YmUuYXAtc291dGhlYXN0LTEuZWxhc3RpY2JlYW5zdGFsay5jb21cL1wvYXBpXC9wZXJ1c2FoYWFuXC9sb2dpbiIsImlhdCI6MTYwMjE2Njc1NSwiZXhwIjoxNjAyMTcwMzU1LCJuYmYiOjE2MDIxNjY3NTUsImp0aSI6ImRQWGpsdkNYTHV6QkRWeVMiLCJzdWIiOjEsInBydiI6ImE4NjUzYWQ0MDc4YjFhNDVmNjU3ODU1ZjA3MmIwMGRlNjIzMDFhYzAifQ.INRKz5jxlRxYOCRzRMb0sh3r-n15A8B1xHdgUsEMx2A",
 											"type": "string"
 										}
 									]
@@ -1579,7 +1624,73 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": ""
+									"raw": "{{dev}}/api/undangan-interview-perusahaan/1",
+									"host": [
+										"{{dev}}"
+									],
+									"path": [
+										"api",
+										"undangan-interview-perusahaan",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get undangan interview kandidat",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9wZXJ1c2FoYWFuXC9sb2dpbiIsImlhdCI6MTYwMjE3MTg5MywiZXhwIjoxNjAyMTc1NDkzLCJuYmYiOjE2MDIxNzE4OTMsImp0aSI6Im1sQVNYeEZUb1h1aUw5VHMiLCJzdWIiOjEsInBydiI6ImE4NjUzYWQ0MDc4YjFhNDVmNjU3ODU1ZjA3MmIwMGRlNjIzMDFhYzAifQ.up1FUl55In9H8HEPPO9QAuCQc8l6dQzdLH6rC6SVA-M",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{dev}}/api/undangan-interview-kandidat/1",
+									"host": [
+										"{{dev}}"
+									],
+									"path": [
+										"api",
+										"undangan-interview-kandidat",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get undangan interview by id iklan",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9wZXJ1c2FoYWFuXC9sb2dpbiIsImlhdCI6MTYwMjE3MTg5MywiZXhwIjoxNjAyMTc1NDkzLCJuYmYiOjE2MDIxNzE4OTMsImp0aSI6Im1sQVNYeEZUb1h1aUw5VHMiLCJzdWIiOjEsInBydiI6ImE4NjUzYWQ0MDc4YjFhNDVmNjU3ODU1ZjA3MmIwMGRlNjIzMDFhYzAifQ.up1FUl55In9H8HEPPO9QAuCQc8l6dQzdLH6rC6SVA-M",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{dev}}/api/undangan-interview-byiklan/1",
+									"host": [
+										"{{dev}}"
+									],
+									"path": [
+										"api",
+										"undangan-interview-byiklan",
+										"1"
+									]
 								}
 							},
 							"response": []
@@ -1734,14 +1845,37 @@
 						{
 							"name": "create pic perusahaan",
 							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9wZXJ1c2FoYWFuXC9sb2dpbiIsImlhdCI6MTYwMjE2NzQ3MywiZXhwIjoxNjAyMTcxMDczLCJuYmYiOjE2MDIxNjc0NzMsImp0aSI6Ik80OWZTR0FEWlgwMXdORXoiLCJzdWIiOjEsInBydiI6ImE4NjUzYWQ0MDc4YjFhNDVmNjU3ODU1ZjA3MmIwMGRlNjIzMDFhYzAifQ.bvZAoGrkYr-Vp9mPBnbRZdbqE3X85tbVZYrvSBK_VE0",
+											"type": "string"
+										}
+									]
+								},
 								"method": "POST",
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": ""
+									"raw": "{\r\n        \"id_perusahaan\" : \"1\",\r\n        \"nama_pic\" :\"nama pic\",\r\n        \"no_telp_pic\" :\"0822323232\",\r\n        \"url_ktp_pic\" :\"test\",\r\n        \"url_foto_profile\":\"test\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
 								},
 								"url": {
-									"raw": ""
+									"raw": "{{dev}}/api/pic-perusahaan/1",
+									"host": [
+										"{{dev}}"
+									],
+									"path": [
+										"api",
+										"pic-perusahaan",
+										"1"
+									]
 								}
 							},
 							"response": []
@@ -1754,7 +1888,7 @@
 									"bearer": [
 										{
 											"key": "token",
-											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMGU0YzFhM2YtNmQ3YS00Y2NhLWJlZTUtZDExMjJmYzNhNzk1IiwiZW1haWwiOiJqaG9uZG9lQGV4YW1wbGUuY29tIiwidXNlcm5hbWUiOiJqaG9uZG9lIiwiaXNfdmVyaWZpZWQiOnRydWUsImlzX2FkbWluIjp0cnVlLCJpYXQiOjE2MDIwNTY3NzYsImV4cCI6MTYwMjY2MTU3Nn0.mVSKfze7phYY362zT9u6OgBL9OYS9ownGidpu8nrNCM",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9wZXJ1c2FoYWFuXC9sb2dpbiIsImlhdCI6MTYwMjE2NzQ3MywiZXhwIjoxNjAyMTcxMDczLCJuYmYiOjE2MDIxNjc0NzMsImp0aSI6Ik80OWZTR0FEWlgwMXdORXoiLCJzdWIiOjEsInBydiI6ImE4NjUzYWQ0MDc4YjFhNDVmNjU3ODU1ZjA3MmIwMGRlNjIzMDFhYzAifQ.bvZAoGrkYr-Vp9mPBnbRZdbqE3X85tbVZYrvSBK_VE0",
 											"type": "string"
 										}
 									]
@@ -1762,7 +1896,15 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": ""
+									"raw": "{{dev}}/api/pic-perusahaan/1",
+									"host": [
+										"{{dev}}"
+									],
+									"path": [
+										"api",
+										"pic-perusahaan",
+										"1"
+									]
 								}
 							},
 							"response": []
@@ -1775,15 +1917,458 @@
 									"bearer": [
 										{
 											"key": "token",
-											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMGU0YzFhM2YtNmQ3YS00Y2NhLWJlZTUtZDExMjJmYzNhNzk1IiwiZW1haWwiOiJqaG9uZG9lQGV4YW1wbGUuY29tIiwidXNlcm5hbWUiOiJqaG9uZG9lIiwiaXNfdmVyaWZpZWQiOnRydWUsImlzX2FkbWluIjp0cnVlLCJpYXQiOjE2MDIwNTY3NzYsImV4cCI6MTYwMjY2MTU3Nn0.mVSKfze7phYY362zT9u6OgBL9OYS9ownGidpu8nrNCM",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9wZXJ1c2FoYWFuXC9sb2dpbiIsImlhdCI6MTYwMjE2NzQ3MywiZXhwIjoxNjAyMTcxMDczLCJuYmYiOjE2MDIxNjc0NzMsImp0aSI6Ik80OWZTR0FEWlgwMXdORXoiLCJzdWIiOjEsInBydiI6ImE4NjUzYWQ0MDc4YjFhNDVmNjU3ODU1ZjA3MmIwMGRlNjIzMDFhYzAifQ.bvZAoGrkYr-Vp9mPBnbRZdbqE3X85tbVZYrvSBK_VE0",
 											"type": "string"
 										}
 									]
 								},
 								"method": "PUT",
 								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n        \"id_perusahaan\" : \"1\",\r\n        \"nama_pic\" :\"nama edit\",\r\n        \"no_telp_pic\" :\"0822323232\",\r\n        \"url_ktp_pic\" :\"test\",\r\n        \"url_foto_profile\":\"test\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
 								"url": {
-									"raw": ""
+									"raw": "{{dev}}/api/pic-perusahaan/1",
+									"host": [
+										"{{dev}}"
+									],
+									"path": [
+										"api",
+										"pic-perusahaan",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Admin",
+			"item": [
+				{
+					"name": "Perusahaan",
+					"item": [
+						{
+							"name": "Verifikasi Perusahaan",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9wZXJ1c2FoYWFuXC9sb2dpbiIsImlhdCI6MTYwMjE2NzQ3MywiZXhwIjoxNjAyMTcxMDczLCJuYmYiOjE2MDIxNjc0NzMsImp0aSI6Ik80OWZTR0FEWlgwMXdORXoiLCJzdWIiOjEsInBydiI6ImE4NjUzYWQ0MDc4YjFhNDVmNjU3ODU1ZjA3MmIwMGRlNjIzMDFhYzAifQ.bvZAoGrkYr-Vp9mPBnbRZdbqE3X85tbVZYrvSBK_VE0",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"status_akun\":0\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{dev}}/api/admin-verifikasi/1",
+									"host": [
+										"{{dev}}"
+									],
+									"path": [
+										"api",
+										"admin-verifikasi",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get All Perusahaan",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9wZXJ1c2FoYWFuXC9sb2dpbiIsImlhdCI6MTYwMjE3MTg5MywiZXhwIjoxNjAyMTc1NDkzLCJuYmYiOjE2MDIxNzE4OTMsImp0aSI6Im1sQVNYeEZUb1h1aUw5VHMiLCJzdWIiOjEsInBydiI6ImE4NjUzYWQ0MDc4YjFhNDVmNjU3ODU1ZjA3MmIwMGRlNjIzMDFhYzAifQ.up1FUl55In9H8HEPPO9QAuCQc8l6dQzdLH6rC6SVA-M",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{dev}}/api/admin-getallperusahaan",
+									"host": [
+										"{{dev}}"
+									],
+									"path": [
+										"api",
+										"admin-getallperusahaan"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Perusahaan by id",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9wZXJ1c2FoYWFuXC9sb2dpbiIsImlhdCI6MTYwMjE2NzQ3MywiZXhwIjoxNjAyMTcxMDczLCJuYmYiOjE2MDIxNjc0NzMsImp0aSI6Ik80OWZTR0FEWlgwMXdORXoiLCJzdWIiOjEsInBydiI6ImE4NjUzYWQ0MDc4YjFhNDVmNjU3ODU1ZjA3MmIwMGRlNjIzMDFhYzAifQ.bvZAoGrkYr-Vp9mPBnbRZdbqE3X85tbVZYrvSBK_VE0",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{dev}}/api/admin-getperusahaanbyid/1",
+									"host": [
+										"{{dev}}"
+									],
+									"path": [
+										"api",
+										"admin-getperusahaanbyid",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "edit profi;e",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9taW5lam9ic2FwaWJlLWVudi5lYmEtbmZpYXJ6YmUuYXAtc291dGhlYXN0LTEuZWxhc3RpY2JlYW5zdGFsay5jb21cL1wvYXBpXC9wZXJ1c2FoYWFuXC9sb2dpbiIsImlhdCI6MTYwMjAyODkyMCwiZXhwIjoxNjAyMDMyNTIwLCJuYmYiOjE2MDIwMjg5MjAsImp0aSI6IlF0VGdkZ2N2V3lrU2M2aVQiLCJzdWIiOjEsInBydiI6ImE4NjUzYWQ0MDc4YjFhNDVmNjU3ODU1ZjA3MmIwMGRlNjIzMDFhYzAifQ.lFfxGm9fdzkvuJG8-7yHWOmqPWozMLfvLvPPNouCvBg",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n        \"nama_perusahaan\":\"testing perusahaan\",\r\n        \"alamat_perusahaan\":\"edit\",\r\n        \"tentang_perusahaan\":\"tentang perusahaan\",\r\n        \"url_banner\":\"url foto\",\r\n        \"foto_perusahaan\":\"url foto\",\r\n        \"website_perusahaan\":\"website\",\r\n        \"jenis_industri\":\"jenis industri\",\r\n        \"no_telp_perusahaan\":\"0822340088822\",\r\n        \"no_npwp_perusahaan\":\"1240981249874124\",\r\n        \"url_npwp_perusahaan\":\"foto npwp\"\r\n\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/profil-perusahaan/1",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"profil-perusahaan",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Kandidat",
+					"item": [
+						{
+							"name": "get all kandidat",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9wZXJ1c2FoYWFuXC9sb2dpbiIsImlhdCI6MTYwMjE3MTg5MywiZXhwIjoxNjAyMTc1NDkzLCJuYmYiOjE2MDIxNzE4OTMsImp0aSI6Im1sQVNYeEZUb1h1aUw5VHMiLCJzdWIiOjEsInBydiI6ImE4NjUzYWQ0MDc4YjFhNDVmNjU3ODU1ZjA3MmIwMGRlNjIzMDFhYzAifQ.up1FUl55In9H8HEPPO9QAuCQc8l6dQzdLH6rC6SVA-M",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{dev}}/api/admin-getallkandidat",
+									"host": [
+										"{{dev}}"
+									],
+									"path": [
+										"api",
+										"admin-getallkandidat"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get kandidat by id",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9wZXJ1c2FoYWFuXC9sb2dpbiIsImlhdCI6MTYwMjE3MTg5MywiZXhwIjoxNjAyMTc1NDkzLCJuYmYiOjE2MDIxNzE4OTMsImp0aSI6Im1sQVNYeEZUb1h1aUw5VHMiLCJzdWIiOjEsInBydiI6ImE4NjUzYWQ0MDc4YjFhNDVmNjU3ODU1ZjA3MmIwMGRlNjIzMDFhYzAifQ.up1FUl55In9H8HEPPO9QAuCQc8l6dQzdLH6rC6SVA-M",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{dev}}/api/admin-getkandidatbyid/1",
+									"host": [
+										"{{dev}}"
+									],
+									"path": [
+										"api",
+										"admin-getkandidatbyid",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update status kandidat",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9wZXJ1c2FoYWFuXC9sb2dpbiIsImlhdCI6MTYwMjE3MTE0NiwiZXhwIjoxNjAyMTc0NzQ2LCJuYmYiOjE2MDIxNzExNDYsImp0aSI6InFSeGZOZkU0cTZNOEsyRzIiLCJzdWIiOjEsInBydiI6ImE4NjUzYWQ0MDc4YjFhNDVmNjU3ODU1ZjA3MmIwMGRlNjIzMDFhYzAifQ.SE0y4fwy54kbYB-uuiIlrhAUzonnsZw2gJ69tHtDjkw",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"status_akun\":1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{dev}}/api/admin-updatestatuskandidat/1",
+									"host": [
+										"{{dev}}"
+									],
+									"path": [
+										"api",
+										"admin-updatestatuskandidat",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Edit Data Pribadi",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9rYW5kaWRhdFwvbG9naW4iLCJpYXQiOjE2MDE4MjM0NTMsImV4cCI6MTYwMTgyNzA1MywibmJmIjoxNjAxODIzNDUzLCJqdGkiOiJyWWl0YVVCeVh4Y0pkNVVYIiwic3ViIjoxLCJwcnYiOiJkOGRmMTk4MTI3N2JmOTU2OGM3ZGQzZmUxYzc1MzA0ODY4NTZhMTQ2In0.ARttmg2grKu51tYcFz6tWLvMIvglT6wBx4MpjUrKvbc",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id_kandidat\":\"1\",\r\n    \"nama_depan\":\"andre\",\r\n    \"nama_belakang\":\"di edit\",\r\n    \"nomor_telepon\": \"08223007743\",\r\n    \"provinsi\": \"jawa tengah\",\r\n    \"kota\" : \"semarang\",\r\n    \"tentang\" : \"tentang saya\",\r\n    \"foto_profile\": \"google.com\"\r\n\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/data-pribadi/1",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"data-pribadi",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Iklan",
+					"item": [
+						{
+							"name": "Get all iklan",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9wZXJ1c2FoYWFuXC9sb2dpbiIsImlhdCI6MTYwMjE3MTE0NiwiZXhwIjoxNjAyMTc0NzQ2LCJuYmYiOjE2MDIxNzExNDYsImp0aSI6InFSeGZOZkU0cTZNOEsyRzIiLCJzdWIiOjEsInBydiI6ImE4NjUzYWQ0MDc4YjFhNDVmNjU3ODU1ZjA3MmIwMGRlNjIzMDFhYzAifQ.SE0y4fwy54kbYB-uuiIlrhAUzonnsZw2gJ69tHtDjkw",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{dev}}/api/admin-getalliklan",
+									"host": [
+										"{{dev}}"
+									],
+									"path": [
+										"api",
+										"admin-getalliklan"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete iklan",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9wZXJ1c2FoYWFuXC9sb2dpbiIsImlhdCI6MTYwMjE3MTE0NiwiZXhwIjoxNjAyMTc0NzQ2LCJuYmYiOjE2MDIxNzExNDYsImp0aSI6InFSeGZOZkU0cTZNOEsyRzIiLCJzdWIiOjEsInBydiI6ImE4NjUzYWQ0MDc4YjFhNDVmNjU3ODU1ZjA3MmIwMGRlNjIzMDFhYzAifQ.SE0y4fwy54kbYB-uuiIlrhAUzonnsZw2gJ69tHtDjkw",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{dev}}/api/admin-deleteiklan/1",
+									"host": [
+										"{{dev}}"
+									],
+									"path": [
+										"api",
+										"admin-deleteiklan",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update status iklan",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9wZXJ1c2FoYWFuXC9sb2dpbiIsImlhdCI6MTYwMjE3MTE0NiwiZXhwIjoxNjAyMTc0NzQ2LCJuYmYiOjE2MDIxNzExNDYsImp0aSI6InFSeGZOZkU0cTZNOEsyRzIiLCJzdWIiOjEsInBydiI6ImE4NjUzYWQ0MDc4YjFhNDVmNjU3ODU1ZjA3MmIwMGRlNjIzMDFhYzAifQ.SE0y4fwy54kbYB-uuiIlrhAUzonnsZw2gJ69tHtDjkw",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"status_iklan\":\"1\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{dev}}/api/admin-updatestatusiklan/1",
+									"host": [
+										"{{dev}}"
+									],
+									"path": [
+										"api",
+										"admin-updatestatusiklan",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update iklan",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9taW5lam9ic2FwaWJlLWVudi5lYmEtbmZpYXJ6YmUuYXAtc291dGhlYXN0LTEuZWxhc3RpY2JlYW5zdGFsay5jb21cL1wvYXBpXC9wZXJ1c2FoYWFuXC9sb2dpbiIsImlhdCI6MTYwMjAzMDQ3NiwiZXhwIjoxNjAyMDM0MDc2LCJuYmYiOjE2MDIwMzA0NzYsImp0aSI6ImxSaVVvN1BwS0duVjk4UXIiLCJzdWIiOjEsInBydiI6ImE4NjUzYWQ0MDc4YjFhNDVmNjU3ODU1ZjA3MmIwMGRlNjIzMDFhYzAifQ.FL0Aj6cUiWadCrh1_eYUEmzSJ0_6A2mha9lLPz5fJ5M",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id_perusahaan\":\"1\",\r\n    \"posisi_pekerjaan\":\"posisi pekerjaan\",\r\n    \"gaji_min\":\"1000000\",\r\n    \"gaji_max\":\"3000000\",\r\n    \"provinsi\":\"jawa edit\",\r\n    \"kota\":\"semarang\",\r\n    \"bidang_pekerjaan\":\"teknologi\",\r\n    \"tingkat_pendidikan\":\"sma\",\r\n    \"pengalaman_kerja\":\"3 tahun\",\r\n    \"persyaratan\":\"test\",\r\n    \"benefit_perusahaan\":\"benefit\",\r\n    \"url_header\":\"google.com\"\r\n\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/iklan-perusahaan/1",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"iklan-perusahaan",
+										"1"
+									]
 								}
 							},
 							"response": []

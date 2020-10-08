@@ -165,7 +165,9 @@ Route::post('cari-iklan','IklanPerusahaanController@CariIklanPerusahaan');//chec
 
 /*END*/
 /*UNDANGAN INTERVIEW*/
-Route::get('undangan-interview/{id}','UndanganInterviewController@GetUndanganInterview');//checked
+Route::get('undangan-interview-perusahaan/{id}','UndanganInterviewController@GetUndanganInterviewPerusahaan');//checked
+Route::get('undangan-interview-kandidat/{id}','UndanganInterviewController@GetUndanganInterviewKandidat');//checked
+Route::get('undangan-interview-byiklan/{id}','UndanganInterviewController@GetUndanganInterviewByIdIklan');//checked
 
 /* KIRIM UNDANGAN */
 Route::post('kirim/undangan','UndanganInterviewController@PostUndanganInterview');//checked
@@ -189,7 +191,7 @@ Route::get('admin-getperusahaanbyid/{idperusahaan}','AdminConfig@GetUserPerusaha
 Route::get('admin-getallkandidat','AdminConfig@GetAllUserKandidat');
 Route::get('admin-getkandidatbyid/{idUserKandidat}','AdminConfig@GetUserKandidatById');
 Route::put('admin-updatestatuskandidat/{idUserKandidat}','AdminConfig@UpdateStatusUserKandidat');
-Route::get('admin-getalliklan/{idperusahaan}','AdminConfig@GetAllIklan');
+Route::get('admin-getalliklan','AdminConfig@GetAllIklan');
 Route::put('admin-updateiklan/{idIklan}','AdminConfig@UpdateIklan');
 Route::delete('admin-deleteiklan/{idperusahaan}','AdminConfig@DeleteIklanPerusahaan');
 Route::patch('admin-updatestatusiklan/{idperusahaan}','AdminConfig@UpdateStatusIklan');//checked

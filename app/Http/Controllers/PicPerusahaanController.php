@@ -17,6 +17,8 @@ class PicPerusahaanController extends Controller
         'nama_pic' => 'required|string',
         'no_telp_pic' =>'required|string',
         'url_ktp_pic' =>'required|string',
+        'url_foto_profile' =>'nullable|string',
+
         ]
     );
     if($validator->fails()){

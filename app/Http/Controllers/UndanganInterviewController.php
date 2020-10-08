@@ -16,6 +16,56 @@ use Illuminate\Mail\Message;
 class UndanganInterviewController extends Controller
 {
     //
+    public function GetUndanganInterviewPerusahaan($id)
+    {
+        $data = UndanganInterview::
+        join('iklan_perusahaan', 'iklan_perusahaan.id', '=', 'undangan_interview.id_perusahaan')
+        ->get();
+        if(count($data)>0){
+            $res['count'] = count($data);
+            $res['message'] = 'data ditemukan';
+            $res['data'] = $data;
+            return $res;
+        }else{
+            $res['count'] = count($data);
+            $res['message'] = 'data tidak ditemukan';
+            return $res;
+        }
+    }
+
+    public function GetUndanganInterviewKandidat($id)
+    {
+        $data = UndanganInterview::where('id_kandidat',$id)
+        ->join('iklan_perusahaan', 'iklan_perusahaan.id', '=', 'undangan_interview.id_kandidat')
+        ->get();
+        if(count($data)>0){
+            $res['count'] = count($data);
+            $res['message'] = 'data ditemukan';
+            $res['data'] = $data;
+            return $res;
+        }else{
+            $res['count'] = count($data);
+            $res['message'] = 'data tidak ditemukan';
+            return $res;
+        }
+    }
+
+    public function GetUndanganInterviewByIdIklan($id)
+    {
+        $data = UndanganInterview::where('id_iklan',$id)
+        ->join('iklan_perusahaan', 'iklan_perusahaan.id', '=', 'undangan_interview.id_iklan')
+        ->get();
+        if(count($data)>0){
+            $res['count'] = count($data);
+            $res['message'] = 'data ditemukan';
+            $res['data'] = $data;
+            return $res;
+        }else{
+            $res['count'] = count($data);
+            $res['message'] = 'data tidak ditemukan';
+            return $res;
+        }
+    }
     public function PostUndanganInterview(Request $req)
     {
 

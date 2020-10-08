@@ -111,13 +111,13 @@ class AdminConfig extends Controller
         return response()->json(['status'=> false, 'error'=> "Verification code is invalid or email not match with token"]);
 
     }
-    public function UpdateStatusUserPerusahaan($idPerusahaan)
+    public function UpdateStatusUserPerusahaan(Request $req, $idPerusahaan)
     {
         # update status 0= belum verifikasi,  1 = terverifikasi email ,3 = verifikasi admin, 5 = dibatasi
         $data = UserPerusahaan::find($idPerusahaan,'id')->first();
         // $data->id_perusahaan = $req->id_perusahaan;
         $data->status_akun = $req->status_akun;
-            if(count($data)>0){
+            if($data){
             if($data->save()){
                 $res['message'] = 'Berhasil Update';
                 $res['data'] = $data;
@@ -135,7 +135,9 @@ class AdminConfig extends Controller
     }
     public function GetAllUserPerusahaan()
     {
-        $data = ProfilPerusahaan::all();
+        $data = UserPerusahaan::
+        join('profile_perusahaan', 'profile_perusahaan.id_perusahaan', '=', 'user_perusahaan.id')
+        ->get();
         if(count($data)>0){
             $res['count'] = count($data);
             $res['message'] = 'data ditemukan';
@@ -149,7 +151,9 @@ class AdminConfig extends Controller
     }
     public function GetUserPerusahaanById($idPerusahaan)
     {
-        $data = ProfilPerusahaan::where('id_perusahaan',$id)->get();
+        $data = UserPerusahaan::where('id_perusahaan',$idPerusahaan)
+        ->join('profile_perusahaan', 'profile_perusahaan.id_perusahaan', '=', 'user_perusahaan.id')
+        ->get();
         if(count($data)>0){
             $res['count'] = count($data);
             $res['message'] = 'data ditemukan';
@@ -163,7 +167,9 @@ class AdminConfig extends Controller
     }
     public function GetAllUserKandidat()
     {
-        $data = DataPribadiModel::all();
+        $data = UserKandidat::
+        join('data_pribadi', 'data_pribadi.id_kandidat', '=', 'user_kandidat.id')
+        ->get();
         if(count($data)>0){
             $res['count'] = count($data);
             $res['message'] = 'data ditemukan';
@@ -177,7 +183,9 @@ class AdminConfig extends Controller
     }
     public function GetUserKandidatById($idUserKandidat)
     {
-        $data = DataPribadiModel::where('id_kandidat',$id)->get();
+        $data = UserKandidat::where('id_kandidat',$idUserKandidat)
+        ->join('data_pribadi', 'data_pribadi.id_kandidat', '=', 'user_kandidat.id')
+        ->get();
         if(count($data)>0){
             $res['count'] = count($data);
             $res['message'] = 'data ditemukan';
@@ -189,13 +197,13 @@ class AdminConfig extends Controller
             return $res;
         }
     }
-    public function UpdateStatusUserKandidat($idUserKandidat)
+    public function UpdateStatusUserKandidat(Request $req, $idUserKandidat)
     {
         # update status user kandidat : 0= unverif email, 1= verif email, 2=restricted
         $data = UserKandidat::find($idUserKandidat,'id')->first();
         // $data->id_perusahaan = $req->id_perusahaan;
         $data->status_akun = $req->status_akun;
-            if(count($data)>0){
+            if($data){
             if($data->save()){
                 $res['message'] = 'Berhasil Update';
                 $res['data'] = $data;
@@ -215,7 +223,7 @@ class AdminConfig extends Controller
     public function GetAllIklan()
     {
         # get all iklan
-        $data = IklanPerusahaanModel::all();
+        $data = Iklan_Perusahaan::all();
         if(count($data)>0){
             $res['count'] = count($data);
             $res['message'] = 'data ditemukan';
@@ -261,7 +269,7 @@ class AdminConfig extends Controller
 
     }
     public function DeleteIklanPerusahaan($id){
-        $data = IklanPerusahaanModel::find($id,'id_perusahaan')->first();
+        $data = Iklan_Perusahaan::find($id,'id')->first();
         if(count($data)>0){
             if($data->delete()){
                 $res['message'] = 'Berhasil Dihapus';
@@ -282,8 +290,9 @@ class AdminConfig extends Controller
 
         $data = Iklan_Perusahaan::find($id,'id')->first();
         // $data->id_perusahaan = $req->id_perusahaan;
-        $data->status_iklan = 1;
-            if(count($data)>0){
+            if($data){
+                $data->status_iklan   = $req->status_iklan;
+
             if($data->save()){
                 $res['message'] = 'Berhasil Update';
                 $res['data'] = $data;

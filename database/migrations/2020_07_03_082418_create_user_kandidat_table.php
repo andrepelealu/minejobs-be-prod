@@ -22,7 +22,7 @@ class CreateUserKandidatTable extends Migration {
 			$table->string('password')->nullable();
 			$table->string('remember_token')->nullable();
 
-			$table->integer('status_akun')->default(0);
+			$table->boolean('status_akun')->default(0);
 			$table->timestamps();
 		});
 	}
