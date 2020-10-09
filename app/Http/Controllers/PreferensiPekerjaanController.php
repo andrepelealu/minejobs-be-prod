@@ -43,7 +43,7 @@ class PreferensiPekerjaanController extends Controller
 
     public function GetPreferensiPekerjaan($id)
     {
-        $data = PreferensiPekerjaan::where('id_kandidat',$id)->get();
+        $data = PreferensiPekerjaan::where('id_kandidat',$id)->paginate(10);
         if(count($data)>0){
             $res['count'] = count($data);
             $res['message'] = 'data ditemukan';

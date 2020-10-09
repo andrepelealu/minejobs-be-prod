@@ -20,7 +20,7 @@ class UndanganInterviewController extends Controller
     {
         $data = UndanganInterview::
         join('iklan_perusahaan', 'iklan_perusahaan.id', '=', 'undangan_interview.id_perusahaan')
-        ->get();
+        ->paginate(10);
         if(count($data)>0){
             $res['count'] = count($data);
             $res['message'] = 'data ditemukan';
@@ -37,7 +37,7 @@ class UndanganInterviewController extends Controller
     {
         $data = UndanganInterview::where('id_kandidat',$id)
         ->join('iklan_perusahaan', 'iklan_perusahaan.id', '=', 'undangan_interview.id_kandidat')
-        ->get();
+        ->paginate(10);
         if(count($data)>0){
             $res['count'] = count($data);
             $res['message'] = 'data ditemukan';
@@ -54,7 +54,7 @@ class UndanganInterviewController extends Controller
     {
         $data = UndanganInterview::where('id_iklan',$id)
         ->join('iklan_perusahaan', 'iklan_perusahaan.id', '=', 'undangan_interview.id_iklan')
-        ->get();
+        ->paginate(10);
         if(count($data)>0){
             $res['count'] = count($data);
             $res['message'] = 'data ditemukan';

@@ -40,7 +40,10 @@ class DataPribadiController extends Controller
     return response()->json($res, 200);
     }
     public function GetDataPribadiById($id){
-        $data = DataPribadiModel::where('id_kandidat',$id)->get();
+        $data = DataPribadiModel::where('id_kandidat',$id)
+        // ->join('user_kandidat', 'user_kandidat.id', '=', 'user_kandidat.id')
+        ->paginate(10);
+
         if(count($data)>0){
             $res['count'] = count($data);
             $res['message'] = 'data ditemukan';

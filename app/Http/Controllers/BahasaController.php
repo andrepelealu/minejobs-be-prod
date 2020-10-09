@@ -39,7 +39,8 @@ class BahasaController extends Controller
 
     public function GetBahasa($id)
     {
-        $data = Bahasa::where('id_kandidat',$id)->get();
+        $data = Bahasa::where('id_kandidat',$id)->paginate(10);
+
         if(count($data)>0){
             $res['count'] = count($data);
             $res['message'] = 'data ditemukan';

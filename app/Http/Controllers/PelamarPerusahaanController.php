@@ -36,7 +36,7 @@ class PelamarPerusahaanController extends Controller
     return response()->json($res, 200);
     }
     public function GetPelamarPerusahaanById($id){
-        $data = Pelamar_Perusahaan::where('id_perusahaan',$id)->get();
+        $data = Pelamar_Perusahaan::where('id_perusahaan',$id)->paginate(10);
         if(count($data)>0){
             $res['count'] = count($data);
             $res['message'] = 'data ditemukan';
@@ -50,7 +50,7 @@ class PelamarPerusahaanController extends Controller
 
     }
     public function GetPelamarPerusahaan(){
-        $data = Pelamar_Perusahaan::all();
+        $data = Pelamar_Perusahaan::all()->paginate(10);
         if(count($data)>0){
             $res['count'] = count($data);
             $res['message'] = 'data ditemukan';

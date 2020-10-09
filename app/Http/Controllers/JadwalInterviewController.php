@@ -54,8 +54,9 @@ class JadwalInterviewController extends Controller
     }
     public function GetJadwalInterview($id){
         $data = UndanganInterview::where('id_kandidat',$id)
-                ->where('status','diterima')
-                ->get();
+        ->join('iklan_perusahaan', 'iklan_perusahaan.id', '=', 'undangan_interview.id_iklan')
+        ->join('profile_perusahaan', 'profile_perusahaan.id', '=', 'undangan_interview.id_perusahaan')
+        ->paginate(10);
         if(count($data)>0){
             $res['count'] = count($data);
             $res['message'] = 'data ditemukan';
@@ -70,8 +71,8 @@ class JadwalInterviewController extends Controller
     }
     public function GetJadwalPerusahaan($id){
         $data = UndanganInterview::where('id_perusahaan',$id)
-        ->where('status','diterima')
-        ->get();
+        ->join('data_pribadi', 'data_pribadi.id', '=', 'undangan_interview.id_kandidat')
+        ->paginate(10);
         if(count($data)>0){
             $res['count'] = count($data);
             $res['message'] = 'data ditemukan';

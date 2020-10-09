@@ -36,7 +36,8 @@ class KeahlianController extends Controller
     }
     public function GetKeahlian($id)
     {
-        $data = Keahlian::where('id_kandidat',$id)->get();
+        $data = Keahlian::where('id_kandidat',$id)->paginate(10);
+
         if(count($data)>0){
             $res['count'] = count($data);
             $res['message'] = 'data ditemukan';

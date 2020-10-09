@@ -34,7 +34,7 @@ class UploadCvController extends Controller
     }
     public function GetCv($id)
     {
-        $data = UploadCv::where('id_kandidat',$id)->get();
+        $data = UploadCv::where('id_kandidat',$id)->paginate(10);
         if(count($data)>0){
             $res['count'] = count($data);
             $res['message'] = 'data ditemukan';

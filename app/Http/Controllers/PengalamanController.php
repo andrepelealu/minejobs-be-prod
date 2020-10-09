@@ -51,7 +51,7 @@ class PengalamanController extends Controller
 
     public function GetPengalaman($id)
     {
-        $data = Pengalaman::where('id_kandidat',$id)->get();
+        $data = Pengalaman::where('id_kandidat',$id)->paginate(10);
         if(count($data)>0){
             $res['count'] = count($data);
             $res['message'] = 'data ditemukan';

@@ -11,7 +11,7 @@ class LamaranTersimpanController extends Controller
     //Route::post('lamaran-tersimpan','LamaranTersimpanController@PostLamaranTersimpan');
 
     public function GetLamaranTersimpan($id){
-        $data = Bahasa::where('id_kandidat',$id)->get();
+        $data = LamaranTersimpan::where('id_kandidat',$id)->paginate(10);
         if(count($data)>0){
             $res['count'] = count($data);
             $res['message'] = 'data ditemukan';

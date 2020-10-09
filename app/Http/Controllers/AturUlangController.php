@@ -12,7 +12,8 @@ class AturUlangController extends Controller
     public function GetAturUlang(Request $req){
         $data = UndanganInterview::where('id_kandidat',$id)
                 ->where('status','atur ulang')
-                ->get();
+                ->paginate(10);
+
         if(count($data)>0){
             $res['count'] = count($data);
             $res['message'] = 'data ditemukan';

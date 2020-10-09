@@ -44,7 +44,7 @@ class PendidikanController extends Controller
     
     public function GetPendidikan($id)
     {
-         $data = Pendidikan::where('id_kandidat',$id)->get();
+         $data = Pendidikan::where('id_kandidat',$id)->paginate(10);
          if(count($data)>0){
              $res['count'] = count($data);
              $res['message'] = 'data ditemukan';

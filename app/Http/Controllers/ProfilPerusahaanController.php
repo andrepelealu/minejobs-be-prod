@@ -52,7 +52,7 @@ class ProfilPerusahaanController extends Controller
 
     public function GetProfilPerusahaan($id)
     {
-        $data = ProfilPerusahaan::where('id_perusahaan',$id)->get();
+        $data = ProfilPerusahaan::where('id_perusahaan',$id)->paginate(10);
         if(count($data)>0){
             $res['count'] = count($data);
             $res['message'] = 'data ditemukan';

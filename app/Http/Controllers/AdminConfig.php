@@ -137,7 +137,8 @@ class AdminConfig extends Controller
     {
         $data = UserPerusahaan::
         join('profile_perusahaan', 'profile_perusahaan.id_perusahaan', '=', 'user_perusahaan.id')
-        ->get();
+        ->paginate(10);
+
         if(count($data)>0){
             $res['count'] = count($data);
             $res['message'] = 'data ditemukan';
@@ -153,7 +154,8 @@ class AdminConfig extends Controller
     {
         $data = UserPerusahaan::where('id_perusahaan',$idPerusahaan)
         ->join('profile_perusahaan', 'profile_perusahaan.id_perusahaan', '=', 'user_perusahaan.id')
-        ->get();
+        ->paginate(10);
+
         if(count($data)>0){
             $res['count'] = count($data);
             $res['message'] = 'data ditemukan';
@@ -169,7 +171,8 @@ class AdminConfig extends Controller
     {
         $data = UserKandidat::
         join('data_pribadi', 'data_pribadi.id_kandidat', '=', 'user_kandidat.id')
-        ->get();
+        ->paginate(10);
+
         if(count($data)>0){
             $res['count'] = count($data);
             $res['message'] = 'data ditemukan';
@@ -185,7 +188,8 @@ class AdminConfig extends Controller
     {
         $data = UserKandidat::where('id_kandidat',$idUserKandidat)
         ->join('data_pribadi', 'data_pribadi.id_kandidat', '=', 'user_kandidat.id')
-        ->get();
+        ->paginate(10);
+
         if(count($data)>0){
             $res['count'] = count($data);
             $res['message'] = 'data ditemukan';
@@ -223,7 +227,9 @@ class AdminConfig extends Controller
     public function GetAllIklan()
     {
         # get all iklan
-        $data = Iklan_Perusahaan::all();
+        $data = Iklan_Perusahaan::all()
+        ->paginate(10);
+
         if(count($data)>0){
             $res['count'] = count($data);
             $res['message'] = 'data ditemukan';

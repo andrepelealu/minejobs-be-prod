@@ -50,7 +50,9 @@ class IklanPerusahaanController extends Controller
     }
     
     public function GetIklanPerusahaanById($id){
-        $data = IklanPerusahaanModel::where('id_perusahaan',$id)->get();
+        $data = IklanPerusahaanModel::where('id_perusahaan',$id)
+        ->join('iklan_perusahaan.id_perusahaan','=','profile_perusahaan.id_perusahaan')
+        ->paginate(10);
         if(count($data)>0){
             $res['count'] = count($data);
             $res['message'] = 'data ditemukan';
@@ -87,10 +89,12 @@ class IklanPerusahaanController extends Controller
             $kota= $req->kota;
             $kota_      = Iklan_Perusahaan::where('kota',$kota)
             ->where('status_iklan','=',1)
-            ->get();
+            ->join('iklan_perusahaan.id_perusahaan','=','profile_perusahaan.id_perusahaan')
+            ->paginate(10);
             $provinsi_= Iklan_Perusahaan::where('provinsi',$provinsi)
             ->where('status_iklan','=',1)
-            ->get();
+            ->join('iklan_perusahaan.id_perusahaan','=','profile_perusahaan.id_perusahaan')
+            ->paginate(10);
             
             if(count($kota_)>0) {
                 $res['count'] = count($kota_);
@@ -111,7 +115,8 @@ class IklanPerusahaanController extends Controller
         public function GetIklanPerusahaanByGaji($gaji){
             $data = Iklan_Perusahaan::where('gaji_min','>=',$gaji)
             ->where('status_iklan',1)
-            ->get();
+            ->join('iklan_perusahaan.id_perusahaan','=','profile_perusahaan.id_perusahaan')
+            ->paginate(10);
             if(count($data)>0){
                 $res['count'] = count($data);
                 $res['message'] = 'data ditemukan';
@@ -126,7 +131,8 @@ class IklanPerusahaanController extends Controller
         public function GetIklanPerusahaanByBidang($bidang){
             $data = Iklan_Perusahaan::where('bidang_pekerjaan','>=',$bidang)
             ->where('status_iklan','=',1)
-            ->get();
+            ->join('iklan_perusahaan.id_perusahaan','=','profile_perusahaan.id_perusahaan')
+            ->paginate(10);
             if(count($data)>0){
                 $res['count'] = count($data);
                 $res['message'] = 'data ditemukan';
@@ -139,7 +145,9 @@ class IklanPerusahaanController extends Controller
             }
         }
         public function GetIklanPerusahaan($id){
-            $data = Iklan_Perusahaan::where('id_perusahaan',$id)->get();
+            $data = Iklan_Perusahaan::where('id_perusahaan',$id)
+            ->join('iklan_perusahaan.id_perusahaan','=','profile_perusahaan.id_perusahaan')
+            ->paginate(10);
             if(count($data)>0){
                 $res['count'] = count($data);
                 $res['message'] = 'data ditemukan';
@@ -170,8 +178,7 @@ class IklanPerusahaanController extends Controller
                                         ->orwhere('nama_perusahaan','like','%' .$search. '%');
                                 });
                     })
-                    ->get();
-            if(count($data)>0){
+                    ->paginate(10);            if(count($data)>0){
 
                 $res['count'] = count($data);
                 $res['message'] = 'data ditemukan';
