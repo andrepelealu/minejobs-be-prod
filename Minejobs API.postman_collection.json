@@ -19,7 +19,7 @@
 									"bearer": [
 										{
 											"key": "token",
-											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9taW5lam9icy1iZS5oZXJva3VhcHAuY29tXC9cL2FwaVwva2FuZGlkYXRcL2xvZ2luIiwiaWF0IjoxNjAxOTkyNDM0LCJleHAiOjE2MDE5OTYwMzQsIm5iZiI6MTYwMTk5MjQzNCwianRpIjoibGtOakFxTGRKN0NTZFNkSyIsInN1YiI6MSwicHJ2IjoiZDhkZjE5ODEyNzdiZjk1NjhjN2RkM2ZlMWM3NTMwNDg2ODU2YTE0NiJ9.qmIBiWE12ZQPzBEd_RLUK3NlAIPZFmY5MFrY5G_d2_Y",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9taW5lam9ic2FwaWJlLWVudi5lYmEtbmZpYXJ6YmUuYXAtc291dGhlYXN0LTEuZWxhc3RpY2JlYW5zdGFsay5jb21cL1wvYXBpXC9rYW5kaWRhdFwvbG9naW4iLCJpYXQiOjE2MDIyNTQwNzYsImV4cCI6MTYwMjI1NzY3NiwibmJmIjoxNjAyMjU0MDc2LCJqdGkiOiI0TkJwUzlpN0x0VGVkazFKIiwic3ViIjoxLCJwcnYiOiJkOGRmMTk4MTI3N2JmOTU2OGM3ZGQzZmUxYzc1MzA0ODY4NTZhMTQ2In0.my0drP6JC2aevp-JI9-lqxCpkSuz1uBHwefUHNITxao",
 											"type": "string"
 										}
 									]
@@ -47,7 +47,7 @@
 									"bearer": [
 										{
 											"key": "token",
-											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9taW5lam9icy1iZS5oZXJva3VhcHAuY29tXC9cL2FwaVwva2FuZGlkYXRcL2xvZ2luIiwiaWF0IjoxNjAxODYxMDk2LCJleHAiOjE2MDE4NjQ2OTYsIm5iZiI6MTYwMTg2MTA5NiwianRpIjoiTk0wb2c4RHkweUtZSVRPeiIsInN1YiI6MSwicHJ2IjoiZDhkZjE5ODEyNzdiZjk1NjhjN2RkM2ZlMWM3NTMwNDg2ODU2YTE0NiJ9.XZZ7lNDhFR5mxnIL8H1jJX_9qaGNzJVkc2BLw1vK4e8",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9taW5lam9ic2FwaWJlLWVudi5lYmEtbmZpYXJ6YmUuYXAtc291dGhlYXN0LTEuZWxhc3RpY2JlYW5zdGFsay5jb21cL1wvYXBpXC9rYW5kaWRhdFwvbG9naW4iLCJpYXQiOjE2MDIyNTQwNzYsImV4cCI6MTYwMjI1NzY3NiwibmJmIjoxNjAyMjU0MDc2LCJqdGkiOiI0TkJwUzlpN0x0VGVkazFKIiwic3ViIjoxLCJwcnYiOiJkOGRmMTk4MTI3N2JmOTU2OGM3ZGQzZmUxYzc1MzA0ODY4NTZhMTQ2In0.my0drP6JC2aevp-JI9-lqxCpkSuz1uBHwefUHNITxao",
 											"type": "string"
 										}
 									]
@@ -76,7 +76,7 @@
 									"bearer": [
 										{
 											"key": "token",
-											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9taW5lam9icy1iZS5oZXJva3VhcHAuY29tXC9cL2FwaVwva2FuZGlkYXRcL2xvZ2luIiwiaWF0IjoxNjAxODYxMDk2LCJleHAiOjE2MDE4NjQ2OTYsIm5iZiI6MTYwMTg2MTA5NiwianRpIjoiTk0wb2c4RHkweUtZSVRPeiIsInN1YiI6MSwicHJ2IjoiZDhkZjE5ODEyNzdiZjk1NjhjN2RkM2ZlMWM3NTMwNDg2ODU2YTE0NiJ9.XZZ7lNDhFR5mxnIL8H1jJX_9qaGNzJVkc2BLw1vK4e8",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9taW5lam9ic2FwaWJlLWVudi5lYmEtbmZpYXJ6YmUuYXAtc291dGhlYXN0LTEuZWxhc3RpY2JlYW5zdGFsay5jb21cL1wvYXBpXC9rYW5kaWRhdFwvbG9naW4iLCJpYXQiOjE2MDIyNTQwNzYsImV4cCI6MTYwMjI1NzY3NiwibmJmIjoxNjAyMjU0MDc2LCJqdGkiOiI0TkJwUzlpN0x0VGVkazFKIiwic3ViIjoxLCJwcnYiOiJkOGRmMTk4MTI3N2JmOTU2OGM3ZGQzZmUxYzc1MzA0ODY4NTZhMTQ2In0.my0drP6JC2aevp-JI9-lqxCpkSuz1uBHwefUHNITxao",
 											"type": "string"
 										}
 									]
@@ -93,13 +93,14 @@
 									}
 								},
 								"url": {
-									"raw": "{{url}}/api/data-pribadi",
+									"raw": "{{url}}/api/data-pribadi/1",
 									"host": [
 										"{{url}}"
 									],
 									"path": [
 										"api",
-										"data-pribadi"
+										"data-pribadi",
+										"1"
 									]
 								}
 							},
@@ -1155,7 +1156,7 @@
 									"bearer": [
 										{
 											"key": "token",
-											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9taW5lam9icy1iZS5oZXJva3VhcHAuY29tXC9cL2FwaVwva2FuZGlkYXRcL2xvZ2luIiwiaWF0IjoxNjAxOTkyNDM0LCJleHAiOjE2MDE5OTYwMzQsIm5iZiI6MTYwMTk5MjQzNCwianRpIjoibGtOakFxTGRKN0NTZFNkSyIsInN1YiI6MSwicHJ2IjoiZDhkZjE5ODEyNzdiZjk1NjhjN2RkM2ZlMWM3NTMwNDg2ODU2YTE0NiJ9.qmIBiWE12ZQPzBEd_RLUK3NlAIPZFmY5MFrY5G_d2_Y",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9taW5lam9ic2FwaWJlLWVudi5lYmEtbmZpYXJ6YmUuYXAtc291dGhlYXN0LTEuZWxhc3RpY2JlYW5zdGFsay5jb21cL1wvYXBpXC9rYW5kaWRhdFwvbG9naW4iLCJpYXQiOjE2MDIyNTQwNzYsImV4cCI6MTYwMjI1NzY3NiwibmJmIjoxNjAyMjU0MDc2LCJqdGkiOiI0TkJwUzlpN0x0VGVkazFKIiwic3ViIjoxLCJwcnYiOiJkOGRmMTk4MTI3N2JmOTU2OGM3ZGQzZmUxYzc1MzA0ODY4NTZhMTQ2In0.my0drP6JC2aevp-JI9-lqxCpkSuz1uBHwefUHNITxao",
 											"type": "string"
 										}
 									]
@@ -1163,13 +1164,13 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{url}}/api/adwal-interview/1",
+									"raw": "{{url}}/api/jadwal-interview/1",
 									"host": [
 										"{{url}}"
 									],
 									"path": [
 										"api",
-										"adwal-interview",
+										"jadwal-interview",
 										"1"
 									]
 								}
@@ -1578,7 +1579,7 @@
 									"bearer": [
 										{
 											"key": "token",
-											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9wZXJ1c2FoYWFuXC9sb2dpbiIsImlhdCI6MTYwMjE3MTg5MywiZXhwIjoxNjAyMTc1NDkzLCJuYmYiOjE2MDIxNzE4OTMsImp0aSI6Im1sQVNYeEZUb1h1aUw5VHMiLCJzdWIiOjEsInBydiI6ImE4NjUzYWQ0MDc4YjFhNDVmNjU3ODU1ZjA3MmIwMGRlNjIzMDFhYzAifQ.up1FUl55In9H8HEPPO9QAuCQc8l6dQzdLH6rC6SVA-M",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9taW5lam9ic2FwaWJlLWVudi5lYmEtbmZpYXJ6YmUuYXAtc291dGhlYXN0LTEuZWxhc3RpY2JlYW5zdGFsay5jb21cL1wvYXBpXC9wZXJ1c2FoYWFuXC9sb2dpbiIsImlhdCI6MTYwMjI0NTA1MywiZXhwIjoxNjAyMjQ4NjUzLCJuYmYiOjE2MDIyNDUwNTMsImp0aSI6ImF6NzFqTEs0dlBvdTBJNlkiLCJzdWIiOjEsInBydiI6ImE4NjUzYWQ0MDc4YjFhNDVmNjU3ODU1ZjA3MmIwMGRlNjIzMDFhYzAifQ.T02IDtJs9dHrWB5ZlEmnkk_JFZprUeg_tp-Vl4ksm2E",
 											"type": "string"
 										}
 									]
@@ -1595,9 +1596,9 @@
 									}
 								},
 								"url": {
-									"raw": "{{dev}}/api/kirim/undangan",
+									"raw": "{{url}}/api/kirim/undangan",
 									"host": [
-										"{{dev}}"
+										"{{url}}"
 									],
 									"path": [
 										"api",
@@ -1624,9 +1625,9 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{dev}}/api/undangan-interview-perusahaan/1",
+									"raw": "{{url}}/api/undangan-interview-perusahaan/1",
 									"host": [
-										"{{dev}}"
+										"{{url}}"
 									],
 									"path": [
 										"api",
@@ -1653,9 +1654,9 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{dev}}/api/undangan-interview-kandidat/1",
+									"raw": "{{url}}/api/undangan-interview-kandidat/1",
 									"host": [
-										"{{dev}}"
+										"{{url}}"
 									],
 									"path": [
 										"api",
@@ -1682,9 +1683,9 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{dev}}/api/undangan-interview-byiklan/1",
+									"raw": "{{url}}/api/undangan-interview-byiklan/1",
 									"host": [
-										"{{dev}}"
+										"{{url}}"
 									],
 									"path": [
 										"api",
@@ -1867,9 +1868,9 @@
 									}
 								},
 								"url": {
-									"raw": "{{dev}}/api/pic-perusahaan/1",
+									"raw": "{{url}}/api/pic-perusahaan/1",
 									"host": [
-										"{{dev}}"
+										"{{url}}"
 									],
 									"path": [
 										"api",
@@ -1896,9 +1897,9 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{dev}}/api/pic-perusahaan/1",
+									"raw": "{{url}}/api/pic-perusahaan/1",
 									"host": [
-										"{{dev}}"
+										"{{url}}"
 									],
 									"path": [
 										"api",
@@ -1934,9 +1935,9 @@
 									}
 								},
 								"url": {
-									"raw": "{{dev}}/api/pic-perusahaan/1",
+									"raw": "{{url}}/api/pic-perusahaan/1",
 									"host": [
-										"{{dev}}"
+										"{{url}}"
 									],
 									"path": [
 										"api",
@@ -1985,9 +1986,9 @@
 									}
 								},
 								"url": {
-									"raw": "{{dev}}/api/admin-verifikasi/1",
+									"raw": "{{url}}/api/admin-verifikasi/1",
 									"host": [
-										"{{dev}}"
+										"{{url}}"
 									],
 									"path": [
 										"api",
@@ -2014,9 +2015,9 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{dev}}/api/admin-getallperusahaan",
+									"raw": "{{url}}/api/admin-getallperusahaan",
 									"host": [
-										"{{dev}}"
+										"{{url}}"
 									],
 									"path": [
 										"api",
@@ -2042,9 +2043,9 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{dev}}/api/admin-getperusahaanbyid/1",
+									"raw": "{{url}}/api/admin-getperusahaanbyid/1",
 									"host": [
-										"{{dev}}"
+										"{{url}}"
 									],
 									"path": [
 										"api",
@@ -2116,9 +2117,9 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{dev}}/api/admin-getallkandidat",
+									"raw": "{{url}}/api/admin-getallkandidat",
 									"host": [
-										"{{dev}}"
+										"{{url}}"
 									],
 									"path": [
 										"api",
@@ -2144,9 +2145,9 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{dev}}/api/admin-getkandidatbyid/1",
+									"raw": "{{url}}/api/admin-getkandidatbyid/1",
 									"host": [
-										"{{dev}}"
+										"{{url}}"
 									],
 									"path": [
 										"api",
@@ -2182,9 +2183,9 @@
 									}
 								},
 								"url": {
-									"raw": "{{dev}}/api/admin-updatestatuskandidat/1",
+									"raw": "{{url}}/api/admin-updatestatuskandidat/1",
 									"host": [
-										"{{dev}}"
+										"{{url}}"
 									],
 									"path": [
 										"api",
@@ -2256,9 +2257,9 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{dev}}/api/admin-getalliklan",
+									"raw": "{{url}}/api/admin-getalliklan",
 									"host": [
-										"{{dev}}"
+										"{{url}}"
 									],
 									"path": [
 										"api",
@@ -2284,9 +2285,9 @@
 								"method": "DELETE",
 								"header": [],
 								"url": {
-									"raw": "{{dev}}/api/admin-deleteiklan/1",
+									"raw": "{{url}}/api/admin-deleteiklan/1",
 									"host": [
-										"{{dev}}"
+										"{{url}}"
 									],
 									"path": [
 										"api",
@@ -2322,9 +2323,9 @@
 									}
 								},
 								"url": {
-									"raw": "{{dev}}/api/admin-updatestatusiklan/1",
+									"raw": "{{url}}/api/admin-updatestatusiklan/1",
 									"host": [
-										"{{dev}}"
+										"{{url}}"
 									],
 									"path": [
 										"api",
