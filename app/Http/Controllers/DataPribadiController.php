@@ -72,7 +72,7 @@ class DataPribadiController extends Controller
     }
     public function UpdateDataPribadi(Request $req , $id){
 
-        $data = DataPribadiModel::find($id,'id_kandidat')->first();
+        $data = DataPribadiModel::where('id_kandidat',$id)->first();
         // $data->id_kandidat = $req->id_kandidat;
         $data->nama_depan       = $req->nama_depan;
         $data->nama_belakang    = $req->nama_belakang;
@@ -81,7 +81,7 @@ class DataPribadiController extends Controller
         $data->kota             = $req->kota;
         $data->tentang          = $req->tentang;
         $data->foto_profile     = $req->foto_profile;
-        if(count($data)>0){
+        if($data){
             if($data->save()){
                 $res['message'] = 'Berhasil Update';
                 $res['data'] = $data;

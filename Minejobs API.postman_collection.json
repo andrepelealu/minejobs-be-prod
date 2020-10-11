@@ -9,8 +9,158 @@
 			"name": "Kandidat",
 			"item": [
 				{
+					"name": "auth",
+					"item": [
+						{
+							"name": "Register Kandidat",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\" : \"test@gmail2.com\",\r\n    \"password\": \"123empatlima\",\r\n    \"password_confirmation\" : \"123empatlima\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/kandidat/register",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"kandidat",
+										"register"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Login Kandidat",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\" : \"test@gmail2.com\",\r\n    \"password\": \"123empatlima\",\r\n    \"password_confirmation\" : \"123empatlima\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/kandidat/login",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"kandidat",
+										"login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "login with google",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/kandidat/auth/google",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"kandidat",
+										"auth",
+										"google"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get auth user",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9rYW5kaWRhdFwvbG9naW4iLCJpYXQiOjE2MDIzODI0NjEsImV4cCI6MTYwMjM4NjA2MSwibmJmIjoxNjAyMzgyNDYxLCJqdGkiOiJRTk80dzY2emtJMldtTlhMIiwic3ViIjoxLCJwcnYiOiJkOGRmMTk4MTI3N2JmOTU2OGM3ZGQzZmUxYzc1MzA0ODY4NTZhMTQ2In0.EwGCDXT2rK9wkyHjrL3TeZyF93z1tshb9rXNJhUf7us",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/kandidat/getuser",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"kandidat",
+										"getuser"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
 					"name": "data pribadi",
 					"item": [
+						{
+							"name": "Create Data Pribadi",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9rYW5kaWRhdFwvbG9naW4iLCJpYXQiOjE2MDIzODMzNTYsImV4cCI6MTYwMjM4Njk1NiwibmJmIjoxNjAyMzgzMzU2LCJqdGkiOiJybW1aWnozd0tIaml0RmdEIiwic3ViIjoxLCJwcnYiOiJkOGRmMTk4MTI3N2JmOTU2OGM3ZGQzZmUxYzc1MzA0ODY4NTZhMTQ2In0.v4bI0GCFVYhmyndm_6Pea1Uo-xvAvsdeUHLhWCcUTJk",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id_kandidat\":\"2\",\r\n    \"nama_depan\":\"andre\",\r\n    \"nama_belakang\":\"äditya\",\r\n    \"nomor_telepon\": \"08223007743\",\r\n    \"provinsi\": \"jawa tengah\",\r\n    \"kota\" : \"semarang\",\r\n    \"tentang\" : \"tentang saya\",\r\n    \"foto_profile\": \"google.com\"\r\n\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/data-pribadi/",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"data-pribadi",
+										""
+									]
+								}
+							},
+							"response": []
+						},
 						{
 							"name": "Get All Data Pribadi",
 							"request": {
@@ -19,7 +169,7 @@
 									"bearer": [
 										{
 											"key": "token",
-											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9taW5lam9ic2FwaWJlLWVudi5lYmEtbmZpYXJ6YmUuYXAtc291dGhlYXN0LTEuZWxhc3RpY2JlYW5zdGFsay5jb21cL1wvYXBpXC9rYW5kaWRhdFwvbG9naW4iLCJpYXQiOjE2MDIyNTQwNzYsImV4cCI6MTYwMjI1NzY3NiwibmJmIjoxNjAyMjU0MDc2LCJqdGkiOiI0TkJwUzlpN0x0VGVkazFKIiwic3ViIjoxLCJwcnYiOiJkOGRmMTk4MTI3N2JmOTU2OGM3ZGQzZmUxYzc1MzA0ODY4NTZhMTQ2In0.my0drP6JC2aevp-JI9-lqxCpkSuz1uBHwefUHNITxao",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9rYW5kaWRhdFwvbG9naW4iLCJpYXQiOjE2MDI0MjUyNjUsImV4cCI6MTYwMjQyODg2NSwibmJmIjoxNjAyNDI1MjY1LCJqdGkiOiJBNm9wZ2RQTkZ3RWJlbkZGIiwic3ViIjoxLCJwcnYiOiJkOGRmMTk4MTI3N2JmOTU2OGM3ZGQzZmUxYzc1MzA0ODY4NTZhMTQ2In0.JrytQo2kGdUtgAypE6snqMOfvQJ88cHLqrGka6tumuY",
 											"type": "string"
 										}
 									]
@@ -69,44 +219,6 @@
 							"response": []
 						},
 						{
-							"name": "Create Data Pribadi",
-							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9rYW5kaWRhdFwvbG9naW4iLCJpYXQiOjE2MDIzODMzNTYsImV4cCI6MTYwMjM4Njk1NiwibmJmIjoxNjAyMzgzMzU2LCJqdGkiOiJybW1aWnozd0tIaml0RmdEIiwic3ViIjoxLCJwcnYiOiJkOGRmMTk4MTI3N2JmOTU2OGM3ZGQzZmUxYzc1MzA0ODY4NTZhMTQ2In0.v4bI0GCFVYhmyndm_6Pea1Uo-xvAvsdeUHLhWCcUTJk",
-											"type": "string"
-										}
-									]
-								},
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n    \"id_kandidat\":\"2\",\r\n    \"nama_depan\":\"andre\",\r\n    \"nama_belakang\":\"äditya\",\r\n    \"nomor_telepon\": \"08223007743\",\r\n    \"provinsi\": \"jawa tengah\",\r\n    \"kota\" : \"semarang\",\r\n    \"tentang\" : \"tentang saya\",\r\n    \"foto_profile\": \"google.com\"\r\n\r\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{url}}/api/data-pribadi/",
-									"host": [
-										"{{url}}"
-									],
-									"path": [
-										"api",
-										"data-pribadi",
-										""
-									]
-								}
-							},
-							"response": []
-						},
-						{
 							"name": "Edit Data Pribadi",
 							"request": {
 								"auth": {
@@ -114,7 +226,7 @@
 									"bearer": [
 										{
 											"key": "token",
-											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9rYW5kaWRhdFwvbG9naW4iLCJpYXQiOjE2MDE4MjM0NTMsImV4cCI6MTYwMTgyNzA1MywibmJmIjoxNjAxODIzNDUzLCJqdGkiOiJyWWl0YVVCeVh4Y0pkNVVYIiwic3ViIjoxLCJwcnYiOiJkOGRmMTk4MTI3N2JmOTU2OGM3ZGQzZmUxYzc1MzA0ODY4NTZhMTQ2In0.ARttmg2grKu51tYcFz6tWLvMIvglT6wBx4MpjUrKvbc",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9rYW5kaWRhdFwvbG9naW4iLCJpYXQiOjE2MDI0MzAwODksImV4cCI6MTYwMjQzMzY4OSwibmJmIjoxNjAyNDMwMDg5LCJqdGkiOiJRWkxSODNXNVltUVc4VG1OIiwic3ViIjoxLCJwcnYiOiJkOGRmMTk4MTI3N2JmOTU2OGM3ZGQzZmUxYzc1MzA0ODY4NTZhMTQ2In0.ncznfzPtYznxh5M9w_YDcDp7f0dMufFyebEfycRk2y0",
 											"type": "string"
 										}
 									]
@@ -123,7 +235,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"id_kandidat\":\"1\",\r\n    \"nama_depan\":\"andre\",\r\n    \"nama_belakang\":\"di edit\",\r\n    \"nomor_telepon\": \"08223007743\",\r\n    \"provinsi\": \"jawa tengah\",\r\n    \"kota\" : \"semarang\",\r\n    \"tentang\" : \"tentang saya\",\r\n    \"foto_profile\": \"google.com\"\r\n\r\n}",
+									"raw": "{\r\n    \"id_kandidat\":\"1\",\r\n    \"nama_depan\":\"andre\",\r\n    \"nama_belakang\":\"di edit\",\r\n    \"nomor_telepon\": \"08223007743\",\r\n    \"provinsi\": \"jawa tengah\",\r\n    \"kota\" : \"semarang\",\r\n    \"tentang\" : \"tentang di edit\",\r\n    \"foto_profile\": \"google.cossm\"\r\n\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -138,6 +250,45 @@
 									"path": [
 										"api",
 										"data-pribadi",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "upload foto",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9rYW5kaWRhdFwvbG9naW4iLCJpYXQiOjE2MDI0Mjg5NDcsImV4cCI6MTYwMjQzMjU0NywibmJmIjoxNjAyNDI4OTQ3LCJqdGkiOiJRM0tMa2VzN0w1YXVJMjB1Iiwic3ViIjoxLCJwcnYiOiJkOGRmMTk4MTI3N2JmOTU2OGM3ZGQzZmUxYzc1MzA0ODY4NTZhMTQ2In0.Cyw8Rq_GosA1UIlq3WfEt_42S-8dzyXSrIaJL13sG14",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "image",
+											"type": "file",
+											"src": "/C:/Users/AndrePelealu/Downloads/WhatsApp Image 2020-10-09 at 22.48.04.jpeg"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/api/upload-foto-user/1",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"upload-foto-user",
 										"1"
 									]
 								}
@@ -279,118 +430,6 @@
 										"api",
 										"preferensi-pekerjaan",
 										"1"
-									]
-								}
-							},
-							"response": []
-						}
-					],
-					"protocolProfileBehavior": {},
-					"_postman_isSubFolder": true
-				},
-				{
-					"name": "auth",
-					"item": [
-						{
-							"name": "Register Kandidat",
-							"request": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n    \"email\" : \"test@gmail2.com\",\r\n    \"password\": \"123empatlima\",\r\n    \"password_confirmation\" : \"123empatlima\"\r\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{url}}/api/kandidat/register",
-									"host": [
-										"{{url}}"
-									],
-									"path": [
-										"api",
-										"kandidat",
-										"register"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "Login Kandidat",
-							"request": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n    \"email\" : \"test@gmail2.com\",\r\n    \"password\": \"123empatlima\",\r\n    \"password_confirmation\" : \"123empatlima\"\r\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{url}}/api/kandidat/login",
-									"host": [
-										"{{url}}"
-									],
-									"path": [
-										"api",
-										"kandidat",
-										"login"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "login with google",
-							"request": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "{{url}}/api/kandidat/auth/google",
-									"host": [
-										"{{url}}"
-									],
-									"path": [
-										"api",
-										"kandidat",
-										"auth",
-										"google"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "get auth user",
-							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9rYW5kaWRhdFwvbG9naW4iLCJpYXQiOjE2MDIzODI0NjEsImV4cCI6MTYwMjM4NjA2MSwibmJmIjoxNjAyMzgyNDYxLCJqdGkiOiJRTk80dzY2emtJMldtTlhMIiwic3ViIjoxLCJwcnYiOiJkOGRmMTk4MTI3N2JmOTU2OGM3ZGQzZmUxYzc1MzA0ODY4NTZhMTQ2In0.EwGCDXT2rK9wkyHjrL3TeZyF93z1tshb9rXNJhUf7us",
-											"type": "string"
-										}
-									]
-								},
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "{{url}}/api/kandidat/getuser",
-									"host": [
-										"{{url}}"
-									],
-									"path": [
-										"api",
-										"kandidat",
-										"getuser"
 									]
 								}
 							},
@@ -1339,7 +1378,7 @@
 									"bearer": [
 										{
 											"key": "token",
-											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9wZXJ1c2FoYWFuXC9sb2dpbiIsImlhdCI6MTYwMjM5NDgwNiwiZXhwIjoxNjAyMzk4NDA2LCJuYmYiOjE2MDIzOTQ4MDYsImp0aSI6Ikw4RmJzNllHc0JFTUFtQlQiLCJzdWIiOjEsInBydiI6ImE4NjUzYWQ0MDc4YjFhNDVmNjU3ODU1ZjA3MmIwMGRlNjIzMDFhYzAifQ.sB5bhyoSwxZhYaLuAFnDXjeirk76Q42nHYElUr0Uog4",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9wZXJ1c2FoYWFuXC9sb2dpbiIsImlhdCI6MTYwMjQxNjU5MywiZXhwIjoxNjAyNDIwMTkzLCJuYmYiOjE2MDI0MTY1OTMsImp0aSI6IlJ6NTdabjBGcVczR2sweEsiLCJzdWIiOjEsInBydiI6ImE4NjUzYWQ0MDc4YjFhNDVmNjU3ODU1ZjA3MmIwMGRlNjIzMDFhYzAifQ.Epauv9wYRTPNTJTriPkXYQH4Sop-1GRukudhktLAMSE",
 											"type": "string"
 										}
 									]
@@ -1434,6 +1473,45 @@
 								}
 							},
 							"response": []
+						},
+						{
+							"name": "upload foto",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9wZXJ1c2FoYWFuXC9sb2dpbiIsImlhdCI6MTYwMjQyOTc1OSwiZXhwIjoxNjAyNDMzMzU5LCJuYmYiOjE2MDI0Mjk3NTksImp0aSI6IlZBSkRCanFsekJwUzZlejQiLCJzdWIiOjEsInBydiI6ImE4NjUzYWQ0MDc4YjFhNDVmNjU3ODU1ZjA3MmIwMGRlNjIzMDFhYzAifQ.hp2-XcUeBeTyy44rOGyt774yKVvYasOw7pKucgAxVHA",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "image",
+											"type": "file",
+											"src": "/C:/Users/AndrePelealu/Downloads/WhatsApp Image 2020-10-09 at 22.48.04.jpeg"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/api/upload-foto-perusahaan/1",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"upload-foto-perusahaan",
+										"1"
+									]
+								}
+							},
+							"response": []
 						}
 					],
 					"protocolProfileBehavior": {},
@@ -1488,7 +1566,7 @@
 									"bearer": [
 										{
 											"key": "token",
-											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9wZXJ1c2FoYWFuXC9sb2dpbiIsImlhdCI6MTYwMjM5NDgwNiwiZXhwIjoxNjAyMzk4NDA2LCJuYmYiOjE2MDIzOTQ4MDYsImp0aSI6Ikw4RmJzNllHc0JFTUFtQlQiLCJzdWIiOjEsInBydiI6ImE4NjUzYWQ0MDc4YjFhNDVmNjU3ODU1ZjA3MmIwMGRlNjIzMDFhYzAifQ.sB5bhyoSwxZhYaLuAFnDXjeirk76Q42nHYElUr0Uog4",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9wZXJ1c2FoYWFuXC9sb2dpbiIsImlhdCI6MTYwMjQxNjU5MywiZXhwIjoxNjAyNDIwMTkzLCJuYmYiOjE2MDI0MTY1OTMsImp0aSI6IlJ6NTdabjBGcVczR2sweEsiLCJzdWIiOjEsInBydiI6ImE4NjUzYWQ0MDc4YjFhNDVmNjU3ODU1ZjA3MmIwMGRlNjIzMDFhYzAifQ.Epauv9wYRTPNTJTriPkXYQH4Sop-1GRukudhktLAMSE",
 											"type": "string"
 										}
 									]
@@ -1675,7 +1753,7 @@
 									"bearer": [
 										{
 											"key": "token",
-											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9wZXJ1c2FoYWFuXC9sb2dpbiIsImlhdCI6MTYwMjM5NDgwNiwiZXhwIjoxNjAyMzk4NDA2LCJuYmYiOjE2MDIzOTQ4MDYsImp0aSI6Ikw4RmJzNllHc0JFTUFtQlQiLCJzdWIiOjEsInBydiI6ImE4NjUzYWQ0MDc4YjFhNDVmNjU3ODU1ZjA3MmIwMGRlNjIzMDFhYzAifQ.sB5bhyoSwxZhYaLuAFnDXjeirk76Q42nHYElUr0Uog4",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9wZXJ1c2FoYWFuXC9sb2dpbiIsImlhdCI6MTYwMjQxNjU5MywiZXhwIjoxNjAyNDIwMTkzLCJuYmYiOjE2MDI0MTY1OTMsImp0aSI6IlJ6NTdabjBGcVczR2sweEsiLCJzdWIiOjEsInBydiI6ImE4NjUzYWQ0MDc4YjFhNDVmNjU3ODU1ZjA3MmIwMGRlNjIzMDFhYzAifQ.Epauv9wYRTPNTJTriPkXYQH4Sop-1GRukudhktLAMSE",
 											"type": "string"
 										}
 									]
@@ -1704,7 +1782,7 @@
 									"bearer": [
 										{
 											"key": "token",
-											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9wZXJ1c2FoYWFuXC9sb2dpbiIsImlhdCI6MTYwMjE3MTg5MywiZXhwIjoxNjAyMTc1NDkzLCJuYmYiOjE2MDIxNzE4OTMsImp0aSI6Im1sQVNYeEZUb1h1aUw5VHMiLCJzdWIiOjEsInBydiI6ImE4NjUzYWQ0MDc4YjFhNDVmNjU3ODU1ZjA3MmIwMGRlNjIzMDFhYzAifQ.up1FUl55In9H8HEPPO9QAuCQc8l6dQzdLH6rC6SVA-M",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9wZXJ1c2FoYWFuXC9sb2dpbiIsImlhdCI6MTYwMjQxNjU5MywiZXhwIjoxNjAyNDIwMTkzLCJuYmYiOjE2MDI0MTY1OTMsImp0aSI6IlJ6NTdabjBGcVczR2sweEsiLCJzdWIiOjEsInBydiI6ImE4NjUzYWQ0MDc4YjFhNDVmNjU3ODU1ZjA3MmIwMGRlNjIzMDFhYzAifQ.Epauv9wYRTPNTJTriPkXYQH4Sop-1GRukudhktLAMSE",
 											"type": "string"
 										}
 									]
@@ -1733,7 +1811,7 @@
 									"bearer": [
 										{
 											"key": "token",
-											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9wZXJ1c2FoYWFuXC9sb2dpbiIsImlhdCI6MTYwMjE3MTg5MywiZXhwIjoxNjAyMTc1NDkzLCJuYmYiOjE2MDIxNzE4OTMsImp0aSI6Im1sQVNYeEZUb1h1aUw5VHMiLCJzdWIiOjEsInBydiI6ImE4NjUzYWQ0MDc4YjFhNDVmNjU3ODU1ZjA3MmIwMGRlNjIzMDFhYzAifQ.up1FUl55In9H8HEPPO9QAuCQc8l6dQzdLH6rC6SVA-M",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9wZXJ1c2FoYWFuXC9sb2dpbiIsImlhdCI6MTYwMjQxNjU5MywiZXhwIjoxNjAyNDIwMTkzLCJuYmYiOjE2MDI0MTY1OTMsImp0aSI6IlJ6NTdabjBGcVczR2sweEsiLCJzdWIiOjEsInBydiI6ImE4NjUzYWQ0MDc4YjFhNDVmNjU3ODU1ZjA3MmIwMGRlNjIzMDFhYzAifQ.Epauv9wYRTPNTJTriPkXYQH4Sop-1GRukudhktLAMSE",
 											"type": "string"
 										}
 									]
@@ -1748,6 +1826,35 @@
 									"path": [
 										"api",
 										"undangan-interview-byiklan",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get undangan interview order by tanggal",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9wZXJ1c2FoYWFuXC9sb2dpbiIsImlhdCI6MTYwMjQxNjU5MywiZXhwIjoxNjAyNDIwMTkzLCJuYmYiOjE2MDI0MTY1OTMsImp0aSI6IlJ6NTdabjBGcVczR2sweEsiLCJzdWIiOjEsInBydiI6ImE4NjUzYWQ0MDc4YjFhNDVmNjU3ODU1ZjA3MmIwMGRlNjIzMDFhYzAifQ.Epauv9wYRTPNTJTriPkXYQH4Sop-1GRukudhktLAMSE",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/undangan-interview-perusahaan-sortdate/1",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"undangan-interview-perusahaan-sortdate",
 										"1"
 									]
 								}

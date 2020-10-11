@@ -67,4 +67,43 @@ class UploadController extends Controller
             return $data;
         }
     }
+
+    public function UploadProfilePerusahaan(Request $request,$id)
+    {
+        $this->validate($request,[
+            'image' => 'required|image:jpeg,png,jpg,gif,svg|max:2048'
+        ]);
+
+        //set folder storage 
+        if(!File::isDirectory($this->perusahaan)){
+            //create folder 
+            File::makeDirectory($this->perusahaan);
+        }
+
+        //ambil file dari form 
+        $file = $request->file('image');
+        //create nama file 
+        $fileName = Carbon::now()->timestamp.'_'.uniqid().'.'.$file->getClientOriginalExtension();
+   
+            $canvas = Image::canvas($this->dimensions_user, $this->dimensions_user);
+
+            $resizeImage  = Image::make($file)->resize($this->dimensions_user, $this->dimensions_user, function($constraint) {
+                $constraint->aspectRatio();
+            });
+
+            $canvas->insert($resizeImage, 'center');
+            //SIMPAN IMAGE KE DALAM MASING-MASING FOLDER (DIMENSI)
+            $canvas->save($this->perusahaan . '/' . $fileName);
+        // }
+        // $filePath = storage_path().'/user/'.$fileName;
+        // $fileContents = File::get($filePath);
+
+        $data = DataPribadiModel::where('id_kandidat',$id)->first();
+        $data->foto_profile = url('/storage/perusahaan/'.$fileName);
+        if($data->save()){
+            $res['message'] = 'Berhasil Upload Foto';
+            $res['data'] =url('/storage/perusahaan/'.$fileName);
+            return $data;
+        }
+    }
 }

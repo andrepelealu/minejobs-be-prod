@@ -153,6 +153,7 @@ Route::get('atur-ulang','AturUlangController@GetAturUlang');//ok
 Route::post('profil-perusahaan','ProfilPerusahaanController@PostProfilPerusahaan');//checked
 Route::get('profil-perusahaan/{id}','ProfilPerusahaanController@GetProfilPerusahaan');//checked
 Route::put('profil-perusahaan/{id}','ProfilPerusahaanController@UpdateProfilPerusahaan');//ok
+Route::post('upload-foto-perusahaan/{id}'	,'UploadController@UploadProfilePerusahaan');//checked
 
 /*END*/
 
