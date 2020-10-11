@@ -76,7 +76,7 @@
 									"bearer": [
 										{
 											"key": "token",
-											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9taW5lam9ic2FwaWJlLWVudi5lYmEtbmZpYXJ6YmUuYXAtc291dGhlYXN0LTEuZWxhc3RpY2JlYW5zdGFsay5jb21cL1wvYXBpXC9rYW5kaWRhdFwvbG9naW4iLCJpYXQiOjE2MDIyNTQwNzYsImV4cCI6MTYwMjI1NzY3NiwibmJmIjoxNjAyMjU0MDc2LCJqdGkiOiI0TkJwUzlpN0x0VGVkazFKIiwic3ViIjoxLCJwcnYiOiJkOGRmMTk4MTI3N2JmOTU2OGM3ZGQzZmUxYzc1MzA0ODY4NTZhMTQ2In0.my0drP6JC2aevp-JI9-lqxCpkSuz1uBHwefUHNITxao",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9rYW5kaWRhdFwvbG9naW4iLCJpYXQiOjE2MDIzODMzNTYsImV4cCI6MTYwMjM4Njk1NiwibmJmIjoxNjAyMzgzMzU2LCJqdGkiOiJybW1aWnozd0tIaml0RmdEIiwic3ViIjoxLCJwcnYiOiJkOGRmMTk4MTI3N2JmOTU2OGM3ZGQzZmUxYzc1MzA0ODY4NTZhMTQ2In0.v4bI0GCFVYhmyndm_6Pea1Uo-xvAvsdeUHLhWCcUTJk",
 											"type": "string"
 										}
 									]
@@ -85,7 +85,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"id_kandidat\":\"1\",\r\n    \"nama_depan\":\"andre\",\r\n    \"nama_belakang\":\"äditya\",\r\n    \"nomor_telepon\": \"08223007743\",\r\n    \"provinsi\": \"jawa tengah\",\r\n    \"kota\" : \"semarang\",\r\n    \"tentang\" : \"tentang saya\",\r\n    \"foto_profile\": \"google.com\"\r\n\r\n}",
+									"raw": "{\r\n    \"id_kandidat\":\"2\",\r\n    \"nama_depan\":\"andre\",\r\n    \"nama_belakang\":\"äditya\",\r\n    \"nomor_telepon\": \"08223007743\",\r\n    \"provinsi\": \"jawa tengah\",\r\n    \"kota\" : \"semarang\",\r\n    \"tentang\" : \"tentang saya\",\r\n    \"foto_profile\": \"google.com\"\r\n\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -93,14 +93,14 @@
 									}
 								},
 								"url": {
-									"raw": "{{url}}/api/data-pribadi/1",
+									"raw": "{{url}}/api/data-pribadi/",
 									"host": [
 										"{{url}}"
 									],
 									"path": [
 										"api",
 										"data-pribadi",
-										"1"
+										""
 									]
 								}
 							},
@@ -298,7 +298,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"email\" : \"test@gmail.com\",\r\n    \"password\": \"123empatlima\",\r\n    \"password_confirmation\" : \"123empatlima\"\r\n}",
+									"raw": "{\r\n    \"email\" : \"test@gmail2.com\",\r\n    \"password\": \"123empatlima\",\r\n    \"password_confirmation\" : \"123empatlima\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -326,7 +326,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"email\" : \"test@gmail.com\",\r\n    \"password\": \"123empatlima\",\r\n    \"password_confirmation\" : \"123empatlima\"\r\n}",
+									"raw": "{\r\n    \"email\" : \"test@gmail2.com\",\r\n    \"password\": \"123empatlima\",\r\n    \"password_confirmation\" : \"123empatlima\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -362,6 +362,35 @@
 										"kandidat",
 										"auth",
 										"google"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get auth user",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9rYW5kaWRhdFwvbG9naW4iLCJpYXQiOjE2MDIzODI0NjEsImV4cCI6MTYwMjM4NjA2MSwibmJmIjoxNjAyMzgyNDYxLCJqdGkiOiJRTk80dzY2emtJMldtTlhMIiwic3ViIjoxLCJwcnYiOiJkOGRmMTk4MTI3N2JmOTU2OGM3ZGQzZmUxYzc1MzA0ODY4NTZhMTQ2In0.EwGCDXT2rK9wkyHjrL3TeZyF93z1tshb9rXNJhUf7us",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/kandidat/getuser",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"kandidat",
+										"getuser"
 									]
 								}
 							},
@@ -1233,9 +1262,9 @@
 									}
 								},
 								"url": {
-									"raw": "{{dev}}/api/perusahaan/login",
+									"raw": "{{url}}/api/perusahaan/login",
 									"host": [
-										"{{dev}}"
+										"{{url}}"
 									],
 									"path": [
 										"api",
@@ -1265,6 +1294,35 @@
 								}
 							},
 							"response": []
+						},
+						{
+							"name": "get auth perusahaan",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9rYW5kaWRhdFwvbG9naW4iLCJpYXQiOjE2MDIzODI0NjEsImV4cCI6MTYwMjM4NjA2MSwibmJmIjoxNjAyMzgyNDYxLCJqdGkiOiJRTk80dzY2emtJMldtTlhMIiwic3ViIjoxLCJwcnYiOiJkOGRmMTk4MTI3N2JmOTU2OGM3ZGQzZmUxYzc1MzA0ODY4NTZhMTQ2In0.EwGCDXT2rK9wkyHjrL3TeZyF93z1tshb9rXNJhUf7us",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/perusahaan/getuser",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"perusahaan",
+										"getuser"
+									]
+								}
+							},
+							"response": []
 						}
 					],
 					"protocolProfileBehavior": {},
@@ -1281,7 +1339,7 @@
 									"bearer": [
 										{
 											"key": "token",
-											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9wZXJ1c2FoYWFuXC9sb2dpbiIsImlhdCI6MTYwMjE3MTg5MywiZXhwIjoxNjAyMTc1NDkzLCJuYmYiOjE2MDIxNzE4OTMsImp0aSI6Im1sQVNYeEZUb1h1aUw5VHMiLCJzdWIiOjEsInBydiI6ImE4NjUzYWQ0MDc4YjFhNDVmNjU3ODU1ZjA3MmIwMGRlNjIzMDFhYzAifQ.up1FUl55In9H8HEPPO9QAuCQc8l6dQzdLH6rC6SVA-M",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9wZXJ1c2FoYWFuXC9sb2dpbiIsImlhdCI6MTYwMjM5NDgwNiwiZXhwIjoxNjAyMzk4NDA2LCJuYmYiOjE2MDIzOTQ4MDYsImp0aSI6Ikw4RmJzNllHc0JFTUFtQlQiLCJzdWIiOjEsInBydiI6ImE4NjUzYWQ0MDc4YjFhNDVmNjU3ODU1ZjA3MmIwMGRlNjIzMDFhYzAifQ.sB5bhyoSwxZhYaLuAFnDXjeirk76Q42nHYElUr0Uog4",
 											"type": "string"
 										}
 									]
@@ -1430,7 +1488,7 @@
 									"bearer": [
 										{
 											"key": "token",
-											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9wZXJ1c2FoYWFuXC9sb2dpbiIsImlhdCI6MTYwMjE3MTg5MywiZXhwIjoxNjAyMTc1NDkzLCJuYmYiOjE2MDIxNzE4OTMsImp0aSI6Im1sQVNYeEZUb1h1aUw5VHMiLCJzdWIiOjEsInBydiI6ImE4NjUzYWQ0MDc4YjFhNDVmNjU3ODU1ZjA3MmIwMGRlNjIzMDFhYzAifQ.up1FUl55In9H8HEPPO9QAuCQc8l6dQzdLH6rC6SVA-M",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9wZXJ1c2FoYWFuXC9sb2dpbiIsImlhdCI6MTYwMjM5NDgwNiwiZXhwIjoxNjAyMzk4NDA2LCJuYmYiOjE2MDIzOTQ4MDYsImp0aSI6Ikw4RmJzNllHc0JFTUFtQlQiLCJzdWIiOjEsInBydiI6ImE4NjUzYWQ0MDc4YjFhNDVmNjU3ODU1ZjA3MmIwMGRlNjIzMDFhYzAifQ.sB5bhyoSwxZhYaLuAFnDXjeirk76Q42nHYElUr0Uog4",
 											"type": "string"
 										}
 									]
@@ -1447,9 +1505,9 @@
 									}
 								},
 								"url": {
-									"raw": "{{dev}}/api/iklan-perusahaan",
+									"raw": "{{url}}/api/iklan-perusahaan",
 									"host": [
-										"{{dev}}"
+										"{{url}}"
 									],
 									"path": [
 										"api",
@@ -1534,7 +1592,7 @@
 									"bearer": [
 										{
 											"key": "token",
-											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9wZXJ1c2FoYWFuXC9sb2dpbiIsImlhdCI6MTYwMjE2NzQ3MywiZXhwIjoxNjAyMTcxMDczLCJuYmYiOjE2MDIxNjc0NzMsImp0aSI6Ik80OWZTR0FEWlgwMXdORXoiLCJzdWIiOjEsInBydiI6ImE4NjUzYWQ0MDc4YjFhNDVmNjU3ODU1ZjA3MmIwMGRlNjIzMDFhYzAifQ.bvZAoGrkYr-Vp9mPBnbRZdbqE3X85tbVZYrvSBK_VE0",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9taW5lam9ic2FwaWJlLWVudi5lYmEtbmZpYXJ6YmUuYXAtc291dGhlYXN0LTEuZWxhc3RpY2JlYW5zdGFsay5jb21cL1wvYXBpXC9rYW5kaWRhdFwvbG9naW4iLCJpYXQiOjE2MDIyNTQwNzYsImV4cCI6MTYwMjI1NzY3NiwibmJmIjoxNjAyMjU0MDc2LCJqdGkiOiI0TkJwUzlpN0x0VGVkazFKIiwic3ViIjoxLCJwcnYiOiJkOGRmMTk4MTI3N2JmOTU2OGM3ZGQzZmUxYzc1MzA0ODY4NTZhMTQ2In0.my0drP6JC2aevp-JI9-lqxCpkSuz1uBHwefUHNITxao",
 											"type": "string"
 										}
 									]
@@ -1551,9 +1609,9 @@
 									}
 								},
 								"url": {
-									"raw": "{{dev}}/api/cari-iklan/",
+									"raw": "{{url}}/api/cari-iklan/",
 									"host": [
-										"{{dev}}"
+										"{{url}}"
 									],
 									"path": [
 										"api",
@@ -1579,7 +1637,7 @@
 									"bearer": [
 										{
 											"key": "token",
-											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9taW5lam9ic2FwaWJlLWVudi5lYmEtbmZpYXJ6YmUuYXAtc291dGhlYXN0LTEuZWxhc3RpY2JlYW5zdGFsay5jb21cL1wvYXBpXC9wZXJ1c2FoYWFuXC9sb2dpbiIsImlhdCI6MTYwMjI0NTA1MywiZXhwIjoxNjAyMjQ4NjUzLCJuYmYiOjE2MDIyNDUwNTMsImp0aSI6ImF6NzFqTEs0dlBvdTBJNlkiLCJzdWIiOjEsInBydiI6ImE4NjUzYWQ0MDc4YjFhNDVmNjU3ODU1ZjA3MmIwMGRlNjIzMDFhYzAifQ.T02IDtJs9dHrWB5ZlEmnkk_JFZprUeg_tp-Vl4ksm2E",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9wZXJ1c2FoYWFuXC9sb2dpbiIsImlhdCI6MTYwMjM5NDgwNiwiZXhwIjoxNjAyMzk4NDA2LCJuYmYiOjE2MDIzOTQ4MDYsImp0aSI6Ikw4RmJzNllHc0JFTUFtQlQiLCJzdWIiOjEsInBydiI6ImE4NjUzYWQ0MDc4YjFhNDVmNjU3ODU1ZjA3MmIwMGRlNjIzMDFhYzAifQ.sB5bhyoSwxZhYaLuAFnDXjeirk76Q42nHYElUr0Uog4",
 											"type": "string"
 										}
 									]
@@ -1617,7 +1675,7 @@
 									"bearer": [
 										{
 											"key": "token",
-											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9taW5lam9ic2FwaWJlLWVudi5lYmEtbmZpYXJ6YmUuYXAtc291dGhlYXN0LTEuZWxhc3RpY2JlYW5zdGFsay5jb21cL1wvYXBpXC9wZXJ1c2FoYWFuXC9sb2dpbiIsImlhdCI6MTYwMjE2Njc1NSwiZXhwIjoxNjAyMTcwMzU1LCJuYmYiOjE2MDIxNjY3NTUsImp0aSI6ImRQWGpsdkNYTHV6QkRWeVMiLCJzdWIiOjEsInBydiI6ImE4NjUzYWQ0MDc4YjFhNDVmNjU3ODU1ZjA3MmIwMGRlNjIzMDFhYzAifQ.INRKz5jxlRxYOCRzRMb0sh3r-n15A8B1xHdgUsEMx2A",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9wZXJ1c2FoYWFuXC9sb2dpbiIsImlhdCI6MTYwMjM5NDgwNiwiZXhwIjoxNjAyMzk4NDA2LCJuYmYiOjE2MDIzOTQ4MDYsImp0aSI6Ikw4RmJzNllHc0JFTUFtQlQiLCJzdWIiOjEsInBydiI6ImE4NjUzYWQ0MDc4YjFhNDVmNjU3ODU1ZjA3MmIwMGRlNjIzMDFhYzAifQ.sB5bhyoSwxZhYaLuAFnDXjeirk76Q42nHYElUr0Uog4",
 											"type": "string"
 										}
 									]
@@ -2380,6 +2438,130 @@
 				}
 			],
 			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "get provinsi by id include kota",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9rYW5kaWRhdFwvbG9naW4iLCJpYXQiOjE2MDIzOTMxMDgsImV4cCI6MTYwMjM5NjcwOCwibmJmIjoxNjAyMzkzMTA4LCJqdGkiOiJ5eXRKdGk2UHdOVnZrVHowIiwic3ViIjoxLCJwcnYiOiJkOGRmMTk4MTI3N2JmOTU2OGM3ZGQzZmUxYzc1MzA0ODY4NTZhMTQ2In0.V3O79Xw2RUY0ogXjBSh1K2rOqUpHuwWwDxnG2BRc2KY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/provinsi/31",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"provinsi",
+						"31"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get all provinsi",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9rYW5kaWRhdFwvbG9naW4iLCJpYXQiOjE2MDIzOTMxMDgsImV4cCI6MTYwMjM5NjcwOCwibmJmIjoxNjAyMzkzMTA4LCJqdGkiOiJ5eXRKdGk2UHdOVnZrVHowIiwic3ViIjoxLCJwcnYiOiJkOGRmMTk4MTI3N2JmOTU2OGM3ZGQzZmUxYzc1MzA0ODY4NTZhMTQ2In0.V3O79Xw2RUY0ogXjBSh1K2rOqUpHuwWwDxnG2BRc2KY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/provinsi",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"provinsi"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get all kota",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/kota",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"kota"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get by id kota",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9rYW5kaWRhdFwvbG9naW4iLCJpYXQiOjE2MDIzOTMxMDgsImV4cCI6MTYwMjM5NjcwOCwibmJmIjoxNjAyMzkzMTA4LCJqdGkiOiJ5eXRKdGk2UHdOVnZrVHowIiwic3ViIjoxLCJwcnYiOiJkOGRmMTk4MTI3N2JmOTU2OGM3ZGQzZmUxYzc1MzA0ODY4NTZhMTQ2In0.V3O79Xw2RUY0ogXjBSh1K2rOqUpHuwWwDxnG2BRc2KY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/kota/1110",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"kota",
+						"1110"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get kota by id provinsi",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/kota/byprovinceid/31",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"kota",
+						"byprovinceid",
+						"31"
+					]
+				}
+			},
+			"response": []
 		}
 	],
 	"protocolProfileBehavior": {}
