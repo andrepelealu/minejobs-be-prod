@@ -33,6 +33,8 @@ Route::post('kandidat/register', 'UserKandidatController@register'); //checked
 Route::post('kandidat/login', 'UserKandidatController@login'); //checked
 Route::post('kandidat/forgot', 'ForgotPasswordKandidatController@sendResetLinkEmail');//checked
 Route::post('kandidat/reset', 'ResetPasswordKandidatController@reset');//checked
+Route::get('kandidat/getuser', 'UserKandidatController@getAuthenticatedUser');//checked
+
 // Route::get('kandidat/getuser', 'UserKandidatController@getAuthenticatedUser');
 /*END LOGIN REGISTER */
 
@@ -41,6 +43,8 @@ Route::post('perusahaan/register', 'UserPerusahaanController@register');//checke
 Route::post('perusahaan/login', 'UserPerusahaanController@login');//checked
 Route::post('perusahaan/forgot', 'ForgotPasswordPerusahaanController@sendResetLinkEmail');//checked
 Route::post('perusahaan/reset', 'ResetPasswordPerusahaanController@reset');//checked
+Route::get('perusahaan/getuser', 'UserPerusahaanController@getAuthenticatedUser');//checked
+
 /*END LOGIN REGISTER */
 
 Route::post('admin/login', 'UserAdminController@login');//checked
