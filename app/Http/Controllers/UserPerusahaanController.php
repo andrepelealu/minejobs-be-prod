@@ -16,6 +16,7 @@ use JWTAuth;
 use JWTAuthException;
 use Mail,DB;
 use App\UserPerusahaan;
+use App\ProfilPerusahaan;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Mail\Message;
 use Illuminate\Support\Facades\Password;
@@ -200,8 +201,12 @@ class UserPerusahaanController extends Controller
             return response()->json(['token_absent'], $e->getStatusCode());
 
         }
+        $data = ProfilPerusahaan::where('id_perusahaan',$user->id)->get();
 
-        return response()->json(compact('user'));
+        $res['message'] = 'data ditemukan';
+        $res['data'] = $data;
+
+        return $res;
     }
 
     public function redirectToProvider($provider)

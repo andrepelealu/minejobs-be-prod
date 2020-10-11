@@ -16,6 +16,7 @@ use JWTAuth;
 use JWTAuthException;
 use Mail,DB;
 use App\UserKandidat;
+use App\DataPribadiModel;
 use App\KandidatVerification;
 
 use Illuminate\Support\Facades\Auth;
@@ -28,18 +29,7 @@ use Laravel\Socialite\Facades\Socialite;
 
 class UserKandidatController extends Controller
 {
-    // public function __construct()
-    // {
-    //     $this->user = new User;
-    // }
-    // protected function guard()
-    // {
-    //     return Auth::guard('kandidat');
-    // }
-    // protected function broker()
-    // {
-    //     return Password::broker('kandidat');
-    // }
+
     public function logout(Request $request){
         config()->set( 'auth.defaults.guard', 'kandidat' );
 
@@ -50,23 +40,10 @@ class UserKandidatController extends Controller
         }catch(\Exception $e){
             return response()->json(['sukses'=>false, 'pesan'=>'Gagal Logout']);
         }
-        // try{
-        //     $this->validate($request,['token'=> 'required']);
-        //     JWTAuth::invalidate($request->input('token'));
-        // }catch(\Exception $e){
-        //     return response()->json(['sukses'=>false, 'pesan'=>'Gagal Logout']);
-        // }
     }
     
     public function recover(Request $request)
     {
-        // \Config::set('jwt.user', 'App\UserKandidat'); 
-        // \Config::set('auth.providers.users.model', \App\UserKandidat::class);
-
-        // \Config::set('auth.providers', ['users' => [
-        //     'driver' => 'eloquent',
-        //     'model' => UserKandidat::class,
-        // ]]);
         Auth::guard('kandidat');
         Password::broker('kandidat');
         $user = UserKandidat::where('email', $request->email)->first();
@@ -172,7 +149,6 @@ class UserKandidatController extends Controller
         }
 
         $user = UserKandidat::create([
-            // 'name' => $request->get('name'),
             'email' => $request->get('email'),
             'password' => Hash::make($request->get('password'))
         ]);
@@ -214,8 +190,12 @@ class UserKandidatController extends Controller
             return response()->json(['token_absent'], $e->getStatusCode());
 
         }
+        $data = DataPribadiModel::where('id_kandidat',$user->id)->get();
 
-        return response()->json(compact('user'));
+        $res['message'] = 'data ditemukan';
+        $res['data'] = $data;
+
+        return $res;
     }
 
     public function redirectToProvider($provider)
