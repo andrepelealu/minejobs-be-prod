@@ -27,6 +27,11 @@ Route::group(['middleware' => ['web']], function () {
 
 });
 
+Route::get('provinsi', 'ProvinsiController@GetAllProvinsi');//checked
+Route::get('provinsi/{id}', 'ProvinsiController@GetKotaByProvinsiId');//checked
+Route::get('kota', 'KotaController@GetAllKota');//checked
+Route::get('kota/{id}', 'KotaController@GetKotaById');//checked
+Route::get('kota/byprovinceid/{id}', 'KotaController@GetKotaByProvinsiId');//checked
 
 /*LOGIN REGISTER KANDIDAT*/
 Route::post('kandidat/register', 'UserKandidatController@register'); //checked
@@ -67,7 +72,7 @@ Route::post('perusahaan/logout', 'UserPerusahaanController@logout');//checked
 	/* DATA PRIBADI */
 
 
-Route::post('data-pribadi/{id}'		,'DataPribadiController@PostDataPribadi');//checked
+Route::post('data-pribadi/'		,'DataPribadiController@PostDataPribadi');//checked
 Route::get('data-pribadi'		,'DataPribadiController@GetDataPribadi');//checked
 Route::get('data-pribadi/{id}'	,'DataPribadiController@GetDataPribadiById');//checked
 Route::put('data-pribadi/{id}'	,'DataPribadiController@UpdateDataPribadi');//checked
