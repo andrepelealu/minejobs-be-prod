@@ -20,6 +20,8 @@ class UndanganInterviewController extends Controller
     {
         $data = UndanganInterview::
         join('iklan_perusahaan', 'iklan_perusahaan.id', '=', 'undangan_interview.id_perusahaan')
+        ->where('undangan_interview.id_perusahaan','=',$id)
+
         ->paginate(10);
         if(count($data)>0){
             $res['count'] = count($data);
