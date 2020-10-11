@@ -76,6 +76,8 @@ Route::post('data-pribadi/'		,'DataPribadiController@PostDataPribadi');//checked
 Route::get('data-pribadi'		,'DataPribadiController@GetDataPribadi');//checked
 Route::get('data-pribadi/{id}'	,'DataPribadiController@GetDataPribadiById');//checked
 Route::put('data-pribadi/{id}'	,'DataPribadiController@UpdateDataPribadi');//checked
+Route::post('upload-foto-user/{id}'	,'UploadController@UploadProfileUser');//checked
+
 // Route::delete('data-pribadi/{id}','DataPribadiController@DeleteDataPribadi');
 /* END DATA PRIBADI */
 /* PREFERENSI PEKERJAAN */
