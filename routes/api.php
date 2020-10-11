@@ -177,6 +177,8 @@ Route::post('cari-iklan','IklanPerusahaanController@CariIklanPerusahaan');//chec
 Route::get('undangan-interview-perusahaan/{id}','UndanganInterviewController@GetUndanganInterviewPerusahaan');//checked
 Route::get('undangan-interview-kandidat/{id}','UndanganInterviewController@GetUndanganInterviewKandidat');//checked
 Route::get('undangan-interview-byiklan/{id}','UndanganInterviewController@GetUndanganInterviewByIdIklan');//checked
+Route::get('undangan-interview-perusahaan-sortdate/{id}','JadwalInterviewController@OrderByDate');//checked
+
 
 /* KIRIM UNDANGAN */
 Route::post('kirim/undangan','UndanganInterviewController@PostUndanganInterview');//checked

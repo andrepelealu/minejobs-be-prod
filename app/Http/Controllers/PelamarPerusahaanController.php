@@ -16,7 +16,7 @@ class PelamarPerusahaanController extends Controller
             'id_kandidat' => 'required|',
             'id_iklan' => 'required|string',
             'id_perusahaan' => 'required|string',
-            'tanggal_lamaran' =>'required|string',
+            'tanggal_lamaran' =>'required',
             
         ]
     );
@@ -26,7 +26,7 @@ class PelamarPerusahaanController extends Controller
     $input = new Pelamar_Perusahaan;
     $input->id_kandidat = $req->id_kandidat;
     $input->id_iklan = $req->id_iklan;
-    $input->tanggal_lamaran = $req->tanggal_lamaran;
+    $input->tanggal_lamaran = Carbon::parse($req->tanggal_lamaran);
     $input->id_perusahaan = $req->id_perusahaan;
     // Table::select('name','surname')->where('id', 1)->get();
 

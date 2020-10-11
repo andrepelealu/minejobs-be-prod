@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
-
+use Carbon\Carbon;
 use App\UndanganInterview;
 use App\UserKandidat;
 use App\ProfilPerusahaan;
@@ -89,12 +89,13 @@ class UndanganInterviewController extends Controller
         return response()->json($validator->errors()->toJson(), 400);
         }
         
+            
             $input = new UndanganInterview;
             $input->id_kandidat = $req->id_kandidat;
             $input->id_perusahaan = $req->id_perusahaan;
             $input->id_iklan = $req->id_iklan;
             $input->pesan = $req->pesan;
-            $input->tanggal_interview = $req->tanggal_interview;
+            $input->tanggal_interview = Carbon::parse($req->tanggal_interview);
             $input->waktu_mulai = $req->waktu_mulai;
             $input->waktu_selesai = $req->waktu_selesai;
             $input->metode_interview = $req->metode_interview;
