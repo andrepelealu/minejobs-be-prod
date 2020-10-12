@@ -131,7 +131,7 @@
 									"bearer": [
 										{
 											"key": "token",
-											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9rYW5kaWRhdFwvbG9naW4iLCJpYXQiOjE2MDIzODMzNTYsImV4cCI6MTYwMjM4Njk1NiwibmJmIjoxNjAyMzgzMzU2LCJqdGkiOiJybW1aWnozd0tIaml0RmdEIiwic3ViIjoxLCJwcnYiOiJkOGRmMTk4MTI3N2JmOTU2OGM3ZGQzZmUxYzc1MzA0ODY4NTZhMTQ2In0.v4bI0GCFVYhmyndm_6Pea1Uo-xvAvsdeUHLhWCcUTJk",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9rYW5kaWRhdFwvbG9naW4iLCJpYXQiOjE2MDI0NjY1MzMsImV4cCI6MTYwMjQ3MDEzMywibmJmIjoxNjAyNDY2NTMzLCJqdGkiOiJJWmlENjlLcEk2aTMxZkcyIiwic3ViIjoxLCJwcnYiOiJkOGRmMTk4MTI3N2JmOTU2OGM3ZGQzZmUxYzc1MzA0ODY4NTZhMTQ2In0.gLKTdSolXTids1tqbCTv9yN0e5tiWVl2McXGOmJEovY",
 											"type": "string"
 										}
 									]
@@ -140,7 +140,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"id_kandidat\":\"2\",\r\n    \"nama_depan\":\"andre\",\r\n    \"nama_belakang\":\"äditya\",\r\n    \"nomor_telepon\": \"08223007743\",\r\n    \"provinsi\": \"jawa tengah\",\r\n    \"kota\" : \"semarang\",\r\n    \"tentang\" : \"tentang saya\",\r\n    \"foto_profile\": \"google.com\"\r\n\r\n}",
+									"raw": "{\r\n    \"id_kandidat\":\"1\",\r\n    \"nama_depan\":\"andre\",\r\n    \"nama_belakang\":\"äditya\",\r\n    \"nomor_telepon\": \"08223007743\",\r\n    \"provinsi\": \"jawa tengah\",\r\n    \"kota\" : \"semarang\",\r\n    \"tentang\" : \"tentang saya\",\r\n    \"foto_profile\": \"google.com\"\r\n\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1378,7 +1378,7 @@
 									"bearer": [
 										{
 											"key": "token",
-											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9wZXJ1c2FoYWFuXC9sb2dpbiIsImlhdCI6MTYwMjQxNjU5MywiZXhwIjoxNjAyNDIwMTkzLCJuYmYiOjE2MDI0MTY1OTMsImp0aSI6IlJ6NTdabjBGcVczR2sweEsiLCJzdWIiOjEsInBydiI6ImE4NjUzYWQ0MDc4YjFhNDVmNjU3ODU1ZjA3MmIwMGRlNjIzMDFhYzAifQ.Epauv9wYRTPNTJTriPkXYQH4Sop-1GRukudhktLAMSE",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9wZXJ1c2FoYWFuXC9sb2dpbiIsImlhdCI6MTYwMjQ2NjU2MywiZXhwIjoxNjAyNDcwMTYzLCJuYmYiOjE2MDI0NjY1NjMsImp0aSI6Ik9pbXBraGdvSDJvM3FGZVMiLCJzdWIiOjEsInBydiI6ImE4NjUzYWQ0MDc4YjFhNDVmNjU3ODU1ZjA3MmIwMGRlNjIzMDFhYzAifQ.3EkRheILj7jgAZW-ORyZt7G2A0KKBi_TztMWWKM_f5s",
 											"type": "string"
 										}
 									]
@@ -1521,6 +1521,43 @@
 					"name": "iklan perusahaan",
 					"item": [
 						{
+							"name": "create iklan",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9wZXJ1c2FoYWFuXC9sb2dpbiIsImlhdCI6MTYwMjQ2NjU2MywiZXhwIjoxNjAyNDcwMTYzLCJuYmYiOjE2MDI0NjY1NjMsImp0aSI6Ik9pbXBraGdvSDJvM3FGZVMiLCJzdWIiOjEsInBydiI6ImE4NjUzYWQ0MDc4YjFhNDVmNjU3ODU1ZjA3MmIwMGRlNjIzMDFhYzAifQ.3EkRheILj7jgAZW-ORyZt7G2A0KKBi_TztMWWKM_f5s",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id_perusahaan\":\"1\",\r\n    \"posisi_pekerjaan\":\"posisi pekerjaan\",\r\n    \"gaji_min\":\"1000000\",\r\n    \"gaji_max\":\"3000000\",\r\n    \"provinsi\":\"jawa tengah\",\r\n    \"kota\":\"semarang\",\r\n    \"bidang_pekerjaan\":\"teknologi\",\r\n    \"tingkat_pendidikan\":\"sma\",\r\n    \"pengalaman_kerja\":\"3 tahun\",\r\n    \"persyaratan\":\"test\",\r\n    \"benefit_perusahaan\":\"benefit\",\r\n    \"url_header\":\"google.com\"\r\n\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/iklan-perusahaan",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"iklan-perusahaan"
+									]
+								}
+							},
+							"response": []
+						},
+						{
 							"name": "update iklan",
 							"request": {
 								"auth": {
@@ -1553,43 +1590,6 @@
 										"api",
 										"iklan-perusahaan",
 										"1"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "create iklan",
-							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9wZXJ1c2FoYWFuXC9sb2dpbiIsImlhdCI6MTYwMjQxNjU5MywiZXhwIjoxNjAyNDIwMTkzLCJuYmYiOjE2MDI0MTY1OTMsImp0aSI6IlJ6NTdabjBGcVczR2sweEsiLCJzdWIiOjEsInBydiI6ImE4NjUzYWQ0MDc4YjFhNDVmNjU3ODU1ZjA3MmIwMGRlNjIzMDFhYzAifQ.Epauv9wYRTPNTJTriPkXYQH4Sop-1GRukudhktLAMSE",
-											"type": "string"
-										}
-									]
-								},
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n    \"id_perusahaan\":\"1\",\r\n    \"posisi_pekerjaan\":\"posisi pekerjaan\",\r\n    \"gaji_min\":\"1000000\",\r\n    \"gaji_max\":\"3000000\",\r\n    \"provinsi\":\"jawa tengah\",\r\n    \"kota\":\"semarang\",\r\n    \"bidang_pekerjaan\":\"teknologi\",\r\n    \"tingkat_pendidikan\":\"sma\",\r\n    \"pengalaman_kerja\":\"3 tahun\",\r\n    \"persyaratan\":\"test\",\r\n    \"benefit_perusahaan\":\"benefit\",\r\n    \"url_header\":\"google.com\"\r\n\r\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{url}}/api/iklan-perusahaan",
-									"host": [
-										"{{url}}"
-									],
-									"path": [
-										"api",
-										"iklan-perusahaan"
 									]
 								}
 							},
@@ -1715,7 +1715,7 @@
 									"bearer": [
 										{
 											"key": "token",
-											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9wZXJ1c2FoYWFuXC9sb2dpbiIsImlhdCI6MTYwMjM5NDgwNiwiZXhwIjoxNjAyMzk4NDA2LCJuYmYiOjE2MDIzOTQ4MDYsImp0aSI6Ikw4RmJzNllHc0JFTUFtQlQiLCJzdWIiOjEsInBydiI6ImE4NjUzYWQ0MDc4YjFhNDVmNjU3ODU1ZjA3MmIwMGRlNjIzMDFhYzAifQ.sB5bhyoSwxZhYaLuAFnDXjeirk76Q42nHYElUr0Uog4",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9wZXJ1c2FoYWFuXC9sb2dpbiIsImlhdCI6MTYwMjQ2NjQ0MywiZXhwIjoxNjAyNDcwMDQzLCJuYmYiOjE2MDI0NjY0NDMsImp0aSI6Ik1QcW5ldFJjWjRYa0hCcTQiLCJzdWIiOjEsInBydiI6ImE4NjUzYWQ0MDc4YjFhNDVmNjU3ODU1ZjA3MmIwMGRlNjIzMDFhYzAifQ.hM9BYkKzMl2rOmSe552j7IcMSH0s291x3KLe87-Q2uk",
 											"type": "string"
 										}
 									]
@@ -1724,7 +1724,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n        \"id_kandidat\" : \"1\",\r\n        \"id_perusahaan\" :\"1\",\r\n        \"id_iklan\" :\"1\",\r\n        \"pesan\":\"test\", \r\n        \"tanggal_interview\":\"1990-20-21\", \r\n        \"waktu_mulai\" :\"10.00\",\r\n        \"waktu_selesai\" :\"11.00\",\r\n        \"metode_interview\":\"langsung\",\r\n        \"url_concall\":\"test\"\r\n}",
+									"raw": "{\r\n        \"id_kandidat\" : \"1\",\r\n        \"id_perusahaan\" :\"1\",\r\n        \"id_iklan\" :\"1\",\r\n        \"pesan\":\"ketiga\", \r\n        \"tanggal_interview\":\"12-10-2019\", \r\n        \"waktu_mulai\" :\"10.00\",\r\n        \"waktu_selesai\" :\"11.00\",\r\n        \"metode_interview\":\"langsung\",\r\n        \"url_concall\":\"test\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
