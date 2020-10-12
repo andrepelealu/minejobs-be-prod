@@ -19,6 +19,7 @@ class CreateUndanganInterviewTable extends Migration {
 			$table->integer('id_perusahaan')->index('undangan_interview_fk1');
 			$table->integer('id_iklan')->index('undangan_interview_fk2');
 			$table->string('pesan');
+			$table->string('lokasi_wawancara')->nullable();
 			$table->date('tanggal_interview');
 			$table->string('metode_interview');
 			$table->string('waktu_mulai');

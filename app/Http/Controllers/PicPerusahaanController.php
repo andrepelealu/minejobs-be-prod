@@ -16,7 +16,7 @@ class PicPerusahaanController extends Controller
         'id_perusahaan' => 'required',
         'nama_pic' => 'required|string',
         'no_telp_pic' =>'required|string',
-        'url_ktp_pic' =>'required|string',
+        'url_ktp_pic' =>'nullable|string',
         'url_foto_profile' =>'nullable|string',
 
         ]

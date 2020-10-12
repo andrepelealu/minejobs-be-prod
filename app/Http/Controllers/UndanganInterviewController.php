@@ -81,6 +81,7 @@ class UndanganInterviewController extends Controller
         'waktu_mulai' =>'required',
         'waktu_selesai' =>'required',
         'metode_interview'=>'required',
+        'lokasi_wawancara'=>'nullable|string',
         'url_concall'=>'nullable|string'
 
         ]
@@ -88,8 +89,6 @@ class UndanganInterviewController extends Controller
     if($validator->fails()){
         return response()->json($validator->errors()->toJson(), 400);
         }
-        
-            
             $input = new UndanganInterview;
             $input->id_kandidat = $req->id_kandidat;
             $input->id_perusahaan = $req->id_perusahaan;
@@ -100,6 +99,7 @@ class UndanganInterviewController extends Controller
             $input->waktu_selesai = $req->waktu_selesai;
             $input->metode_interview = $req->metode_interview;
             $input->url_concall = $req->url_concall;
+            $input->lokasi_wawancara = $req->lokasi_wawancara;
             $input->status = 'menunggu konfirmasi';
             
     $detailIklan = Iklan_Perusahaan::select('posisi_pekerjaan')->where('id',$req->id_iklan)->get();

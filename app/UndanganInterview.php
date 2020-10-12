@@ -18,5 +18,6 @@ class UndanganInterview extends Model
     'waktu_mulai',
     'waktu_selesai',
     'metode_interview',
+    'lokasi_wawancara',
     'status'];
 }

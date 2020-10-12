@@ -17,13 +17,13 @@ class ProfilPerusahaanController extends Controller
         'nama_perusahaan' => 'required|string',
         'alamat_perusahaan' =>'required|string',
         'tentang_perusahaan' =>'required|string',
-        'url_banner'=>'required|string',
-        'foto_perusahaan'=>'required|string',
-        'website_perusahaan'=>'required|string',
+        'url_banner'=>'nullable|string',
+        'foto_perusahaan'=>'nullable|string',
+        'website_perusahaan'=>'nullable|string',
         'jenis_industri'=>'required|string',
         'no_telp_perusahaan'=>'required|string',
         'no_npwp_perusahaan'=>'required|string',
-        'url_npwp_perusahaan'=>'required|string',
+        'url_npwp_perusahaan'=>'nullable|string',
 
         ]
     );
