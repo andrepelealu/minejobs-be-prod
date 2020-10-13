@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use App\ProfilPerusahaan;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use Carbon\Carbon;
+use Image;
+use File;
 
 class ProfilPerusahaanController extends Controller
 {
@@ -24,24 +27,66 @@ class ProfilPerusahaanController extends Controller
         'no_telp_perusahaan'=>'required|string',
         'no_npwp_perusahaan'=>'required|string',
         'url_npwp_perusahaan'=>'nullable|string',
+        'foto_perusahaan_data' => 'nullable|image:jpeg,png,jpg,gif,svg|max:2048',
+        'foto_npwp_data' => 'nullable|image:jpeg,png,jpg,gif,svg|max:2048'
 
         ]
     );
     if($validator->fails()){
         return response()->json($validator->errors()->toJson(), 400);
         }
+        $file_foto_perusahaan = $req->file('foto_perusahaan_data');
+        $file_foto_npwp = $req->file('foto_npwp_data');
+
+        $url_foto_perusahaan='';
+        $url_foto_npwp='';
+
+        if($file_foto_perusahaan){
+
+            if(!File::isDirectory(storage_path('app/public/perusahaan'))){
+                //create folder 
+                File::makeDirectory(storage_path('app/public/perusahaan'));
+            }
+    
+            $fileName = Carbon::now()->timestamp.'_'.uniqid().'.'.$file_foto_perusahaan->getClientOriginalExtension();
+            $canvas = Image::canvas(300, 300);
+            $resizeImage  = Image::make($file_foto_perusahaan)->resize('300', '300', function($constraint) {
+                $constraint->aspectRatio();
+            });
+            $canvas->insert($resizeImage, 'center');
+            $canvas->save(storage_path('app/public/perusahaan') . '/' . $fileName);
+            $url_foto_perusahaan = url('/storage/perusahaan/'.$fileName);
+        }
+
+        if($file_foto_npwp){
+
+            if(!File::isDirectory(storage_path('app/public/perusahaan/npwp'))){
+                //create folder 
+                File::makeDirectory(storage_path('app/public/perusahaan/npwp'));
+            }
+    
+            $fileName = Carbon::now()->timestamp.'_'.uniqid().'.'.$file_foto_npwp->getClientOriginalExtension();
+            $canvas = Image::canvas(500, 500);
+            $resizeImage  = Image::make($file_foto_npwp)->resize('500', '500', function($constraint) {
+                $constraint->aspectRatio();
+            });
+            $canvas->insert($resizeImage, 'center');
+            $canvas->save(storage_path('app/public/perusahaan/npwp') . '/' . $fileName);
+            $url_foto_npwp = url('/storage/perusahaan/npwp'.$fileName);
+        }
+
             $input = new ProfilPerusahaan;
             $input->id_perusahaan = $req->id_perusahaan;
             $input->nama_perusahaan = $req->nama_perusahaan;
             $input->alamat_perusahaan = $req->alamat_perusahaan;
             $input->tentang_perusahaan = $req->tentang_perusahaan;
             $input->url_banner = $req->url_banner;
-            $input->foto_perusahaan = $req->foto_perusahaan;
+            $input->foto_perusahaan = $url_foto_perusahaan;
             $input->jenis_industri = $req->jenis_industri;
             $input->website_perusahaan = $req->website_perusahaan;
             $input->no_telp_perusahaan = $req->no_telp_perusahaan;
             $input->no_npwp_perusahaan = $req->no_npwp_perusahaan;
-            $input->url_npwp_perusahaan = $req->url_npwp_perusahaan;
+            $input->url_npwp_perusahaan = $url_foto_npwp;
 
             $input->save();
 

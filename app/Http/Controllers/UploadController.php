@@ -55,9 +55,7 @@ class UploadController extends Controller
             $canvas->insert($resizeImage, 'center');
             //SIMPAN IMAGE KE DALAM MASING-MASING FOLDER (DIMENSI)
             $canvas->save($this->user . '/' . $fileName);
-        // }
-        // $filePath = storage_path().'/user/'.$fileName;
-        // $fileContents = File::get($filePath);
+
 
         $data = DataPribadiModel::where('id_kandidat',$id)->first();
         $data->foto_profile = url('/storage/user/'.$fileName);

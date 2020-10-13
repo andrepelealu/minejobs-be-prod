@@ -31,3 +31,10 @@ Route::get('/home', 'HomeController@index')->name('home');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/run-migrations', function () {
+    return Artisan::call('migrate:refresh');
+});
+Route::get('/run-seed', function () {
+    return Artisan::call('db:seed');
+});
