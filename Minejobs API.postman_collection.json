@@ -131,7 +131,7 @@
 									"bearer": [
 										{
 											"key": "token",
-											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9rYW5kaWRhdFwvbG9naW4iLCJpYXQiOjE2MDI0NjY1MzMsImV4cCI6MTYwMjQ3MDEzMywibmJmIjoxNjAyNDY2NTMzLCJqdGkiOiJJWmlENjlLcEk2aTMxZkcyIiwic3ViIjoxLCJwcnYiOiJkOGRmMTk4MTI3N2JmOTU2OGM3ZGQzZmUxYzc1MzA0ODY4NTZhMTQ2In0.gLKTdSolXTids1tqbCTv9yN0e5tiWVl2McXGOmJEovY",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9rYW5kaWRhdFwvbG9naW4iLCJpYXQiOjE2MDI1OTc1NTksImV4cCI6MTYwMjYwMTE1OSwibmJmIjoxNjAyNTk3NTU5LCJqdGkiOiJ4a1R5VUlrd2hIeW0xS0xoIiwic3ViIjoxLCJwcnYiOiJkOGRmMTk4MTI3N2JmOTU2OGM3ZGQzZmUxYzc1MzA0ODY4NTZhMTQ2In0.Bbfu0qmbWyN82WroF5czbn7pwlv1TVRomO7CT2f_SEs",
 											"type": "string"
 										}
 									]
@@ -139,8 +139,49 @@
 								"method": "POST",
 								"header": [],
 								"body": {
-									"mode": "raw",
-									"raw": "{\r\n    \"id_kandidat\":\"1\",\r\n    \"nama_depan\":\"andre\",\r\n    \"nama_belakang\":\"äditya\",\r\n    \"nomor_telepon\": \"08223007743\",\r\n    \"provinsi\": \"jawa tengah\",\r\n    \"kota\" : \"semarang\",\r\n    \"tentang\" : \"tentang saya\",\r\n    \"foto_profile\": \"google.com\"\r\n\r\n}",
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "image",
+											"type": "file",
+											"src": "/C:/Users/AndrePelealu/Downloads/WhatsApp Image 2020-09-29 at 06.20.01.jpeg"
+										},
+										{
+											"key": "id_kandidat",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "nama_depan",
+											"value": "Andre",
+											"type": "text"
+										},
+										{
+											"key": "nomor_telepon",
+											"value": "082234007743",
+											"type": "text"
+										},
+										{
+											"key": "provinsi",
+											"value": "Jawa Tengah",
+											"type": "text"
+										},
+										{
+											"key": "kota",
+											"value": "Semarang",
+											"type": "text"
+										},
+										{
+											"key": "tentang",
+											"value": "testing",
+											"type": "text"
+										},
+										{
+											"key": "nama belakang",
+											"value": "Pelealu",
+											"type": "text"
+										}
+									],
 									"options": {
 										"raw": {
 											"language": "json"
@@ -156,6 +197,13 @@
 										"api",
 										"data-pribadi",
 										""
+									],
+									"query": [
+										{
+											"key": "image",
+											"value": null,
+											"disabled": true
+										}
 									]
 								}
 							},
@@ -450,7 +498,7 @@
 									"bearer": [
 										{
 											"key": "token",
-											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9rYW5kaWRhdFwvbG9naW4iLCJpYXQiOjE2MDE4MjM0NTMsImV4cCI6MTYwMTgyNzA1MywibmJmIjoxNjAxODIzNDUzLCJqdGkiOiJyWWl0YVVCeVh4Y0pkNVVYIiwic3ViIjoxLCJwcnYiOiJkOGRmMTk4MTI3N2JmOTU2OGM3ZGQzZmUxYzc1MzA0ODY4NTZhMTQ2In0.ARttmg2grKu51tYcFz6tWLvMIvglT6wBx4MpjUrKvbc",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9rYW5kaWRhdFwvbG9naW4iLCJpYXQiOjE2MDI0MjYyMTQsImV4cCI6MTYwMjQyOTgxNCwibmJmIjoxNjAyNDI2MjE0LCJqdGkiOiJicU1FbHRTMkNBS01sb0Q3Iiwic3ViIjoxLCJwcnYiOiJkOGRmMTk4MTI3N2JmOTU2OGM3ZGQzZmUxYzc1MzA0ODY4NTZhMTQ2In0.oD2PyRvujBfVgG0u3z9nM3WX433T2uVJGzt672Kqm9k",
 											"type": "string"
 										}
 									]
@@ -516,7 +564,7 @@
 									"bearer": [
 										{
 											"key": "token",
-											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9rYW5kaWRhdFwvbG9naW4iLCJpYXQiOjE2MDE4MjM0NTMsImV4cCI6MTYwMTgyNzA1MywibmJmIjoxNjAxODIzNDUzLCJqdGkiOiJyWWl0YVVCeVh4Y0pkNVVYIiwic3ViIjoxLCJwcnYiOiJkOGRmMTk4MTI3N2JmOTU2OGM3ZGQzZmUxYzc1MzA0ODY4NTZhMTQ2In0.ARttmg2grKu51tYcFz6tWLvMIvglT6wBx4MpjUrKvbc",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9rYW5kaWRhdFwvbG9naW4iLCJpYXQiOjE2MDI0MjYyMTQsImV4cCI6MTYwMjQyOTgxNCwibmJmIjoxNjAyNDI2MjE0LCJqdGkiOiJicU1FbHRTMkNBS01sb0Q3Iiwic3ViIjoxLCJwcnYiOiJkOGRmMTk4MTI3N2JmOTU2OGM3ZGQzZmUxYzc1MzA0ODY4NTZhMTQ2In0.oD2PyRvujBfVgG0u3z9nM3WX433T2uVJGzt672Kqm9k",
 											"type": "string"
 										}
 									]
@@ -1378,7 +1426,7 @@
 									"bearer": [
 										{
 											"key": "token",
-											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9wZXJ1c2FoYWFuXC9sb2dpbiIsImlhdCI6MTYwMjQ2NjU2MywiZXhwIjoxNjAyNDcwMTYzLCJuYmYiOjE2MDI0NjY1NjMsImp0aSI6Ik9pbXBraGdvSDJvM3FGZVMiLCJzdWIiOjEsInBydiI6ImE4NjUzYWQ0MDc4YjFhNDVmNjU3ODU1ZjA3MmIwMGRlNjIzMDFhYzAifQ.3EkRheILj7jgAZW-ORyZt7G2A0KKBi_TztMWWKM_f5s",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9wZXJ1c2FoYWFuXC9sb2dpbiIsImlhdCI6MTYwMjU5OTcwMCwiZXhwIjoxNjAyNjAzMzAwLCJuYmYiOjE2MDI1OTk3MDAsImp0aSI6IlBzQ2dRaFZKMk15UkVXbzkiLCJzdWIiOjEsInBydiI6ImE4NjUzYWQ0MDc4YjFhNDVmNjU3ODU1ZjA3MmIwMGRlNjIzMDFhYzAifQ.H7_OVwjOYCrlFUcWwSu00-tINYjlVAXT1Yd-_dGTnI4",
 											"type": "string"
 										}
 									]
@@ -1386,8 +1434,72 @@
 								"method": "POST",
 								"header": [],
 								"body": {
-									"mode": "raw",
-									"raw": "{\r\n        \"id_perusahaan\":\"1\",\r\n        \"nama_perusahaan\":\"testing perusahaan\",\r\n        \"alamat_perusahaan\":\"alamat perusahaan\",\r\n        \"tentang_perusahaan\":\"tentang perusahaan\",\r\n        \"url_banner\":\"url foto\",\r\n        \"foto_perusahaan\":\"url foto\",\r\n        \"website_perusahaan\":\"website\",\r\n        \"jenis_industri\":\"jenis industri\",\r\n        \"no_telp_perusahaan\":\"0822340088822\",\r\n        \"no_npwp_perusahaan\":\"1240981249874124\",\r\n        \"url_npwp_perusahaan\":\"foto npwp\"\r\n\r\n}",
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "foto_npwp_data",
+											"type": "file",
+											"src": "/C:/Users/AndrePelealu/Downloads/WhatsApp Image 2020-10-09 at 22.48.04.jpeg"
+										},
+										{
+											"key": "id_perusahaan",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "nama_perusahaan",
+											"value": "test",
+											"type": "text"
+										},
+										{
+											"key": "alamat_perusahaan",
+											"value": "test",
+											"type": "text"
+										},
+										{
+											"key": "tentang_perusahaan",
+											"value": "test",
+											"type": "text"
+										},
+										{
+											"key": "url_banner",
+											"value": "",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "foto_perusahaan",
+											"value": "",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "website_perusahaan",
+											"value": "test",
+											"type": "text"
+										},
+										{
+											"key": "jenis_industri",
+											"value": "test",
+											"type": "text"
+										},
+										{
+											"key": "no_telp_perusahaan",
+											"value": "test",
+											"type": "text"
+										},
+										{
+											"key": "no_npwp_perusahaan",
+											"value": "test",
+											"type": "text"
+										},
+										{
+											"key": "url_npwp_perusahaan",
+											"value": "",
+											"type": "text",
+											"disabled": true
+										}
+									],
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1415,7 +1527,7 @@
 									"bearer": [
 										{
 											"key": "token",
-											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9taW5lam9ic2FwaWJlLWVudi5lYmEtbmZpYXJ6YmUuYXAtc291dGhlYXN0LTEuZWxhc3RpY2JlYW5zdGFsay5jb21cL1wvYXBpXC9wZXJ1c2FoYWFuXC9sb2dpbiIsImlhdCI6MTYwMjAyNzIxMywiZXhwIjoxNjAyMDMwODEzLCJuYmYiOjE2MDIwMjcyMTMsImp0aSI6IjF2a0kyTnh5cmRibzRnTjAiLCJzdWIiOjEsInBydiI6ImE4NjUzYWQ0MDc4YjFhNDVmNjU3ODU1ZjA3MmIwMGRlNjIzMDFhYzAifQ.ODWyJXp16r2d4ReSIagLxEwavHw50_X1c_45XaQ71SE",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9wZXJ1c2FoYWFuXC9sb2dpbiIsImlhdCI6MTYwMjQyOTc1OSwiZXhwIjoxNjAyNDMzMzU5LCJuYmYiOjE2MDI0Mjk3NTksImp0aSI6IlZBSkRCanFsekJwUzZlejQiLCJzdWIiOjEsInBydiI6ImE4NjUzYWQ0MDc4YjFhNDVmNjU3ODU1ZjA3MmIwMGRlNjIzMDFhYzAifQ.hp2-XcUeBeTyy44rOGyt774yKVvYasOw7pKucgAxVHA",
 											"type": "string"
 										}
 									]
@@ -1444,7 +1556,7 @@
 									"bearer": [
 										{
 											"key": "token",
-											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9taW5lam9ic2FwaWJlLWVudi5lYmEtbmZpYXJ6YmUuYXAtc291dGhlYXN0LTEuZWxhc3RpY2JlYW5zdGFsay5jb21cL1wvYXBpXC9wZXJ1c2FoYWFuXC9sb2dpbiIsImlhdCI6MTYwMjAyODkyMCwiZXhwIjoxNjAyMDMyNTIwLCJuYmYiOjE2MDIwMjg5MjAsImp0aSI6IlF0VGdkZ2N2V3lrU2M2aVQiLCJzdWIiOjEsInBydiI6ImE4NjUzYWQ0MDc4YjFhNDVmNjU3ODU1ZjA3MmIwMGRlNjIzMDFhYzAifQ.lFfxGm9fdzkvuJG8-7yHWOmqPWozMLfvLvPPNouCvBg",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9wZXJ1c2FoYWFuXC9sb2dpbiIsImlhdCI6MTYwMjQyOTc1OSwiZXhwIjoxNjAyNDMzMzU5LCJuYmYiOjE2MDI0Mjk3NTksImp0aSI6IlZBSkRCanFsekJwUzZlejQiLCJzdWIiOjEsInBydiI6ImE4NjUzYWQ0MDc4YjFhNDVmNjU3ODU1ZjA3MmIwMGRlNjIzMDFhYzAifQ.hp2-XcUeBeTyy44rOGyt774yKVvYasOw7pKucgAxVHA",
 											"type": "string"
 										}
 									]
