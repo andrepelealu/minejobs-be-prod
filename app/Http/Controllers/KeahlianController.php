@@ -16,22 +16,21 @@ class KeahlianController extends Controller
     public function PostKeahlian(Request $req)
     {
         $validator = Validator::make($req->all(), [
-            'id_kandidat' => 'required',
-            'nama_keahlian' => 'required|string',
-            'tingkatan' =>'required|string',
+            'data' => 'required|array',
+            'data.*.id_kandidat' => 'required',
+            'data.*.nama_keahlian' => 'required|string',
+            'data.*.tingkatan' =>'required|string',
         ]
     );
     if($validator->fails()){
         return response()->json($validator->errors()->toJson(), 400);
     }
-    $input = new Keahlian;
-    $input->id_kandidat = $req->id_kandidat;
-    $input->nama_keahlian = $req->nama_keahlian;
-    $input->tingkatan = $req->tingkatan;
-    $input->save();
-
+    $data = $req->data;
+    $insert = Keahlian::insert($data);
     $res['message'] = 'berhasil post';
-    $res['data'] = $input;
+    $res['data'] = $data;
+
+
     return response()->json($res, 200);
     }
     public function GetKeahlian($id)

@@ -15,25 +15,22 @@ class BahasaController extends Controller
     public function PostBahasa(Request $req)
     {
         $validator = Validator::make($req->all(), [
-            'id_kandidat' => 'required|unique:bahasa',
-            'bahasa_dikuasai' => 'required|string',
-            'kemampuan_verbal' =>'required|string',
-            'kemampuan_tulisan' =>'required|string'
+            'data' => 'required|array',
+            'data.*.id_kandidat' => 'required|integer',
+            'data.*.bahasa_dikuasai' => 'required|string',
+            'data.*.kemampuan_verbal' =>'required|string',
+            'data.*.kemampuan_tulisan' =>'required|string'
          
         ]
     );
     if($validator->fails()){
         return response()->json($validator->errors()->toJson(), 400);
     }
-    $input = new Bahasa;
-    $input->id_kandidat = $req->id_kandidat;
-    $input->bahasa_dikuasai = $req->bahasa_dikuasai;
-    $input->kemampuan_verbal = $req->kemampuan_verbal;
-    $input->kemampuan_tulisan = $req->kemampuan_tulisan;
-    $input->save();
 
+    $data = $req->data;
+    $insert = Bahasa::insert($data);
     $res['message'] = 'berhasil post';
-    $res['data'] = $input;
+    $res['data'] = $data;
     return response()->json($res, 200);
     }
 
