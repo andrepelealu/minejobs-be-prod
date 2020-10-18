@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 use App\UploadCv;
 use Illuminate\Support\Facades\Validator;
+use File;
+use Carbon\Carbon;
 
 use Illuminate\Http\Request;
 
@@ -17,15 +19,31 @@ class UploadCvController extends Controller
     {
         $validator = Validator::make($req->all(), [
             'id_kandidat' => 'required|unique:upload_cv',
-            'url_cv' => 'required|string'
+            'file_cv' => 'required|mimes:pdf|max:2048'
         ]
     );
     if($validator->fails()){
         return response()->json($validator->errors()->toJson(), 400);
     }
+    //upload image
+    $file = $req->file('file_cv');
+    $url='';
+    if($file){
+
+        if(!File::isDirectory(storage_path('app/public/user/cv'))){
+            //create folder 
+            File::makeDirectory(storage_path('app/public/user/cv'));
+        }
+
+        $fileName = Carbon::now()->timestamp.'_'.uniqid().'.'.$file->getClientOriginalExtension();
+        $file->move(storage_path('app/public/user/cv'),$fileName);
+
+        $url = url('/storage/user/cv/'.$fileName);
+    }
+
     $input = new UploadCv;
     $input->id_kandidat = $req->id_kandidat;
-    $input->url_cv = $req->url_cv;
+    $input->url_cv = $url;
     $input->save();
 
     $res['message'] = 'berhasil post';

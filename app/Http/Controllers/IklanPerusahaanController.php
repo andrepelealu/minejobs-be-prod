@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use App\Iklan_Perusahaan;
+use Carbon\Carbon;
+use Image;
+use File;
 use DB;
 class IklanPerusahaanController extends Controller
 {
@@ -12,8 +15,8 @@ class IklanPerusahaanController extends Controller
         $validator = Validator::make($req->all(), [
             'id_perusahaan' => 'required',
             'posisi_pekerjaan' => 'required|string',
-            'gaji_min' =>'required|string',
-            'gaji_max' =>'required|string',
+            'gaji_min' =>'required|integer',
+            'gaji_max' =>'required|integer',
             'provinsi'=>'required|string',
             'kota'=>'required|string',
             'bidang_pekerjaan'=>'required|string',
@@ -21,13 +24,35 @@ class IklanPerusahaanController extends Controller
             'pengalaman_kerja'=>'required|string',
             'persyaratan'=>'required|string',
             'benefit_perusahaan'=>'required|string',
-            'url_header'=>'required|string'
+            'file_foto_header'=>'nullable|image:jpeg,png,jpg,gif,svg|max:2048'
+
         ]
     );
 
     if($validator->fails()){
         return response()->json($validator->errors()->toJson(), 400);
     }
+
+    //upload image
+    $file = $req->file('file_foto_header');
+    $url='';
+    if($file){
+
+        if(!File::isDirectory(storage_path('app/public/perusahaan/header'))){
+            //create folder 
+            File::makeDirectory(storage_path('app/public/perusahaan/header'));
+        }
+
+        $fileName = Carbon::now()->timestamp.'_'.uniqid().'.'.$file->getClientOriginalExtension();
+        $canvas = Image::canvas(250, 130);
+        $resizeImage  = Image::make($file)->resize('250', '130', function($constraint) {
+            $constraint->aspectRatio();
+        });
+        $canvas->insert($resizeImage, 'center');
+        $canvas->save(storage_path('app/public/perusahaan/header') . '/' . $fileName);
+        $url = url('/storage/perusahaan/header/'.$fileName);
+    }
+
     $input = new Iklan_Perusahaan;
     $input->id_perusahaan = $req->id_perusahaan;
     $input->posisi_pekerjaan = $req->posisi_pekerjaan;
@@ -40,7 +65,7 @@ class IklanPerusahaanController extends Controller
     $input->pengalaman_kerja = $req->pengalaman_kerja;
     $input->persyaratan = $req->persyaratan;
     $input->benefit_perusahaan = $req->benefit_perusahaan;
-    $input->url_header = $req->url_header;
+    $input->url_header = $url;
 
     $input->save();
 
