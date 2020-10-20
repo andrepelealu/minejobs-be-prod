@@ -72,7 +72,7 @@ Route::post('perusahaan/logout', 'UserPerusahaanController@logout');//checked
 	/* DATA PRIBADI */
 
 
-Route::post('data-pribadi/'		,'DataPribadiController@PostDataPribadi');//checked
+Route::post('data-pribadi/post'		,'DataPribadiController@PostDataPribadi');//checked
 Route::get('data-pribadi'		,'DataPribadiController@GetDataPribadi');//checked
 Route::get('data-pribadi/{id}'	,'DataPribadiController@GetDataPribadiById');//checked
 Route::put('data-pribadi/{id}'	,'DataPribadiController@UpdateDataPribadi');//checked

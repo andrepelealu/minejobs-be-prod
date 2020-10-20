@@ -131,7 +131,7 @@
 									"bearer": [
 										{
 											"key": "token",
-											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9rYW5kaWRhdFwvbG9naW4iLCJpYXQiOjE2MDI1OTc1NTksImV4cCI6MTYwMjYwMTE1OSwibmJmIjoxNjAyNTk3NTU5LCJqdGkiOiJ4a1R5VUlrd2hIeW0xS0xoIiwic3ViIjoxLCJwcnYiOiJkOGRmMTk4MTI3N2JmOTU2OGM3ZGQzZmUxYzc1MzA0ODY4NTZhMTQ2In0.Bbfu0qmbWyN82WroF5czbn7pwlv1TVRomO7CT2f_SEs",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9rYW5kaWRhdFwvbG9naW4iLCJpYXQiOjE2MDMwODA1MTYsImV4cCI6MTYwMzA4NDExNiwibmJmIjoxNjAzMDgwNTE2LCJqdGkiOiJIRnV1R2hkVjNSclZ0SnRJIiwic3ViIjoxLCJwcnYiOiJkOGRmMTk4MTI3N2JmOTU2OGM3ZGQzZmUxYzc1MzA0ODY4NTZhMTQ2In0.Ja4lj0mFtwcF1cPSNLH-C2V_Cjq3spxv9ebOAf83azk",
 											"type": "string"
 										}
 									]
@@ -139,49 +139,8 @@
 								"method": "POST",
 								"header": [],
 								"body": {
-									"mode": "formdata",
-									"formdata": [
-										{
-											"key": "image",
-											"type": "file",
-											"src": "/C:/Users/AndrePelealu/Downloads/WhatsApp Image 2020-09-29 at 06.20.01.jpeg"
-										},
-										{
-											"key": "id_kandidat",
-											"value": "1",
-											"type": "text"
-										},
-										{
-											"key": "nama_depan",
-											"value": "Andre",
-											"type": "text"
-										},
-										{
-											"key": "nomor_telepon",
-											"value": "082234007743",
-											"type": "text"
-										},
-										{
-											"key": "provinsi",
-											"value": "Jawa Tengah",
-											"type": "text"
-										},
-										{
-											"key": "kota",
-											"value": "Semarang",
-											"type": "text"
-										},
-										{
-											"key": "tentang",
-											"value": "testing",
-											"type": "text"
-										},
-										{
-											"key": "nama belakang",
-											"value": "Pelealu",
-											"type": "text"
-										}
-									],
+									"mode": "raw",
+									"raw": "{\r\n    \"id_kandidat\":\"1\",\r\n    \"nama_depan\":\"andre\",\r\n    \"nama_belakang\":\"di edit\",\r\n    \"nomor_telepon\": \"08223007743\",\r\n    \"provinsi\": \"jawa tengah\",\r\n    \"kota\" : \"semarang\",\r\n    \"tentang\" : \"tentang di edit\",\r\n    \"foto_profile\": \"\"\r\n\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
