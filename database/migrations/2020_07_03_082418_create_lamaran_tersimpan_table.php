@@ -17,7 +17,8 @@ class CreateLamaranTersimpanTable extends Migration {
 			$table->integer('id', true);
 			$table->integer('id_iklan')->index('lamaran_tersimpan_fk0');
 			$table->integer('id_kandidat')->index('lamaran_tersimpan_fk1');
-
+			$table->timestamps();
+			$table->softDeletes();
 		});
 	}
 

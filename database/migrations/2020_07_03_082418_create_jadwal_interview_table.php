@@ -18,6 +18,8 @@ class CreateJadwalInterviewTable extends Migration {
 			$table->integer('id_undangan_interview')->index('jadwal_interview_fk0');
 			$table->integer('id_kandidat')->index('jadwal_interview_fk1');
 			$table->integer('id_perusahaan')->index('jadwal_interview_fk2');
+			$table->timestamps();
+			$table->softDeletes();
 		});
 	}
 

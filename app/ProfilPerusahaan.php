@@ -3,11 +3,13 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class ProfilPerusahaan extends Model
 {
+    use SoftDeletes;
     protected $table = 'profile_perusahaan';
-    public $timestamps = false;
+    public $timestamps = true;
     protected $fillable = [
     'id_perusahaan',
     'nama_perusahaan',

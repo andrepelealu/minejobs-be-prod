@@ -18,6 +18,8 @@ class CreateLamaranTerkirimTable extends Migration {
 			$table->integer('id_kandidat')->index('lamaran_terkirim_fk0');
 			$table->integer('id_iklan')->index('lamaran_terkirim_fk1');
 			$table->date('tanggal_kirim');
+			$table->timestamps();
+			$table->softDeletes();
 		});
 	}
 

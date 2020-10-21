@@ -26,6 +26,8 @@ class CreateProfilePerusahaanTable extends Migration {
 			$table->string('no_telp_perusahaan');
 			$table->string('no_npwp_perusahaan')->nullable();
 			$table->string('url_npwp_perusahaan')->nullable();
+			$table->timestamps();
+			$table->softDeletes();
 		});
 	}
 

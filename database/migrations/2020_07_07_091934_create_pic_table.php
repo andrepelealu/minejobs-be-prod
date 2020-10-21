@@ -20,7 +20,8 @@ class CreatePicTable extends Migration
 			$table->string('no_telp_pic');
             $table->string('url_ktp_pic')->nullable();
             $table->string('url_foto_profile')->nullable();
-
+			$table->timestamps();
+			$table->softDeletes();
         });
     }
 

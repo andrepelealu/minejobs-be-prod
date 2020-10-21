@@ -17,6 +17,8 @@ class CreateUploadCvTable extends Migration {
 			$table->integer('id', true);
 			$table->integer('id_kandidat')->index('upload_cv_fk0');
 			$table->string('url_cv');
+			$table->timestamps();
+			$table->softDeletes();
 		});
 	}
 

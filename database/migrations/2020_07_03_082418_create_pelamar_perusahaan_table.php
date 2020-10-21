@@ -19,8 +19,9 @@ class CreatePelamarPerusahaanTable extends Migration {
 			$table->integer('id_iklan')->index('pelamar_perusahaan_fk1');
 			$table->integer('id_perusahaan')->index('pelamar_perusahaan_fk2');
 			$table->string('status_lamaran')->default("belum diproses");
-
 			$table->date('tanggal_lamaran');
+			$table->timestamps();
+			$table->softDeletes();
 		});
 	}
 

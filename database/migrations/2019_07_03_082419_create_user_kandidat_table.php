@@ -24,6 +24,7 @@ class CreateUserKandidatTable extends Migration {
 
 			$table->boolean('status_akun')->default(0);
 			$table->timestamps();
+			$table->softDeletes();
 		});
 	}
 

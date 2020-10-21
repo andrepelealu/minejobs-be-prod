@@ -3,13 +3,13 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class DataPribadiModel extends Model
 {
-    //
-    // protected $table = 'my_table_name';
+    use SoftDeletes;
     protected $table = 'data_pribadi';
-    public $timestamps = false;
+    public $timestamps = true;
     protected $fillable = [
     'id_kandidat',
     'nama_depan',

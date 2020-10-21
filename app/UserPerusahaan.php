@@ -7,10 +7,12 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Tymon\JWTAuth\Contracts\JWTSubject;
 use App\Notifications\PasswordNotificationPerusahaan;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class UserPerusahaan extends Authenticatable implements JWTSubject
 {
     use Notifiable;
+    use SoftDeletes;
 
     /**
      * The attributes that are mass assignable.
@@ -18,7 +20,7 @@ class UserPerusahaan extends Authenticatable implements JWTSubject
      * @var array
      */
     protected $table = 'user_perusahaan';
-    public $timestamps = false;
+    public $timestamps = true;
 
     protected $fillable = [
         'socialite_id','socialite_provider','email', 'password','status_akun'

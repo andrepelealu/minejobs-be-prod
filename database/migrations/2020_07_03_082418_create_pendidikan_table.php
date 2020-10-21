@@ -21,6 +21,8 @@ class CreatePendidikanTable extends Migration {
 			$table->string('tahun_mulai');
 			$table->string('tahun_selesai');
 			$table->string('nama_instansi');
+			$table->timestamps();
+			$table->softDeletes();
 		});
 	}
 

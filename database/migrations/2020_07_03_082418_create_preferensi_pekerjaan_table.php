@@ -20,6 +20,8 @@ class CreatePreferensiPekerjaanTable extends Migration {
 			$table->string('provinsi');
 			$table->string('kota');
 			$table->string('bidang_pekerjaan');
+			$table->timestamps();
+			$table->softDeletes();
 		});
 	}
 

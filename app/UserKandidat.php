@@ -7,10 +7,14 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Tymon\JWTAuth\Contracts\JWTSubject;
 use App\Notifications\PasswordNotificationKandidat;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class UserKandidat extends Authenticatable implements JWTSubject
 {
     use Notifiable;
+    use SoftDeletes;
+    public $timestamps = true;
+
 
     /**
      * The attributes that are mass assignable.

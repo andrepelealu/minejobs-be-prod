@@ -19,6 +19,8 @@ class CreateBahasaTable extends Migration {
 			$table->string('bahasa_dikuasai');
 			$table->string('kemampuan_verbal');
 			$table->string('kemampuan_tulisan');
+			$table->timestamps();
+			$table->softDeletes();
 		});
 	}
 

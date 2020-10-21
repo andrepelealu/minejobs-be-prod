@@ -23,6 +23,8 @@ class CreateDataPribadiTable extends Migration {
 			$table->string('kota');
 			$table->string('tentang');
 			$table->string('foto_profile');
+			$table->timestamps();
+			$table->softDeletes();
 		});
 	}
 

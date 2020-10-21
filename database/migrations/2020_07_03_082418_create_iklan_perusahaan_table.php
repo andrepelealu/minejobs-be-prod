@@ -28,6 +28,8 @@ class CreateIklanPerusahaanTable extends Migration {
 			$table->string('benefit_perusahaan');
 			$table->string('url_header');
 			$table->integer('status_iklan')->default(0);
+			$table->timestamps();
+			$table->softDeletes();
 		});
 	}
 

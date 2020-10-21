@@ -18,7 +18,8 @@ class CreateUserAdminVerificationTable extends Migration
             $table->integer('id_kandidat');
             $table->string('email');
             $table->string('token');
-
+			$table->timestamps();
+			$table->softDeletes();
         });
     }
 

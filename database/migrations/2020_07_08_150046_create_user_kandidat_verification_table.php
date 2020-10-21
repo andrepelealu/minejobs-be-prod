@@ -17,7 +17,8 @@ class CreateUserKandidatVerificationTable extends Migration
             $table->integer('id',true);
             $table->integer('id_kandidat')->index('user_kandidat_verification_fk0');
             $table->string('token');
-
+			$table->timestamps();
+			$table->softDeletes();
         });
     }
 

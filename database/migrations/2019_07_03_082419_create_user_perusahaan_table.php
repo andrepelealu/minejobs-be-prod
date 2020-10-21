@@ -22,7 +22,9 @@ class CreateUserPerusahaanTable extends Migration {
 			$table->string('remember_token')->nullable();
 
 			$table->boolean('status_akun')->default(0);
-			
+			$table->timestamps();
+			$table->softDeletes();
+
 		});
 	}
 

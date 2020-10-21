@@ -17,7 +17,8 @@ class CreateUserPerusahaanVerificationTable extends Migration
             $table->integer('id',true);
             $table->integer('id_kandidat')->index('user_perusahaan_verification_fk0');
             $table->string('token');
-
+			$table->timestamps();
+			$table->softDeletes();
         });
     }
 

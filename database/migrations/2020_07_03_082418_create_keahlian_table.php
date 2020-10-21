@@ -18,6 +18,8 @@ class CreateKeahlianTable extends Migration {
 			$table->integer('id_kandidat')->index('keahlian_fk0');
 			$table->string('nama_keahlian');
 			$table->string('tingkatan');
+			$table->timestamps();
+			$table->softDeletes();
 		});
 	}
 

@@ -26,6 +26,8 @@ class CreateUndanganInterviewTable extends Migration {
 			$table->string('waktu_selesai');
 			$table->string('url_concall')->nullable();
 			$table->string('status');
+			$table->timestamps();
+			$table->softDeletes();
 		});
 	}
 

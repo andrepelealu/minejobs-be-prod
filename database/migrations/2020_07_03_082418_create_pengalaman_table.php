@@ -25,6 +25,8 @@ class CreatePengalamanTable extends Migration {
 			$table->string('jabatan');
 			$table->integer('gaji');
 			$table->string('deskripsi_pekerjaan');
+			$table->timestamps();
+			$table->softDeletes();
 		});
 	}
 

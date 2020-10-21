@@ -3,12 +3,13 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class UndanganInterview extends Model
 {
-    //
+    use SoftDeletes;
     protected $table = 'undangan_interview';
-    public $timestamps = false;
+    public $timestamps = true;
     protected $fillable = [
     'id_kandidat',
     'id_perusahaan',
