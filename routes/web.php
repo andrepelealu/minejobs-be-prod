@@ -38,3 +38,6 @@ Route::get('/run-migrations', function () {
 Route::get('/run-seed', function () {
     return Artisan::call('db:seed');
 });
+Route::get('/link', function () {
+    File::link(storage_path('app/public'), public_path('storage'));
+});
