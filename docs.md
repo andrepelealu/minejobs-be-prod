@@ -271,7 +271,7 @@ Note: token yg digunakan yg berada diluar object user
 # Data Pengalaman
 ## Create 
 
-Routes : {{url}}/api/data-pribadi/post
+Routes : {{url}}/api/pengalaman
 
 Method : POST
 
@@ -279,13 +279,16 @@ Body :
 |field|type|optional|
 |-|-|-|
 |id_kandidat|int|x|
-|nama_depan|string|x|
-|nama_belakang|string|x|
-|nomor_telepon|string|x|
-|provinsi|string|x|
-|kota|string|x|
-|tentang|string|x|
-|image|file|v|
+|posisi_pekerjaan|string|x|
+|nama_perusahaan|string|x|
+|bulan_mulai|string|x|
+|bulan_selesai|string|x|
+|tahun_mulai|string|x|
+|tahun_selesai|string|x|
+|jabatan|string|x|
+|gaji|string|x|
+|deskripsi_pekerjaan|string|x|
+
 
 
 Response : 
@@ -294,23 +297,25 @@ Response :
     "message": "berhasil post",
     "data": {
         "id_kandidat": "1",
-        "nama_depan": "test",
-        "nama_belakang": "test",
-        "nomor_telepon": "3242",
-        "provinsi": "saf",
-        "kota": "asf",
-        "tentang": "adf",
-        "foto_profile": "http://api.minejobs.id/storage/user/1603608672_5f9520606d4db.jpeg",
-        "updated_at": "2020-10-25 06:51:12",
-        "created_at": "2020-10-25 06:51:12",
-        "id": 3
+        "posisi_pekerjaan": "posisi 1",
+        "nama_perusahaan": "test cobaa",
+        "bulan_mulai": "januari",
+        "bulan_selesai": "februari",
+        "tahun_mulai": "2019",
+        "tahun_selesai": "2020",
+        "jabatan": "test jabatan",
+        "gaji": "124214",
+        "deskripsi_pekerjaan": "ini deskripsi",
+        "updated_at": "2020-10-25 16:53:12",
+        "created_at": "2020-10-25 16:53:12",
+        "id": 1
     }
 }
 ```
-note : id_kandidat bersifat uniq , data pribadi tidak bisa dihapus (kecuali admin) hanya bisa update 
+note : 
 
 ## Get
-Routes : {{url}}/api/data-pribadi/{id}
+Routes : {{url}}/api/pengalaman/{id}
 
 Method : GET
 
@@ -327,26 +332,28 @@ Response :
         "current_page": 1,
         "data": [
             {
-                "id": 3,
+                "id": 1,
                 "id_kandidat": 1,
-                "nama_depan": "test",
-                "nama_belakang": "test",
-                "nomor_telepon": "3242",
-                "provinsi": "saf",
-                "kota": "asf",
-                "tentang": "adf",
-                "foto_profile": "http://api.minejobs.id/storage/user/1603608672_5f9520606d4db.jpeg",
-                "created_at": "2020-10-25 06:51:12",
-                "updated_at": "2020-10-25 06:51:12",
+                "posisi_pekerjaan": "posisi 1",
+                "nama_perusahaan": "test cobaa",
+                "bulan_mulai": "januari",
+                "bulan_selesai": "februari",
+                "tahun_mulai": "2019",
+                "tahun_selesai": "2020",
+                "jabatan": "test jabatan",
+                "gaji": 124214,
+                "deskripsi_pekerjaan": "ini deskripsi",
+                "created_at": "2020-10-25 16:53:12",
+                "updated_at": "2020-10-25 16:53:12",
                 "deleted_at": null
             }
         ],
-        "first_page_url": "http://api.minejobs.id/api/data-pribadi/1?page=1",
+        "first_page_url": "http://api.minejobs.id/api/pengalaman/1?page=1",
         "from": 1,
         "last_page": 1,
-        "last_page_url": "http://api.minejobs.id/api/data-pribadi/1?page=1",
+        "last_page_url": "http://api.minejobs.id/api/pengalaman/1?page=1",
         "next_page_url": null,
-        "path": "http://api.minejobs.id/api/data-pribadi/1",
+        "path": "http://api.minejobs.id/api/pengalaman/1",
         "per_page": 10,
         "prev_page_url": null,
         "to": 1,
@@ -356,7 +363,7 @@ Response :
 ```
 Notes : id yang digunakan id kandidat
 ## Edit
-Routes : {{url}}/api/data-pribadi/{ID}
+Routes : {{url}}/api/pengalaman/1
 
 Method : PUT
 
@@ -364,30 +371,35 @@ Body :
 |field|type|optional|
 |-|-|-|
 |id_kandidat|int|x|
-|nama_depan|string|x|
-|nama_belakang|string|x|
-|nomor_telepon|string|x|
-|provinsi|string|x|
-|kota|string|x|
-|tentang|string|x|
-|image|file|v|
+|posisi_pekerjaan|string|x|
+|nama_perusahaan|string|x|
+|bulan_mulai|string|x|
+|bulan_selesai|string|x|
+|tahun_mulai|string|x|
+|tahun_selesai|string|x|
+|jabatan|string|x|
+|gaji|string|x|
+|deskripsi_pekerjaan|string|x|
 
 Response : 
 ```
 {
-    "message": "berhasil post",
+    "message": "Berhasil Update",
     "data": {
-        "id_kandidat": "1",
-        "nama_depan": "test",
-        "nama_belakang": "test",
-        "nomor_telepon": "3242",
-        "provinsi": "saf",
-        "kota": "asf",
-        "tentang": "adf",
-        "foto_profile": "http://api.minejobs.id/storage/user/1603608672_5f9520606d4db.jpeg",
-        "updated_at": "2020-10-25 06:51:12",
-        "created_at": "2020-10-25 06:51:12",
-        "id": 3
+        "id": 1,
+        "id_kandidat": 1,
+        "posisi_pekerjaan": "posisi 1",
+        "nama_perusahaan": "test cobaa",
+        "bulan_mulai": "januari",
+        "bulan_selesai": "2020",
+        "tahun_mulai": "2019",
+        "tahun_selesai": "2020",
+        "jabatan": "test jabatan",
+        "gaji": "124214",
+        "deskripsi_pekerjaan": "ini di edit",
+        "created_at": "2020-10-25 16:53:12",
+        "updated_at": "2020-10-25 16:55:05",
+        "deleted_at": null
     }
 }
 ```
