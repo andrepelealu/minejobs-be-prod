@@ -66,11 +66,23 @@ class UploadCvController extends Controller
     }
     public function UpdateCv(Request $req, $id)
     {
-        $data = UploadCv::find($id,'id_kandidat')->first();
-        // $data->id_kandidat = $req->id_kandidat;
+        $data = UploadCv::find($id,'id')->first();
         $data->id_kandidat = $req->id_kandidat;
-        $data->url_cv = $req->url_cv;
-        if(count($data)>0){
+        $file = $req->file('file_cv');
+        $url='';
+        if($file){
+
+        if(!File::isDirectory(storage_path('app/public/user/cv'))){
+            //create folder 
+            File::makeDirectory(storage_path('app/public/user/cv'));
+        }
+
+        $fileName = Carbon::now()->timestamp.'_'.uniqid().'.'.$file->getClientOriginalExtension();
+        $file->move(storage_path('app/public/user/cv'),$fileName);
+        $data->url_cv = $req->url('/storage/user/cv/'.$fileName);
+
+    }
+        if($data){
             if($data->save()){
                 $res['message'] = 'Berhasil Update';
                 $res['data'] = $data;
@@ -81,7 +93,7 @@ class UploadCvController extends Controller
                 return $res;
             }
         }else{
-            $res['count'] = count($data);
+            
             $res['message'] = 'data tidak ditemukan';
             return $res;
         }

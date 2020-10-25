@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Pelamar_Perusahaan;
 use App\UserKandidat;
@@ -49,6 +49,22 @@ class PelamarPerusahaanController extends Controller
         }
 
     }
+    
+    public function GetLamaranByKandidatId($id){
+        $data = Pelamar_Perusahaan::where('id_kandidat',$id)->paginate(10);
+        if(count($data)>0){
+            $res['count'] = count($data);
+            $res['message'] = 'data ditemukan';
+            $res['data'] = $data;
+            return $res;
+        }else{
+            $res['count'] = count($data);
+            $res['message'] = 'data tidak ditemukan';
+            return $res;
+        }
+
+    }
+    
     public function GetPelamarPerusahaan(){
         $data = Pelamar_Perusahaan::all()->paginate(10);
         if(count($data)>0){
@@ -64,15 +80,14 @@ class PelamarPerusahaanController extends Controller
 
     }
     public function UpdateStatusPelamar(Request $req , $id){
+        
+        $update = Pelamar_Perusahaan::where('id_kandidat', $id)
+          ->update(['status_lamaran' => 'menunggu wawancara']);
+        
 
-        $check = Pelamar_Perusahaan::find($id,'id');
-        // $data->id_perusahaan = $req->id_perusahaan;
-        // $data->id_iklan = $req->id_iklan;
-        // $data->tanggal_lamaran = $req->tanggal_lamaran;            
-        if($check){
-            $data = Pelamar_Perusahaan::find($id,'id')->first();
-            $data->status_lamaran = $req->status_lamaran;
-            if($data->save()){
+     
+            if($update){
+                $data = Pelamar_Perusahaan::where('id_kandidat',$id)->get();
                 $res['message'] = 'Berhasil Update';
                 $res['data'] = $data;
                 return $res;
@@ -81,11 +96,7 @@ class PelamarPerusahaanController extends Controller
                 $res['data'] = $data;
                 return $res;
             }
-        }else{
-            
-            $res['message'] = 'data tidak ditemukan';
-            return $res;
-        }
+        
 
     }
     public function DeletePelamarPerusahaan($id){

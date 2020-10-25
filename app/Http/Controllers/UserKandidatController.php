@@ -32,7 +32,6 @@ class UserKandidatController extends Controller
 
     public function logout(Request $request){
         config()->set( 'auth.defaults.guard', 'kandidat' );
-
         try{
             $this->validate($request,['token'=> 'required']);
             JWTAuth::invalidate($request->input('token'));
@@ -198,9 +197,18 @@ class UserKandidatController extends Controller
         return $res;
     }
 
-    public function redirectToProvider($provider)
+    public function redirectToProvider()
     {
-        return Socialite::driver($provider)->redirect();
+         $config = [
+            'client_id'     => env('GOOGLE_ID'),
+            'client_secret' => env('GOOGLE_SECRET'),
+            'redirect'      => env('GOOGLE_URL_KANDIDAT'), 
+        ];
+        
+        $provider = Socialite::buildProvider(\Laravel\Socialite\Two\GoogleProvider::class, $config);
+            
+        return $provider->redirect();
+        // return Socialite::driver($provider)->redirect();
     }
 
     /**
@@ -213,29 +221,36 @@ class UserKandidatController extends Controller
      */
     public function handleProviderCallback($provider)
     {
-        config()->set( 'auth.defaults.guard', 'perusahaan' );
-        $user = Socialite::driver($provider)->stateless()->user();
+
+        config()->set( 'auth.defaults.guard', 'kandidat' );
+        $config = [
+            'client_id'     => env('GOOGLE_ID'),
+            'client_secret' => env('GOOGLE_SECRET'),
+            'redirect'      => env('GOOGLE_URL_KANDIDAT'), 
+        ];
+        
+        $buildProvider = Socialite::buildProvider(\Laravel\Socialite\Two\GoogleProvider::class, $config);
+            
+            
+        $user = $buildProvider->stateless()->user();
         $email = $user->email;
-        $authUser = $this->findOrCreateUser($user, $provider);
-        Auth::login($authUser, true);
+        $authUser = $this->findOrCreateUser($user, 'google');
+        // Auth::login($authUser, true);
         // $token = JWTAuth::fromUser($user);
-        $dummyuser = array(
-            'email'=>$user->email,
-            'remember_token'=>$user->token
-        );
+
         $token = JWTAuth::fromUser($authUser);
-        $res['token'] = $token.rand(0, 9);
-        $res['real_token'] = substr($res['token'], 0, -1);
+        $res['status'] = 200;
+        $res['messages'] = 'success';
+        $res['token'] = $token;
+        // $res['real_token'] = substr($res['token'], 0, -1);
         $res['user'] = $user;
         return response()->json($res);
 
         // return redirect('/');
     }
 
-
     public function findOrCreateUser($user, $provider)
     {
-        config()->set( 'auth.defaults.guard', 'perusahaan' );
         $authUser = UserKandidat::where('email', $user->email)->first();
         if ($authUser) {
             return $authUser;

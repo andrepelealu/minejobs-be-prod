@@ -142,15 +142,15 @@ class UndanganInterviewController extends Controller
     {
         $data = UndanganInterview::find($id,'id')->first();
         // $data->id_perusahaan = $req->id_perusahaan;
-        $data->status_iklan = $req->status;
-            if(count($data)>0){
+        $data->status = $req->status;
+            if($data){
             if($req->status === 'diterima'){
                 $data->save();
                 //insert into jadwal interview
                 $res['message'] = 'Undangan diterima';
                 $res['data'] = $data;
                 return $res;
-            }else if($req->status === 'atur ulang'){
+            }else if($req->status === 'atur_ulang'){
                 //insert into atur ulang interview
                 $data->save();
                 $res['message'] = 'Permintaan Atur Ulang';

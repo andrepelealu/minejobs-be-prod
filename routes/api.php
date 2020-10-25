@@ -22,8 +22,10 @@ use Illuminate\Http\Request;
 Route::group(['middleware' => ['web']], function () {
 	Route::get('kandidat/auth/{provider}', 'UserKandidatController@redirectToProvider');
 	Route::get('perusahaan/auth/{provider}', 'UserPerusahaanController@redirectToProvider');
-	Route::get('auth/{provider}/{user}', 'UserPerusahaanController@handleProviderCallback');
-	// Route::get('auth/{provider}/callback', 'UserPerusahaanController@handleProviderCallback');
+// 	Route::get('auth/{provider}/{user}', 'UserPerusahaanController@handleProviderCallback');
+	Route::get('auth/{provider}/callback/perusahaan', 'UserPerusahaanController@handleProviderCallback');
+	
+	Route::get('auth/{provider}/callback/kandidat', 'UserKandidatController@handleProviderCallback');
 
 });
 
@@ -66,9 +68,9 @@ Route::post('admin/reset', 'ResetPasswordAdminController@reset');//checked
 // });
 Route::middleware(['jwt.verify'])->group(function () {
 
-Route::post('kandidat/logout', 'UserKandidatController@logout'); //checked
-Route::post('admin/logout', 'UserAdminController@logout');//checked
-Route::post('perusahaan/logout', 'UserPerusahaanController@logout');//checked
+Route::get('kandidat/logout', 'UserKandidatController@logout'); //checked
+Route::get('admin/logout', 'UserAdminController@logout');//checked
+Route::get('perusahaan/logout', 'UserPerusahaanController@logout');//checked
 	/* DATA PRIBADI */
 
 
@@ -131,7 +133,7 @@ Route::delete('uploadcv/{id}'	,'UploadCvController@DeleteCv');
 Route::get('lamaran-tersimpan/{id}','LamaranTersimpanController@GetLamaranTersimpan');//checked
 
 // Route::get('lamaran-tersimpan','LamaranTersimpanController@GetLamaranTersimpan')->middleware('jwt.verify:kandidat');
-Route::post('lamaran-tersimpan','LamaranTersimpanController@PostLamaranTersimpan');//checked
+Route::post('lamaran-tersimpan/post','LamaranTersimpanController@PostLamaranTersimpan');//checked
 
 /*END*/
 
@@ -166,7 +168,8 @@ Route::get('filter-gaji/{gaji}','IklanPerusahaanController@GetIklanPerusahaanByG
 // Route::get('filter-kota/{kota}','IklanPerusahaanController@GetIklanPerusahaanByKota');
 Route::post('filter-lokasi','IklanPerusahaanController@GetIklanPerusahaanByLokasi');//checked
 Route::get('filter-bidang/{bidang}','IklanPerusahaanController@GetIklanPerusahaanByBidang');//checked
-Route::post('cari-iklan','IklanPerusahaanController@CariIklanPerusahaan');//checked
+Route::get('cari-iklan','IklanPerusahaanController@CariIklanPerusahaan');//checked
+Route::get('get-iklan','IklanPerusahaanController@GetAllIklan');//checked
 
 
 
@@ -182,14 +185,16 @@ Route::get('undangan-interview-kandidat/{id}','UndanganInterviewController@GetUn
 Route::get('undangan-interview-byiklan/{id}','UndanganInterviewController@GetUndanganInterviewByIdIklan');//checked
 Route::get('undangan-interview-perusahaan-sortdate/{id}','JadwalInterviewController@OrderByDate');//checked
 
+Route::put('undangan-interview/update-status/{id}','UndanganInterviewController@UpdateStatusInterview');//checked
 
 /* KIRIM UNDANGAN */
 Route::post('kirim/undangan','UndanganInterviewController@PostUndanganInterview');//checked
 /*END*/
 /*END*/
 Route::post('pelamar-perusahaan','PelamarPerusahaanController@PostPelamarPerusahaan');//checked
-Route::get('pelamar-perusahaan/{id}','PelamarPerusahaanController@GetPelamarPerusahaan');//checked
-Route::patch('pelamar-perusahaan/{id}','PelamarPerusahaanController@UpdateStatusPelamar');//ok
+Route::get('pelamar-perusahaan/{id}','PelamarPerusahaanController@GetPelamarPerusahaanById');//checked
+Route::get('pelamar-kandidat/{id}','PelamarPerusahaanController@GetLamaranByKandidatId');//checked
+Route::put('pelamar-kandidat/confirm/{id}','PelamarPerusahaanController@UpdateStatusPelamar');//ok
 Route::delete('pelamar-perusahaan/{id}','PelamarPerusahaanController@DeletePelamarPerusahaan');//ok
 
 /*DATA PIC PERUSAHAAN*/

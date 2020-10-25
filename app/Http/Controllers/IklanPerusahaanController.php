@@ -66,6 +66,7 @@ class IklanPerusahaanController extends Controller
     $input->persyaratan = $req->persyaratan;
     $input->benefit_perusahaan = $req->benefit_perusahaan;
     $input->url_header = $url;
+    $input->status_iklan = 1;
 
     $input->save();
 
@@ -75,7 +76,7 @@ class IklanPerusahaanController extends Controller
     }
     
     public function GetIklanPerusahaanById($id){
-        $data = IklanPerusahaanModel::where('id_perusahaan',$id)
+        $data = Iklan_Perusahaan::where('id_perusahaan',$id)
         ->join('iklan_perusahaan.id_perusahaan','=','profile_perusahaan.id_perusahaan')
         ->paginate(10);
         if(count($data)>0){
@@ -91,7 +92,7 @@ class IklanPerusahaanController extends Controller
     }
 
     public function  DeleteIklanPerusahaan($id){
-        $data = IklanPerusahaanModel::find($id,'id_perusahaan')->first();
+        $data = Iklan_Perusahaan::find($id,'id_perusahaan')->first();
         if($data){
             if($data->delete()){
                 $res['message'] = 'Berhasil Dihapus';
@@ -170,8 +171,11 @@ class IklanPerusahaanController extends Controller
             }
         }
         public function GetIklanPerusahaan($id){
-            $data = Iklan_Perusahaan::where('id_perusahaan',$id)
-            ->join('iklan_perusahaan.id_perusahaan','=','profile_perusahaan.id_perusahaan')
+            $data = DB::table('profile_perusahaan as a') 
+            ->join('iklan_perusahaan as b','a.id_perusahaan','=', 'b.id_perusahaan')
+            ->where('b.id_perusahaan',$id)
+            ->where('b.status_iklan','=',1)
+            ->orderBy('a.id', 'DESC')
             ->paginate(10);
             if(count($data)>0){
                 $res['count'] = count($data);
@@ -185,11 +189,32 @@ class IklanPerusahaanController extends Controller
             }
 
         }
+        public function GetAllIklan(Request $req){
+            // if($req->has('test')){
+            //     return $req->test;
+            // }
+            $data = DB::table('profile_perusahaan as a') 
+            ->join('iklan_perusahaan as b','b.id_perusahaan','=', 'a.id_perusahaan')
+            ->orderBy('b.created_at', 'DESC')
+            ->paginate(10);
+            if(count($data)>0){
+                $res['count'] = count($data);
+                $res['message'] = 'data ditemukan';
+                $res['data'] = $data;
+                return $res;
+            }else{
+                $res['count'] = count($data);
+                $res['message'] = 'data tidak ditemukan';
+                return $res;
+            }
+
+        }
+
         public function CariIklanPerusahaan (Request $req)
         {
             // menangkap data pencarian
-            $search             = $req->keyword;
-
+     
+            $search             = $req->q;
             $data= DB::table('iklan_perusahaan')
                     ->join('profile_perusahaan',function($join) use($search){
                         $join->on('iklan_perusahaan.id_perusahaan','=','profile_perusahaan.id_perusahaan')

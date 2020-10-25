@@ -209,9 +209,18 @@ class UserPerusahaanController extends Controller
         return $res;
     }
 
-    public function redirectToProvider($provider)
+    public function redirectToProvider()
     {
-        return Socialite::driver($provider)->redirect();
+        $config = [
+            'client_id'     => env('GOOGLE_ID'),
+            'client_secret' => env('GOOGLE_SECRET'),
+            'redirect'      => env('GOOGLE_URL_PERUSAHAAN'), 
+        ];
+        
+        $provider = Socialite::buildProvider(\Laravel\Socialite\Two\GoogleProvider::class, $config);
+            
+        return $provider->redirect();
+        // return Socialite::driver($provider)->redirect();
     }
 
     /**
@@ -222,11 +231,20 @@ class UserPerusahaanController extends Controller
      *
      * @return Response
      */
-    public function handleProviderCallback($provider,$role)
+    public function handleProviderCallback($provider)
     {
 
         config()->set( 'auth.defaults.guard', 'perusahaan' );
-        $user = Socialite::driver($provider)->stateless()->user();
+        $config = [
+            'client_id'     => env('GOOGLE_ID'),
+            'client_secret' => env('GOOGLE_SECRET'),
+            'redirect'      => env('GOOGLE_URL_PERUSAHAAN'), 
+        ];
+        
+        $buildProvider = Socialite::buildProvider(\Laravel\Socialite\Two\GoogleProvider::class, $config);
+            
+            
+        $user = $buildProvider->stateless()->user();
         $email = $user->email;
         $authUser = $this->findOrCreateUser($user, $provider);
         // Auth::login($authUser, true);

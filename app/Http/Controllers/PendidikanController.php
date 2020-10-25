@@ -67,7 +67,7 @@ class PendidikanController extends Controller
         $data->tahun_selesai        = $req->tahun_selesai;
         $data->nama_instansi        = $req->nama_instansi;
         $data->jenjang_pendidikan   = $req->jenjang_pendidikan;
-        if(count($data)>0){
+        if($data){
             if($data->save()){
                 $res['message'] = 'Berhasil Update';
                 $res['data'] = $data;

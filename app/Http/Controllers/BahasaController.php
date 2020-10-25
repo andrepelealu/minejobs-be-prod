@@ -52,14 +52,14 @@ class BahasaController extends Controller
 
     public function UpdateBahasa(Request $req, $id)
     {
-        $data = Bahasa::find($id,'id_kandidat')->first();
+        $data = Bahasa::find($id,'id')->first();
         // $data->id_kandidat = $req->id_kandidat;
         $data->id_kandidat         = $req->id_kandidat;
         $data->bahasa_dikuasai     = $req->bahasa_dikuasai;
         $data->kemampuan_verbal    = $req->kemampuan_verbal;
         $data->kemampuan_tulisan   = $req->kemampuan_tulisan;
 
-        if(count($data)>0){
+        if($data){
             if($data->save()){
                 $res['message'] = 'Berhasil Update';
                 $res['data'] = $data;
@@ -70,7 +70,7 @@ class BahasaController extends Controller
                 return $res;
             }
         }else{
-            $res['count'] = count($data);
+          
             $res['message'] = 'data tidak ditemukan';
             return $res;
         }

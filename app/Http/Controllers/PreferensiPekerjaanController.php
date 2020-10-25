@@ -57,14 +57,14 @@ class PreferensiPekerjaanController extends Controller
     }
     public function UpdatePreferensiPekerjaan(Request $req, $id)
     {
-        $data = PreferensiPekerjaan::find($id,'id_kandidat')->first();
+        $data = PreferensiPekerjaan::find($id,'id')->first();
         // $data->id_kandidat = $req->id_kandidat;
         $data->id_kandidat = $req->id_kandidat;
         $data->gaji_diharapkan = $req->gaji_diharapkan;
         $data->provinsi = $req->provinsi;
         $data->kota = $req->kota;
         $data->bidang_pekerjaan = $req->bidang_pekerjaan;
-        if(count($data)>0){
+        if($data){
             if($data->save()){
                 $res['message'] = 'Berhasil Update';
                 $res['data'] = $data;

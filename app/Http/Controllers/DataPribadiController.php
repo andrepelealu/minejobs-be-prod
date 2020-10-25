@@ -94,14 +94,13 @@ class DataPribadiController extends Controller
     }
     public function UpdateDataPribadi(Request $req , $id){
         $validator = Validator::make($req->all(), [
-            'id_kandidat' => 'required|unique:data_pribadi',
+            'id_kandidat' => 'required|',
             'nama_depan' => 'required|string',
             'nama_belakang' =>'required|string',
             'nomor_telepon' =>'required|string',
             'provinsi'=>'required|string',
             'kota'=>'required|string',
             'tentang'=>'required|string',
-            'foto_profile'=>'required|string',
             'image' => 'nullable|image:jpeg,png,jpg,gif,svg|max:2048'
 
         ]
@@ -110,23 +109,27 @@ class DataPribadiController extends Controller
         return response()->json($validator->errors()->toJson(), 400);
     }
         //upload image
-        $file = $request->file('image');
-        if($file){
-    
-            if(!File::isDirectory(storage_path('app/public/user'))){
-                //create folder 
-                File::makeDirectory(storage_path('app/public/user'));
-            }
-    
-            $fileName = Carbon::now()->timestamp.'_'.uniqid().'.'.$file->getClientOriginalExtension();
-            $canvas = Image::canvas($this->dimensions_user, $this->dimensions_user);
-            $resizeImage  = Image::make($file)->resize('300', '300', function($constraint) {
-                $constraint->aspectRatio();
-            });
-            $canvas->insert($resizeImage, 'center');
-            $canvas->save($this->user . '/' . $fileName);
-    
+
+    $file = $req->file('image');
+    $url = '';
+    if($file){
+
+        if(!File::isDirectory(storage_path('app/public/user'))){
+            //create folder 
+            File::makeDirectory(storage_path('app/public/user'));
         }
+
+        $fileName = Carbon::now()->timestamp.'_'.uniqid().'.'.$file->getClientOriginalExtension();
+        $canvas = Image::canvas(300, 300);
+        $resizeImage  = Image::make($file)->resize('300', '300', function($constraint) {
+            $constraint->aspectRatio();
+        });
+        $canvas->insert($resizeImage, 'center');
+        $canvas->save(storage_path('app/public/user') . '/' . $fileName);
+        $url = url('/storage/user/'.$fileName);
+        $data->foto_profile     = $url('/storage/user/'.$fileName);
+
+    }
 
         $data = DataPribadiModel::where('id_kandidat',$id)->first();
         // $data->id_kandidat = $req->id_kandidat;
@@ -136,7 +139,7 @@ class DataPribadiController extends Controller
         $data->provinsi         = $req->provinsi;
         $data->kota             = $req->kota;
         $data->tentang          = $req->tentang;
-        $data->foto_profile     = $req->url('/storage/user/'.$fileName);
+
         if($data){
             if($data->save()){
                 $res['message'] = 'Berhasil Update';

@@ -55,7 +55,7 @@ class KeahlianController extends Controller
         $data->id_kandidat = $req->id_kandidat;
         $data->nama_keahlian = $req->nama_keahlian;
         $data->tingkatan = $req->tingkatan;
-        if(count($data)>0){
+        if($data){
             if($data->save()){
                 $res['message'] = 'Berhasil Update';
                 $res['data'] = $data;
@@ -66,7 +66,7 @@ class KeahlianController extends Controller
                 return $res;
             }
         }else{
-            $res['count'] = count($data);
+         
             $res['message'] = 'data tidak ditemukan';
             return $res;
         }

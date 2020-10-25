@@ -32,6 +32,8 @@ class JadwalInterviewController extends Controller
         $data = UndanganInterview::where('id_kandidat',$id)
         ->join('iklan_perusahaan', 'iklan_perusahaan.id', '=', 'undangan_interview.id_iklan')
         ->join('profile_perusahaan', 'profile_perusahaan.id', '=', 'undangan_interview.id_perusahaan')
+        ->where('status','diterima')
+        // ->orderBy(id)
         ->paginate(10);
         if(count($data)>0){
             $res['count'] = count($data);

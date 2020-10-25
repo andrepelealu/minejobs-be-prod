@@ -11,7 +11,11 @@ class LamaranTersimpanController extends Controller
     //Route::post('lamaran-tersimpan','LamaranTersimpanController@PostLamaranTersimpan');
 
     public function GetLamaranTersimpan($id){
-        $data = LamaranTersimpan::where('id_kandidat',$id)->paginate(10);
+        $data = LamaranTersimpan::where('id_kandidat',$id)
+                ->join('iklan_perusahaan', 'iklan_perusahaan.id', '=', 'lamaran_tersimpan.id_iklan')
+                // ->join('profile_perusahaan', 'iklan_perusahaan.id_perusahaan', '=', 'iklan_perusahaan.id_iklan')
+                
+        ->paginate(10);
         if(count($data)>0){
             $res['count'] = count($data);
             $res['message'] = 'data ditemukan';
