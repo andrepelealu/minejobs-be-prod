@@ -1358,25 +1358,12 @@ notes : id params = id kandidat | status : diterima, atur_ulang
 
 -------
 
-# Detil Undangan 
+# Detil Undangan (Kandidat)
 
 ## Get
-Routes : 
+Routes : {{url}}/api/undangan-interview-kandidat/1
 
-Method : 
-
-Body :
-|field|type|optional|
-|-|-|-
-
-Response : 
-```
-```
-
-## Edit
-Routes : 
-
-Method : 
+Method : GET
 
 Body :
 |field|type|optional|
@@ -1384,33 +1371,64 @@ Body :
 
 Response : 
 ```
+{
+    "count": 1,
+    "message": "data ditemukan",
+    "data": {
+        "current_page": 1,
+        "data": [
+            {
+                "id": 4,
+                "id_kandidat": 1,
+                "id_perusahaan": 1,
+                "id_iklan": 4,
+                "pesan": "ketiga",
+                "lokasi_wawancara": null,
+                "tanggal_interview": "2019-10-12",
+                "metode_interview": "langsung",
+                "waktu_mulai": "10.00",
+                "waktu_selesai": "11.00",
+                "url_concall": "test",
+                "status": "menunggu konfirmasi",
+                "created_at": "2020-10-24 16:31:31",
+                "updated_at": "2020-10-24 16:31:31",
+                "deleted_at": null,
+                "posisi_pekerjaan": "test",
+                "gaji_min": 10,
+                "gaji_max": 10,
+                "provinsi": "asd",
+                "kota": "asd",
+                "bidang_pekerjaan": "asd",
+                "tingkat_pendidikan": "asd",
+                "pengalaman_kerja": "asd",
+                "persyaratan": "asd",
+                "benefit_perusahaan": "asd",
+                "url_header": "http://localhost:8000/storage/perusahaan/header/1603557091_5f9456e3acb5b.jpeg",
+                "status_iklan": 1
+            }
+        ],
+        "first_page_url": "http://localhost:8000/api/undangan-interview-kandidat/1?page=1",
+        "from": 1,
+        "last_page": 1,
+        "last_page_url": "http://localhost:8000/api/undangan-interview-kandidat/1?page=1",
+        "next_page_url": null,
+        "path": "http://localhost:8000/api/undangan-interview-kandidat/1",
+        "per_page": 10,
+        "prev_page_url": null,
+        "to": 1,
+        "total": 1
+    }
+}
 ```
-
-
-Notes on Detil Undangan : 
-```
-```
+notes : id params = id_kandidat
 
 -------
 
 # Lamar Pekerjaan
-## Create
-Routes : 
+## Get Kandidat Summary
+Routes : {{url}}/api/kandidat/getuser
 
-Method : 
-
-Body :
-|field|type|optional|
-|-|-|-
-
-Response : 
-```
-```
-
-## Get
-Routes : 
-
-Method : 
+Method : GET
 
 Body :
 |field|type|optional|
@@ -1418,12 +1436,31 @@ Body :
 
 Response : 
 ```
+{
+    "message": "data ditemukan",
+    "data": [
+        {
+            "id": 1,
+            "id_kandidat": 1,
+            "nama_depan": "test",
+            "nama_belakang": "test",
+            "nomor_telepon": "3242",
+            "provinsi": "saf",
+            "kota": "asf",
+            "tentang": "adf",
+            "foto_profile": "http://localhost:8000/storage/user/1603675403_5f96250b0d200.jpeg",
+            "created_at": "2020-10-26 01:23:24",
+            "updated_at": "2020-10-26 01:23:24",
+            "deleted_at": null
+        }
+    ]
+}
 ```
 
-## Edit
-Routes : 
+## Get Iklan Summary
+Routes : {{url}}/api/iklan-perusahaan/1
 
-Method : 
+Method : GET
 
 Body :
 |field|type|optional|
@@ -1431,46 +1468,67 @@ Body :
 
 Response : 
 ```
+{
+    "count": 1,
+    "message": "data ditemukan",
+    "data": {
+        "current_page": 1,
+        "data": [
+            {
+                "id": 4,
+                "id_perusahaan": 1,
+                "nama_perusahaan": "test",
+                "alamat_perusahaan": "test",
+                "tentang_perusahaan": "test",
+                "url_banner": null,
+                "foto_perusahaan": "",
+                "website_perusahaan": "test",
+                "jenis_industri": "test",
+                "no_telp_perusahaan": "test",
+                "no_npwp_perusahaan": "test",
+                "url_npwp_perusahaan": "http://localhost:8000/storage/perusahaan/npwp1603552641_5f944581aa08b.jpeg",
+                "created_at": "2020-10-24 16:31:31",
+                "updated_at": "2020-10-24 16:31:31",
+                "deleted_at": null,
+                "posisi_pekerjaan": "test",
+                "gaji_min": 10,
+                "gaji_max": 10,
+                "provinsi": "asd",
+                "kota": "asd",
+                "bidang_pekerjaan": "asd",
+                "tingkat_pendidikan": "asd",
+                "pengalaman_kerja": "asd",
+                "persyaratan": "asd",
+                "benefit_perusahaan": "asd",
+                "url_header": "http://localhost:8000/storage/perusahaan/header/1603557091_5f9456e3acb5b.jpeg",
+                "status_iklan": 1
+            }
+        ],
+        "first_page_url": "http://localhost:8000/api/iklan-perusahaan/1?page=1",
+        "from": 1,
+        "last_page": 1,
+        "last_page_url": "http://localhost:8000/api/iklan-perusahaan/1?page=1",
+        "next_page_url": null,
+        "path": "http://localhost:8000/api/iklan-perusahaan/1",
+        "per_page": 10,
+        "prev_page_url": null,
+        "to": 1,
+        "total": 1
+    }
+}
 ```
 
+Kirim lamaran menggunakan api # Kirim Lamaran 
 
-Notes on Lamar Pekerjaan : 
-```
-```
 
 -------
 
 # Job Details
-## Create
-Routes : 
-
-Method : 
-
-Body :
-|field|type|optional|
-|-|-|-
-
-Response : 
-```
-```
 
 ## Get
-Routes : 
+Routes : {{url}}/api/iklan-perusahaan/1
 
-Method : 
-
-Body :
-|field|type|optional|
-|-|-|-
-
-Response : 
-```
-```
-
-## Edit
-Routes : 
-
-Method : 
+Method : GET
 
 Body :
 |field|type|optional|
@@ -1478,46 +1536,63 @@ Body :
 
 Response : 
 ```
-```
-
-
-Notes on Job Details : 
-```
+{
+    "count": 1,
+    "message": "data ditemukan",
+    "data": {
+        "current_page": 1,
+        "data": [
+            {
+                "id": 4,
+                "id_perusahaan": 1,
+                "nama_perusahaan": "test",
+                "alamat_perusahaan": "test",
+                "tentang_perusahaan": "test",
+                "url_banner": null,
+                "foto_perusahaan": "",
+                "website_perusahaan": "test",
+                "jenis_industri": "test",
+                "no_telp_perusahaan": "test",
+                "no_npwp_perusahaan": "test",
+                "url_npwp_perusahaan": "http://localhost:8000/storage/perusahaan/npwp1603552641_5f944581aa08b.jpeg",
+                "created_at": "2020-10-24 16:31:31",
+                "updated_at": "2020-10-24 16:31:31",
+                "deleted_at": null,
+                "posisi_pekerjaan": "test",
+                "gaji_min": 10,
+                "gaji_max": 10,
+                "provinsi": "asd",
+                "kota": "asd",
+                "bidang_pekerjaan": "asd",
+                "tingkat_pendidikan": "asd",
+                "pengalaman_kerja": "asd",
+                "persyaratan": "asd",
+                "benefit_perusahaan": "asd",
+                "url_header": "http://localhost:8000/storage/perusahaan/header/1603557091_5f9456e3acb5b.jpeg",
+                "status_iklan": 1
+            }
+        ],
+        "first_page_url": "http://localhost:8000/api/iklan-perusahaan/1?page=1",
+        "from": 1,
+        "last_page": 1,
+        "last_page_url": "http://localhost:8000/api/iklan-perusahaan/1?page=1",
+        "next_page_url": null,
+        "path": "http://localhost:8000/api/iklan-perusahaan/1",
+        "per_page": 10,
+        "prev_page_url": null,
+        "to": 1,
+        "total": 1
+    }
+}
 ```
 
 -------
 
 # Company Details
-## Create
-Routes : 
-
-Method : 
-
-Body :
-|field|type|optional|
-|-|-|-
-
-Response : 
-```
-```
-
 ## Get
-Routes : 
+Routes : {{url}}/api/profil-perusahaan/{id}
 
-Method : 
-
-Body :
-|field|type|optional|
-|-|-|-
-
-Response : 
-```
-```
-
-## Edit
-Routes : 
-
-Method : 
+Method : GET
 
 Body :
 |field|type|optional|
@@ -1525,11 +1600,41 @@ Body :
 
 Response : 
 ```
+{
+    "count": 1,
+    "message": "data ditemukan",
+    "data": {
+        "current_page": 1,
+        "data": [
+            {
+                "id": 2,
+                "id_perusahaan": 1,
+                "nama_perusahaan": "test",
+                "alamat_perusahaan": "test",
+                "tentang_perusahaan": "test",
+                "url_banner": null,
+                "foto_perusahaan": "",
+                "website_perusahaan": "test",
+                "jenis_industri": "test",
+                "no_telp_perusahaan": "test",
+                "no_npwp_perusahaan": "test",
+                "url_npwp_perusahaan": "http://localhost:8000/storage/perusahaan/npwp1603552641_5f944581aa08b.jpeg",
+                "created_at": "2020-10-24 15:17:21",
+                "updated_at": "2020-10-24 15:17:21",
+                "deleted_at": null
+            }
+        ],
+        "first_page_url": "http://localhost:8000/api/profil-perusahaan/1?page=1",
+        "from": 1,
+        "last_page": 1,
+        "last_page_url": "http://localhost:8000/api/profil-perusahaan/1?page=1",
+        "next_page_url": null,
+        "path": "http://localhost:8000/api/profil-perusahaan/1",
+        "per_page": 10,
+        "prev_page_url": null,
+        "to": 1,
+        "total": 1
+    }
+}
 ```
-
-
-Notes on Company Details : 
-```
-```
-
 -------
