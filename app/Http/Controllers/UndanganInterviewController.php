@@ -38,7 +38,7 @@ class UndanganInterviewController extends Controller
     public function GetUndanganInterviewKandidat($id)
     {
         $data = UndanganInterview::where('id_kandidat',$id)
-        ->join('iklan_perusahaan', 'iklan_perusahaan.id', '=', 'undangan_interview.id_kandidat')
+        ->join('iklan_perusahaan', 'iklan_perusahaan.id', '=', 'undangan_interview.id_iklan')
         ->paginate(10);
         if(count($data)>0){
             $res['count'] = count($data);
@@ -55,7 +55,7 @@ class UndanganInterviewController extends Controller
     public function GetUndanganInterviewByIdIklan($id)
     {
         $data = UndanganInterview::where('id_iklan',$id)
-        ->join('iklan_perusahaan', 'iklan_perusahaan.id', '=', 'undangan_interview.id_iklan')
+        // ->join('iklan_perusahaan', 'iklan_perusahaan.id', '=', 'undangan_interview.id_iklan')
         ->paginate(10);
         if(count($data)>0){
             $res['count'] = count($data);
