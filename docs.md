@@ -1360,10 +1360,12 @@ notes : id params = id_kandidat
 Routes : {{url}}/api/undangan-interview/update-status/{id}?status=diterima
 
 Method : PUT
+Params : status
 
 Body :
 |field|type|optional|
-|-|-|-
+|-|-|-|
+
 
 Response : 
 ```
