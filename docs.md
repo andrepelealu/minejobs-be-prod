@@ -1,6 +1,22 @@
 # Index
 
 ### Landing Page
+### Data Pengalaman
+### Pendidikan
+### Keahlian
+### Bahasa
+### Preferensi
+### Data Diri
+### Upload Resume
+### Cari Lowongan
+### Lamaran Terkirim
+### Kirim Lamaran
+### Jadwal Interview
+### Undangan Interview
+### Detil Undangan (Kandidat)
+### Lamar Pekerjaan
+### Job Details
+### Company Details
 
 # Landing Page
 
