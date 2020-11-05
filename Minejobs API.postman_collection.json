@@ -18,7 +18,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"email\" : \"test@gmail2.com\",\r\n    \"password\": \"123empatlima\",\r\n    \"password_confirmation\" : \"123empatlima\"\r\n}",
+									"raw": "{\r\n    \"email\" : \"test2@gmail3.com\",\r\n    \"password\": \"123empatlima\",\r\n    \"password_confirmation\" : \"123empatlima\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -95,7 +95,7 @@
 									"bearer": [
 										{
 											"key": "token",
-											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9hcGkubWluZWpvYnMuaWRcL2FwaVwvYXV0aFwvZ29vZ2xlXC9jYWxsYmFja1wva2FuZGlkYXQiLCJpYXQiOjE2MDM2MDY5MjgsImV4cCI6MTYwMzYxMDUyOCwibmJmIjoxNjAzNjA2OTI4LCJqdGkiOiIyZlBxQk84VGg3MHBESWN5Iiwic3ViIjo0LCJwcnYiOiJkOGRmMTk4MTI3N2JmOTU2OGM3ZGQzZmUxYzc1MzA0ODY4NTZhMTQ2In0.iLuOnfr7xPmzpxpaZiUwxQtaPdOAAV85n4Chy9o2N9w9",
+											"value": "{{token}}",
 											"type": "string"
 										}
 									]
@@ -103,11 +103,12 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{url}}/kandidat/getuser",
+									"raw": "{{url}}/api/kandidat/getuser",
 									"host": [
 										"{{url}}"
 									],
 									"path": [
+										"api",
 										"kandidat",
 										"getuser"
 									]
@@ -251,19 +252,26 @@
 						},
 						{
 							"name": "Get All Data Pribadi",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
 							"request": {
 								"auth": {
 									"type": "bearer",
 									"bearer": [
 										{
 											"key": "token",
-											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9rYW5kaWRhdFwvbG9naW4iLCJpYXQiOjE2MDI0MjUyNjUsImV4cCI6MTYwMjQyODg2NSwibmJmIjoxNjAyNDI1MjY1LCJqdGkiOiJBNm9wZ2RQTkZ3RWJlbkZGIiwic3ViIjoxLCJwcnYiOiJkOGRmMTk4MTI3N2JmOTU2OGM3ZGQzZmUxYzc1MzA0ODY4NTZhMTQ2In0.JrytQo2kGdUtgAypE6snqMOfvQJ88cHLqrGka6tumuY",
+											"value": "{{token}}",
 											"type": "string"
 										}
 									]
 								},
 								"method": "GET",
 								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
 								"url": {
 									"raw": "{{url}}/api/data-pribadi",
 									"host": [
@@ -285,7 +293,7 @@
 									"bearer": [
 										{
 											"key": "token",
-											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9taW5lam9ic2FwaWJlLWVudi5lYmEtbmZpYXJ6YmUuYXAtc291dGhlYXN0LTEuZWxhc3RpY2JlYW5zdGFsay5jb21cL1wvYXBpXC9rYW5kaWRhdFwvbG9naW4iLCJpYXQiOjE2MDIyNTQwNzYsImV4cCI6MTYwMjI1NzY3NiwibmJmIjoxNjAyMjU0MDc2LCJqdGkiOiI0TkJwUzlpN0x0VGVkazFKIiwic3ViIjoxLCJwcnYiOiJkOGRmMTk4MTI3N2JmOTU2OGM3ZGQzZmUxYzc1MzA0ODY4NTZhMTQ2In0.my0drP6JC2aevp-JI9-lqxCpkSuz1uBHwefUHNITxao",
+											"value": "{{token}}",
 											"type": "string"
 										}
 									]
@@ -328,8 +336,54 @@
 									}
 								],
 								"body": {
-									"mode": "raw",
-									"raw": "{\r\n    \"id_kandidat\":\"1\",\r\n    \"nama_depan\":\"andre\",\r\n    \"nama_belakang\":\"di edit\",\r\n    \"nomor_telepon\": \"08223007743\",\r\n    \"provinsi\": \"jawa tengah\",\r\n    \"kota\" : \"semarang\",\r\n    \"tentang\" : \"tentang di edit\",\r\n    \"foto_profile\": \"google.cossm\"\r\n\r\n}",
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "id_kandidat",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "nama_depan",
+											"value": "test",
+											"type": "text"
+										},
+										{
+											"key": "nama_belakang",
+											"value": "test",
+											"type": "text"
+										},
+										{
+											"key": "nomor_telepon",
+											"value": "1231",
+											"type": "text"
+										},
+										{
+											"key": "provinsi",
+											"value": "qwe",
+											"type": "text"
+										},
+										{
+											"key": "kota",
+											"value": "qwe",
+											"type": "text"
+										},
+										{
+											"key": "tentang",
+											"value": "qwe",
+											"type": "text"
+										},
+										{
+											"key": "image",
+											"type": "file",
+											"src": "/C:/Users/AndrePelealu/Downloads/download-removebg-preview.png"
+										},
+										{
+											"key": "_method",
+											"value": "put",
+											"type": "text"
+										}
+									],
 									"options": {
 										"raw": {
 											"language": "json"
@@ -358,7 +412,7 @@
 									"bearer": [
 										{
 											"key": "token",
-											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9rYW5kaWRhdFwvbG9naW4iLCJpYXQiOjE2MDI0Mjg5NDcsImV4cCI6MTYwMjQzMjU0NywibmJmIjoxNjAyNDI4OTQ3LCJqdGkiOiJRM0tMa2VzN0w1YXVJMjB1Iiwic3ViIjoxLCJwcnYiOiJkOGRmMTk4MTI3N2JmOTU2OGM3ZGQzZmUxYzc1MzA0ODY4NTZhMTQ2In0.Cyw8Rq_GosA1UIlq3WfEt_42S-8dzyXSrIaJL13sG14",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9hcGkubWluZWpvYnMuaWRcL2FwaVwva2FuZGlkYXRcL2xvZ2luIiwiaWF0IjoxNjAzMjA1MzE4LCJleHAiOjE2MDMyMDg5MTgsIm5iZiI6MTYwMzIwNTMxOCwianRpIjoieXRGSmU3eUhOM05aVW5hTiIsInN1YiI6MSwicHJ2IjoiZDhkZjE5ODEyNzdiZjk1NjhjN2RkM2ZlMWM3NTMwNDg2ODU2YTE0NiJ9.ZNFQ_8A-UmH7qDlqq3sBKE-M2tjtE1gZjqCklFkMTwU",
 											"type": "string"
 										}
 									]
@@ -449,7 +503,7 @@
 									"bearer": [
 										{
 											"key": "token",
-											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9taW5lam9icy1iZS5oZXJva3VhcHAuY29tXC9cL2FwaVwva2FuZGlkYXRcL2xvZ2luIiwiaWF0IjoxNjAxODYxMDk2LCJleHAiOjE2MDE4NjQ2OTYsIm5iZiI6MTYwMTg2MTA5NiwianRpIjoiTk0wb2c4RHkweUtZSVRPeiIsInN1YiI6MSwicHJ2IjoiZDhkZjE5ODEyNzdiZjk1NjhjN2RkM2ZlMWM3NTMwNDg2ODU2YTE0NiJ9.XZZ7lNDhFR5mxnIL8H1jJX_9qaGNzJVkc2BLw1vK4e8",
+											"value": "{{token}}",
 											"type": "string"
 										}
 									]
@@ -486,7 +540,7 @@
 									"bearer": [
 										{
 											"key": "token",
-											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9taW5lam9icy1iZS5oZXJva3VhcHAuY29tXC9cL2FwaVwva2FuZGlkYXRcL2xvZ2luIiwiaWF0IjoxNjAxODYxMDk2LCJleHAiOjE2MDE4NjQ2OTYsIm5iZiI6MTYwMTg2MTA5NiwianRpIjoiTk0wb2c4RHkweUtZSVRPeiIsInN1YiI6MSwicHJ2IjoiZDhkZjE5ODEyNzdiZjk1NjhjN2RkM2ZlMWM3NTMwNDg2ODU2YTE0NiJ9.XZZ7lNDhFR5mxnIL8H1jJX_9qaGNzJVkc2BLw1vK4e8",
+											"value": "{{token}}",
 											"type": "string"
 										}
 									]
@@ -553,7 +607,7 @@
 									"bearer": [
 										{
 											"key": "token",
-											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9rYW5kaWRhdFwvbG9naW4iLCJpYXQiOjE2MDE4MjM0NTMsImV4cCI6MTYwMTgyNzA1MywibmJmIjoxNjAxODIzNDUzLCJqdGkiOiJyWWl0YVVCeVh4Y0pkNVVYIiwic3ViIjoxLCJwcnYiOiJkOGRmMTk4MTI3N2JmOTU2OGM3ZGQzZmUxYzc1MzA0ODY4NTZhMTQ2In0.ARttmg2grKu51tYcFz6tWLvMIvglT6wBx4MpjUrKvbc",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9rYW5kaWRhdFwvbG9naW4iLCJpYXQiOjE2MDMyNDE4MDksImV4cCI6MTYwMzI0NTQwOSwibmJmIjoxNjAzMjQxODA5LCJqdGkiOiJhbjRTR3dCc2RXZzlobHc3Iiwic3ViIjoxLCJwcnYiOiJkOGRmMTk4MTI3N2JmOTU2OGM3ZGQzZmUxYzc1MzA0ODY4NTZhMTQ2In0.gnBiEd9D93kuQNfdClIz-rExLD-AprXkJ5Dl9VM4TnM",
 											"type": "string"
 										}
 									]
@@ -589,7 +643,7 @@
 									"bearer": [
 										{
 											"key": "token",
-											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9rYW5kaWRhdFwvbG9naW4iLCJpYXQiOjE2MDI0MjYyMTQsImV4cCI6MTYwMjQyOTgxNCwibmJmIjoxNjAyNDI2MjE0LCJqdGkiOiJicU1FbHRTMkNBS01sb0Q3Iiwic3ViIjoxLCJwcnYiOiJkOGRmMTk4MTI3N2JmOTU2OGM3ZGQzZmUxYzc1MzA0ODY4NTZhMTQ2In0.oD2PyRvujBfVgG0u3z9nM3WX433T2uVJGzt672Kqm9k",
+											"value": "{{token}}",
 											"type": "string"
 										}
 									]
@@ -626,7 +680,7 @@
 									"bearer": [
 										{
 											"key": "token",
-											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9rYW5kaWRhdFwvbG9naW4iLCJpYXQiOjE2MDE4MjM0NTMsImV4cCI6MTYwMTgyNzA1MywibmJmIjoxNjAxODIzNDUzLCJqdGkiOiJyWWl0YVVCeVh4Y0pkNVVYIiwic3ViIjoxLCJwcnYiOiJkOGRmMTk4MTI3N2JmOTU2OGM3ZGQzZmUxYzc1MzA0ODY4NTZhMTQ2In0.ARttmg2grKu51tYcFz6tWLvMIvglT6wBx4MpjUrKvbc",
+											"value": "{{token}}",
 											"type": "string"
 										}
 									]
@@ -655,7 +709,7 @@
 									"bearer": [
 										{
 											"key": "token",
-											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9rYW5kaWRhdFwvbG9naW4iLCJpYXQiOjE2MDI0MjYyMTQsImV4cCI6MTYwMjQyOTgxNCwibmJmIjoxNjAyNDI2MjE0LCJqdGkiOiJicU1FbHRTMkNBS01sb0Q3Iiwic3ViIjoxLCJwcnYiOiJkOGRmMTk4MTI3N2JmOTU2OGM3ZGQzZmUxYzc1MzA0ODY4NTZhMTQ2In0.oD2PyRvujBfVgG0u3z9nM3WX433T2uVJGzt672Kqm9k",
+											"value": "{{token}}",
 											"type": "string"
 										}
 									]
@@ -729,7 +783,7 @@
 									"bearer": [
 										{
 											"key": "token",
-											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9rYW5kaWRhdFwvbG9naW4iLCJpYXQiOjE2MDE4MjM0NTMsImV4cCI6MTYwMTgyNzA1MywibmJmIjoxNjAxODIzNDUzLCJqdGkiOiJyWWl0YVVCeVh4Y0pkNVVYIiwic3ViIjoxLCJwcnYiOiJkOGRmMTk4MTI3N2JmOTU2OGM3ZGQzZmUxYzc1MzA0ODY4NTZhMTQ2In0.ARttmg2grKu51tYcFz6tWLvMIvglT6wBx4MpjUrKvbc",
+											"value": "{{token}}",
 											"type": "string"
 										}
 									]
@@ -766,7 +820,7 @@
 									"bearer": [
 										{
 											"key": "token",
-											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9rYW5kaWRhdFwvbG9naW4iLCJpYXQiOjE2MDE4MjM0NTMsImV4cCI6MTYwMTgyNzA1MywibmJmIjoxNjAxODIzNDUzLCJqdGkiOiJyWWl0YVVCeVh4Y0pkNVVYIiwic3ViIjoxLCJwcnYiOiJkOGRmMTk4MTI3N2JmOTU2OGM3ZGQzZmUxYzc1MzA0ODY4NTZhMTQ2In0.ARttmg2grKu51tYcFz6tWLvMIvglT6wBx4MpjUrKvbc",
+											"value": "{{token}}",
 											"type": "string"
 										}
 									]
@@ -1502,7 +1556,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"email\" : \"test@gmail.com\",\r\n    \"password\": \"123empatlima\",\r\n    \"password_confirmation\" : \"123empatlima\"\r\n}",
+									"raw": "{\r\n    \"email\" : \"andre02.9d@gmail.com\",\r\n    \"password\": \"123empatlima\",\r\n    \"password_confirmation\" : \"123empatlima\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1530,7 +1584,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"email\" : \"test@gmail.com\",\r\n    \"password\": \"123empatlima\",\r\n    \"password_confirmation\" : \"123empatlima\"\r\n}",
+									"raw": "{\r\n    \"email\" : \"andre02.9d@gmail.com\",\r\n    \"password\": \"123empatlima\",\r\n    \"password_confirmation\" : \"123empatlima\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -2052,19 +2106,13 @@
 									}
 								},
 								"url": {
-									"raw": "{{url}}/api/cari-iklan?q=test",
+									"raw": "{{url}}/api/cari-iklan",
 									"host": [
 										"{{url}}"
 									],
 									"path": [
 										"api",
 										"cari-iklan"
-									],
-									"query": [
-										{
-											"key": "q",
-											"value": "test"
-										}
 									]
 								}
 							},
@@ -2078,7 +2126,7 @@
 									"bearer": [
 										{
 											"key": "token",
-											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9wZXJ1c2FoYWFuXC9sb2dpbiIsImlhdCI6MTYwMzU1NjI4MiwiZXhwIjoxNjAzNTU5ODgyLCJuYmYiOjE2MDM1NTYyODIsImp0aSI6IlpPMHd5dWViRUVIUWR4NkoiLCJzdWIiOjEsInBydiI6ImE4NjUzYWQ0MDc4YjFhNDVmNjU3ODU1ZjA3MmIwMGRlNjIzMDFhYzAifQ.ORHWw0VjPFTaoasPHXI2qT3cEXB8rh9BowdNhXnMELg",
+											"value": "{{token}}",
 											"type": "string"
 										}
 									]
@@ -2122,7 +2170,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n        \"id_kandidat\" : \"1\",\r\n        \"id_perusahaan\" :\"1\",\r\n        \"id_iklan\" :\"7\",\r\n        \"pesan\":\"ketiga\", \r\n        \"tanggal_interview\":\"12-10-2019\", \r\n        \"waktu_mulai\" :\"10.00\",\r\n        \"waktu_selesai\" :\"11.00\",\r\n        \"metode_interview\":\"langsung\",\r\n        \"url_concall\":\"test\"\r\n}",
+									"raw": "{\r\n        \"id_kandidat\" : \"1\",\r\n        \"id_perusahaan\" :\"1\",\r\n        \"id_iklan\" :\"4\",\r\n        \"pesan\":\"ketiga\", \r\n        \"tanggal_interview\":\"12-10-2019\", \r\n        \"waktu_mulai\" :\"10.00\",\r\n        \"waktu_selesai\" :\"11.00\",\r\n        \"metode_interview\":\"langsung\",\r\n        \"url_concall\":\"test\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -2217,19 +2265,20 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{url}}/api/undangan-interview-byiklan/7?id=1",
+									"raw": "{{url}}/api/undangan-interview-byiklan/4",
 									"host": [
 										"{{url}}"
 									],
 									"path": [
 										"api",
 										"undangan-interview-byiklan",
-										"7"
+										"4"
 									],
 									"query": [
 										{
 											"key": "id",
-											"value": "1"
+											"value": "1",
+											"disabled": true
 										}
 									]
 								}
