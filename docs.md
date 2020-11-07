@@ -1358,6 +1358,68 @@ notes : id params = id_kandidat
 
 # Undangan Interview
 ## Get List undangan Interview(kandidat)
+Routes : {{url}}/api/undangan-interview-kandidat/1
+
+Method : GET
+
+Body :
+|field|type|optional|
+|-|-|-
+
+Response : 
+```
+{
+    "count": 1,
+    "message": "data ditemukan",
+    "data": {
+        "current_page": 1,
+        "data": [
+            {
+                "id": 4,
+                "id_kandidat": 1,
+                "id_perusahaan": 1,
+                "id_iklan": 4,
+                "pesan": "ketiga",
+                "lokasi_wawancara": null,
+                "tanggal_interview": "2019-10-12",
+                "metode_interview": "langsung",
+                "waktu_mulai": "10.00",
+                "waktu_selesai": "11.00",
+                "url_concall": "test",
+                "status": "menunggu konfirmasi",
+                "created_at": "2020-10-24 16:31:31",
+                "updated_at": "2020-10-24 16:31:31",
+                "deleted_at": null,
+                "posisi_pekerjaan": "test",
+                "gaji_min": 10,
+                "gaji_max": 10,
+                "provinsi": "asd",
+                "kota": "asd",
+                "bidang_pekerjaan": "asd",
+                "tingkat_pendidikan": "asd",
+                "pengalaman_kerja": "asd",
+                "persyaratan": "asd",
+                "benefit_perusahaan": "asd",
+                "url_header": "http://localhost:8000/storage/perusahaan/header/1603557091_5f9456e3acb5b.jpeg",
+                "status_iklan": 1
+            }
+        ],
+        "first_page_url": "http://localhost:8000/api/undangan-interview-kandidat/1?page=1",
+        "from": 1,
+        "last_page": 1,
+        "last_page_url": "http://localhost:8000/api/undangan-interview-kandidat/1?page=1",
+        "next_page_url": null,
+        "path": "http://localhost:8000/api/undangan-interview-kandidat/1",
+        "per_page": 10,
+        "prev_page_url": null,
+        "to": 1,
+        "total": 1
+    }
+}
+```
+notes : id params = id_kandidat
+
+-------
 ## Update Status Undangan (kandidat)
 Routes : {{url}}/api/undangan-interview/update-status/{id}?status=diterima
 
