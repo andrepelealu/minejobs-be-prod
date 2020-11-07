@@ -633,6 +633,7 @@ Body :
 |id_kandidat|int|x|
 |nama_keahlian|string|x|
 |tingkatan|string|x|
+|jurusan|string|v|
 
 
 Response : 
@@ -788,8 +789,8 @@ Body :
 |id_kandidat|int|x|
 |gaji_diharapkan|int|x|
 |provinsi|int|x|
-|kota|int|x|
-|bidang_pekerjaan|int|x|
+|kota|int|v|
+|bidang_pekerjaan|int|v|
 
 
 Response : 
@@ -1356,6 +1357,7 @@ notes : id params = id_kandidat
 -------
 
 # Undangan Interview
+## Get List undangan Interview(kandidat)
 ## Update Status Undangan (kandidat)
 Routes : {{url}}/api/undangan-interview/update-status/{id}?status=diterima
 
